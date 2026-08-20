@@ -29,12 +29,11 @@ export default function AboutPage() {
             </div>
 
             <div className="max-w-none">
+              <p className="text-stone-600 leading-relaxed text-[15px] mb-4">
+                Hệ thống <strong>Gia Phả Dòng Họ Nguyễn Mậu (Ngành 4)</strong> tại <strong>Thôn Thượng Đền, Thị trấn Cổ Lễ, Huyện Trực Ninh, Tỉnh Nam Định</strong> được xây dựng trên nền tảng mã nguồn mở hiện đại nhằm số hóa toàn bộ cây phả hệ, lưu giữ gia phả, kỵ nhật (ngày giỗ Âm lịch), tiểu sử và công trạng của các bậc tiền nhân cho muôn đời con cháu mai sau.
+              </p>
               <p className="text-stone-600 leading-relaxed text-[15px] mb-8">
-                <strong className="text-stone-800">Gia Phả OS</strong> là một
-                giải pháp mã nguồn mở được thiết kế giúp các dòng họ, gia đình
-                tự xây dựng và quản lý cây phả hệ của riêng mình. Dự án giúp bảo
-                tồn và truyền đạt lại thông tin cội nguồn một cách trực quan,
-                hiện đại, và đặc biệt là an toàn.
+                Hệ thống cung cấp khả năng tra cứu danh xưng chuẩn xác theo văn hóa truyền thống Việt Nam, xem sơ đồ cây phả hệ, sơ đồ tư duy, quản lý sự kiện giỗ họ và bảo mật thông tin liên lạc của các thành viên.
               </p>
 
               <div className="mt-8 mb-4 border-t border-stone-100 pt-8 flex items-center gap-3">
