@@ -123,6 +123,17 @@ function sanitizeCustomEvent(
   };
 }
 
+function sanitizePrivateDetails(
+  d: any,
+): PersonDetailsPrivateExport {
+  return {
+    person_id: d.person_id,
+    phone_number: d.phone_number ?? d.phone ?? null,
+    occupation: d.occupation ?? null,
+    current_residence: d.current_residence ?? d.residence ?? null,
+  };
+}
+
 // ─── Export ───────────────────────────────────────────────────────────────────
 
 export async function exportData(
@@ -359,7 +370,9 @@ export async function importData(
 
   // 7. Insert person_details_private (if present in payload)
   let privateDetailsCount = 0;
-  const privateDetails = importPayload.person_details_private ?? [];
+  const privateDetails = (importPayload.person_details_private ?? []).map(
+    sanitizePrivateDetails,
+  );
   if (privateDetails.length > 0) {
     for (let i = 0; i < privateDetails.length; i += CHUNK) {
       const chunk = privateDetails.slice(i, i + CHUNK);

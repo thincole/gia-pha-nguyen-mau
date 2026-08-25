@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "timestamp": "2026-08-25T09:31:10.723Z",
+  "timestamp": "2026-08-25T11:04:13.757Z",
   "persons": [
     {
       "id": "00000000-0000-0100-0001-000000000000",
@@ -3017,66 +3017,51 @@
   "person_details_private": [
     {
       "person_id": "00000000-0000-2504-0001-000000000000",
-      "phone": null,
+      "phone_number": null,
       "occupation": "Chủ tịch UBMTTQ Thị trấn Cổ Lễ / Trưởng nam Ngành 4",
-      "residence": "Thôn Thượng Đền, Thị trấn Cổ Lễ, Trực Ninh, Nam Định",
-      "notes": null
+      "current_residence": "Thôn Thượng Đền, Thị trấn Cổ Lễ, Trực Ninh, Nam Định"
     },
     {
       "person_id": "00000000-0000-2604-0001-000000000000",
-      "phone": null,
+      "phone_number": null,
       "occupation": "Thiếu tá Công an tỉnh Đồng Nai",
-      "residence": null,
-      "notes": null
+      "current_residence": null
     },
     {
       "person_id": "00000000-0000-2604-0008-000000000000",
-      "phone": null,
+      "phone_number": null,
       "occupation": "Tiến sĩ Viện Khoa học Thủy lợi Việt Nam",
-      "residence": null,
-      "notes": null
+      "current_residence": null
     }
   ],
   "custom_events": [
     {
       "id": "22222222-2222-2222-2222-000000000001",
-      "title": "Giỗ Thủy Tổ Nguyễn Mậu Thái (Phúc Hội)",
-      "date": "2026-07-18",
-      "description": "Ngày kỵ nhật Thủy Tổ Họ Nguyễn Mậu tại Cổ Lễ (Mồng 5 tháng 6 Âm lịch). Con cháu toàn họ tề tựu tế lễ tại Từ đường Thượng Đền.",
-      "type": "death_anniversary",
-      "is_lunar": true,
-      "lunar_day": 5,
-      "lunar_month": 6
+      "name": "Giỗ Thủy Tổ Nguyễn Mậu Thái (Phúc Hội)",
+      "event_date": "2026-07-18",
+      "content": "Ngày kỵ nhật Thủy Tổ Họ Nguyễn Mậu tại Cổ Lễ (Mồng 5 tháng 6 Âm lịch). Con cháu toàn họ tề tựu tế lễ tại Từ đường Thượng Đền.",
+      "location": "Từ đường Họ Nguyễn Mậu, Thôn Thượng Đền, Cổ Lễ"
     },
     {
       "id": "22222222-2222-2222-2222-000000000002",
-      "title": "Giỗ Tổ Tướng Công Nguyễn Mậu Hoàn (Ngành 4)",
-      "date": "2026-02-28",
-      "description": "Ngày kỵ nhật Tướng Công Nguyễn Mậu Hoàn (Tự Tuấn Thông / Viết Nghĩa, 12 tháng Giêng Âm lịch). Triều đình cấp 100 mẫu ruộng và dân làng tế tự.",
-      "type": "death_anniversary",
-      "is_lunar": true,
-      "lunar_day": 12,
-      "lunar_month": 1
+      "name": "Giỗ Tổ Tướng Công Nguyễn Mậu Hoàn (Ngành 4)",
+      "event_date": "2026-02-28",
+      "content": "Ngày kỵ nhật Tướng Công Nguyễn Mậu Hoàn (Tự Tuấn Thông / Viết Nghĩa, 12 tháng Giêng Âm lịch). Triều đình cấp 100 mẫu ruộng và dân làng tế tự.",
+      "location": "Từ đường Ngành 4, Thôn Thượng Đền, Cổ Lễ"
     },
     {
       "id": "22222222-2222-2222-2222-000000000003",
-      "title": "Giỗ Tổ Ngành Nhất Nguyễn Mậu Trường (Phúc Tiên)",
-      "date": "2026-11-09",
-      "description": "Ngày kỵ nhật Tổ Ngành Nhất (Mồng 1 tháng 10 Âm lịch). Tế lễ tại Từ đường Ngành Nhất.",
-      "type": "death_anniversary",
-      "is_lunar": true,
-      "lunar_day": 1,
-      "lunar_month": 10
+      "name": "Giỗ Tổ Ngành Nhất Nguyễn Mậu Trường (Phúc Tiên)",
+      "event_date": "2026-11-09",
+      "content": "Ngày kỵ nhật Tổ Ngành Nhất (Mồng 1 tháng 10 Âm lịch). Tế lễ tại Từ đường Ngành Nhất.",
+      "location": "Từ đường Ngành Nhất, Thôn Thượng Đền"
     },
     {
       "id": "22222222-2222-2222-2222-000000000004",
-      "title": "Lễ Hội Chùa Cổ Lễ & Đền Thượng Lãng",
-      "date": "2026-10-24",
-      "description": "Lễ hội truyền thống Chùa Cổ Lễ và Đền Thượng tưởng nhớ Đức Thánh Nguyễn Minh Không (13-16 tháng 9 Âm lịch).",
-      "type": "gathering",
-      "is_lunar": true,
-      "lunar_day": 15,
-      "lunar_month": 9
+      "name": "Lễ Hội Chùa Cổ Lễ & Đền Thượng Lãng",
+      "event_date": "2026-10-24",
+      "content": "Lễ hội truyền thống Chùa Cổ Lễ và Đền Thượng tưởng nhớ Đức Thánh Nguyễn Minh Không (13-16 tháng 9 Âm lịch).",
+      "location": "Chùa Cổ Lễ & Đền Thượng Lãng"
     }
   ]
 }

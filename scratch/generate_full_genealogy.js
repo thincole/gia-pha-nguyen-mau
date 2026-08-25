@@ -63,13 +63,12 @@ function addPerson({
   };
   persons.push(p);
 
-  if (phone || occupation || residence || private_notes) {
+  if (phone || occupation || residence) {
     personDetailsPrivate.push({
       person_id: id,
-      phone,
+      phone_number: phone,
       occupation,
-      residence,
-      notes: private_notes,
+      current_residence: residence,
     });
   }
   return id;
@@ -1462,46 +1461,34 @@ addParentsChild(id_d26_minh, id_d26_minh_ba, id_d27_hien);
 // -----------------------------------------------------------------------------
 customEvents.push({
   id: '22222222-2222-2222-2222-000000000001',
-  title: 'Giỗ Thủy Tổ Nguyễn Mậu Thái (Phúc Hội)',
-  date: '2026-07-18',
-  description: 'Ngày kỵ nhật Thủy Tổ Họ Nguyễn Mậu tại Cổ Lễ (Mồng 5 tháng 6 Âm lịch). Con cháu toàn họ tề tựu tế lễ tại Từ đường Thượng Đền.',
-  type: 'death_anniversary',
-  is_lunar: true,
-  lunar_day: 5,
-  lunar_month: 6,
+  name: 'Giỗ Thủy Tổ Nguyễn Mậu Thái (Phúc Hội)',
+  event_date: '2026-07-18',
+  content: 'Ngày kỵ nhật Thủy Tổ Họ Nguyễn Mậu tại Cổ Lễ (Mồng 5 tháng 6 Âm lịch). Con cháu toàn họ tề tựu tế lễ tại Từ đường Thượng Đền.',
+  location: 'Từ đường Họ Nguyễn Mậu, Thôn Thượng Đền, Cổ Lễ',
 });
 
 customEvents.push({
   id: '22222222-2222-2222-2222-000000000002',
-  title: 'Giỗ Tổ Tướng Công Nguyễn Mậu Hoàn (Ngành 4)',
-  date: '2026-02-28',
-  description: 'Ngày kỵ nhật Tướng Công Nguyễn Mậu Hoàn (Tự Tuấn Thông / Viết Nghĩa, 12 tháng Giêng Âm lịch). Triều đình cấp 100 mẫu ruộng và dân làng tế tự.',
-  type: 'death_anniversary',
-  is_lunar: true,
-  lunar_day: 12,
-  lunar_month: 1,
+  name: 'Giỗ Tổ Tướng Công Nguyễn Mậu Hoàn (Ngành 4)',
+  event_date: '2026-02-28',
+  content: 'Ngày kỵ nhật Tướng Công Nguyễn Mậu Hoàn (Tự Tuấn Thông / Viết Nghĩa, 12 tháng Giêng Âm lịch). Triều đình cấp 100 mẫu ruộng và dân làng tế tự.',
+  location: 'Từ đường Ngành 4, Thôn Thượng Đền, Cổ Lễ',
 });
 
 customEvents.push({
   id: '22222222-2222-2222-2222-000000000003',
-  title: 'Giỗ Tổ Ngành Nhất Nguyễn Mậu Trường (Phúc Tiên)',
-  date: '2026-11-09',
-  description: 'Ngày kỵ nhật Tổ Ngành Nhất (Mồng 1 tháng 10 Âm lịch). Tế lễ tại Từ đường Ngành Nhất.',
-  type: 'death_anniversary',
-  is_lunar: true,
-  lunar_day: 1,
-  lunar_month: 10,
+  name: 'Giỗ Tổ Ngành Nhất Nguyễn Mậu Trường (Phúc Tiên)',
+  event_date: '2026-11-09',
+  content: 'Ngày kỵ nhật Tổ Ngành Nhất (Mồng 1 tháng 10 Âm lịch). Tế lễ tại Từ đường Ngành Nhất.',
+  location: 'Từ đường Ngành Nhất, Thôn Thượng Đền',
 });
 
 customEvents.push({
   id: '22222222-2222-2222-2222-000000000004',
-  title: 'Lễ Hội Chùa Cổ Lễ & Đền Thượng Lãng',
-  date: '2026-10-24',
-  description: 'Lễ hội truyền thống Chùa Cổ Lễ và Đền Thượng tưởng nhớ Đức Thánh Nguyễn Minh Không (13-16 tháng 9 Âm lịch).',
-  type: 'gathering',
-  is_lunar: true,
-  lunar_day: 15,
-  lunar_month: 9,
+  name: 'Lễ Hội Chùa Cổ Lễ & Đền Thượng Lãng',
+  event_date: '2026-10-24',
+  content: 'Lễ hội truyền thống Chùa Cổ Lễ và Đền Thượng tưởng nhớ Đức Thánh Nguyễn Minh Không (13-16 tháng 9 Âm lịch).',
+  location: 'Chùa Cổ Lễ & Đền Thượng Lãng',
 });
 
 // Output JSON Backup v3
@@ -1556,13 +1543,13 @@ for (const r of relationships) {
 sql += `\n-- 4. Thêm Thông tin Riêng tư (person_details_private)\n`;
 for (const priv of personDetailsPrivate) {
   const sanitize = (val) => val === null || val === undefined ? 'NULL' : `'${String(val).replace(/'/g, "''")}'`;
-  sql += `INSERT INTO person_details_private (person_id, phone, occupation, residence, notes) VALUES ('${priv.person_id}', ${sanitize(priv.phone)}, ${sanitize(priv.occupation)}, ${sanitize(priv.residence)}, ${sanitize(priv.notes)});\n`;
+  sql += `INSERT INTO person_details_private (person_id, phone_number, occupation, current_residence) VALUES ('${priv.person_id}', ${sanitize(priv.phone_number)}, ${sanitize(priv.occupation)}, ${sanitize(priv.current_residence)});\n`;
 }
 
 sql += `\n-- 5. Thêm Sự kiện Tế tự Dòng họ (custom_events)\n`;
 for (const ev of customEvents) {
   const sanitize = (val) => val === null || val === undefined ? 'NULL' : `'${String(val).replace(/'/g, "''")}'`;
-  sql += `INSERT INTO custom_events (id, title, date, description, type, is_lunar, lunar_day, lunar_month) VALUES ('${ev.id}', ${sanitize(ev.title)}, '${ev.date}', ${sanitize(ev.description)}, '${ev.type}', ${ev.is_lunar}, ${ev.lunar_day}, ${ev.lunar_month});\n`;
+  sql += `INSERT INTO custom_events (id, name, event_date, content, location) VALUES ('${ev.id}', ${sanitize(ev.name)}, '${ev.event_date}', ${sanitize(ev.content)}, ${sanitize(ev.location)});\n`;
 }
 
 sql += `\nCOMMIT;\n`;
