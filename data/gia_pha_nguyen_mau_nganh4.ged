@@ -5,461 +5,944 @@
 2 NAME Giapha OS
 2 VERS 0.1.0
 0 @I1@ INDI
-1 NAME Nguyễn Mậu /Phúc/
+1 NAME Nguyễn /Bặc/
 1 SEX M
 1 BIRT
-2 DATE 12 APR 1895
+2 DATE 904
 1 DEAT Y
-2 DATE 06 OCT 1968
-1 FAMS @F1@
-1 NOTE Cụ Khởi Tổ Ngành 4 dòng họ Nguyễn Mậu tại Thôn Thượng Đền, Cổ Lễ, Trực Ninh. Sinh thời đức độ, nho nhã, tinh thông y thuật và phong thủy, có công tạo dựng cơ nghiệp và quy hoạch từ đường ngành 4. Phần mộ an táng tại Khu Lăng Mộ dòng họ Nguyễn Mậu, Thôn Thượng Đền, Cổ Lễ.
+2 DATE 979
+1 FAMS @F24@
+1 NOTE Khởi Tổ Nguyên Đương họ Nguyễn. Sinh năm Giáp Tý (904), mất năm Kỷ Mão (979), thọ 76 tuổi. Quê Đại Hữu, Đại Hoàng, Gia Viễn, Ninh Bình. Bạn cờ lau tam đồng với Đinh Bộ Lĩnh. Đại tướng số 1 dẹp loạn 12 sứ quân, Thừa tướng phụ Quốc Định Quốc Công. Triều Lý Thái Tổ truy phong Trung Liệt Đại Vương Thượng Đẳng Phúc Thần.
 0 @I2@ INDI
-1 NAME Trần Thị /Đoan/
-1 SEX F
-1 BIRT
-2 DATE 20 SEP 1898
+1 NAME Nguyễn /Đệ/
+1 SEX M
 1 DEAT Y
-2 DATE 27 NOV 1972
-1 FAMS @F1@
-1 NOTE Cụ Bà Chính Thất, người làng Chùa Cổ Lễ, hiền thục nết na, tần tảo cùng Cụ Ông nuôi dạy con cháu giữ trọn nền nếp gia phong. Mộ an táng tại Khu Lăng Mộ dòng họ Nguyễn Mậu, Thôn Thượng Đền.
+2 DATE 1028
+1 FAMC @F24@
+1 FAMS @F25@
+1 NOTE Con trưởng Tổ Bặc. Mất năm Mậu Thìn (1028). Triều Tiền Lê phong Điện Tiền đô chỉ huy Sứ. Triều Lý Thái Tổ phong Đô hiệu Điểm Tước hầu (1010-1028).
 0 @I3@ INDI
-1 NAME Nguyễn Mậu /Trọng/
+1 NAME Nguyễn Phúc /Đạt/
 1 SEX M
-1 BIRT
-2 DATE 08 FEB 1920
 1 DEAT Y
-2 DATE 11 APR 1995
-1 FAMC @F1@
-1 FAMS @F2@
-1 NOTE Trưởng nam Ngành 4. Tham gia kháng chiến chống Pháp, phụ trách công tác thủ công nghiệp địa phương tại Cổ Lễ. Người giữ gìn gia phả chữ Hán Nôm và hưng công trùng tu Từ đường họ. Mộ tại Nghĩa trang Thượng Đền.
+1 FAMC @F24@
+1 NOTE Con thứ 2 của Khởi Tổ Nguyễn Bặc.
 0 @I4@ INDI
-1 NAME Lê Thị /Mùi/
-1 SEX F
-1 BIRT
-2 DATE 15 MAY 1923
+1 NAME Nguyễn /Viễn/
+1 SEX M
 1 DEAT Y
-2 DATE 15 JUL 2002
-1 FAMS @F2@
-1 NOTE Cụ bà đảm đang, phụ trách việc tế lễ họ nhiều năm, phúc hậu, thương yêu con cháu. Mộ tại Nghĩa trang Thượng Đền, Cổ Lễ.
+1 FAMC @F25@
+1 FAMS @F26@
+1 NOTE Con trai thứ 2 của Tổ Nguyễn Đệ. Quan triều Lý Thánh Tông (1054-1071). Triều Lý Nhân Tông (1072-1127) được phong Tả tướng Quốc - Tham tri sự.
 0 @I5@ INDI
-1 NAME Nguyễn Mậu /Khoa/
+1 NAME Nguyễn Quang /Lợi/
 1 SEX M
-1 BIRT
-2 DATE 19 AUG 1925
 1 DEAT Y
-2 DATE 18 DEC 2005
-1 FAMC @F1@
-1 FAMS @F3@
-1 NOTE Nhị nam Ngành 4. Nhà giáo dạy chữ Nho và chữ Quốc ngữ nhiều năm tại vùng Cổ Lễ, Trực Ninh. Học trò khắp vùng kính trọng về phẩm hạnh. Mộ tại Nghĩa trang Đồng Thượng, Cổ Lễ.
+1 FAMC @F25@
+1 NOTE Con thứ nhất của Tổ Nguyễn Đệ.
 0 @I6@ INDI
-1 NAME Phạm Thị /Nhàn/
-1 SEX F
-1 BIRT
-2 DATE 10 NOV 1928
+1 NAME Nguyễn Phúc /Lịch/
+1 SEX M
 1 DEAT Y
-2 DATE 16 OCT 2010
-1 FAMS @F3@
-1 NOTE Xuất thân gia đình Nho học Trực Ninh, mẫu mực lễ giáo, đức độ dịu hiền. Mộ tại Nghĩa trang Đồng Thượng, Cổ Lễ.
+1 FAMC @F25@
+1 NOTE Con thứ 3 của Tổ Nguyễn Đệ.
 0 @I7@ INDI
-1 NAME Nguyễn Thị /Thanh/
-1 SEX F
-1 BIRT
-2 DATE 25 JUN 1929
+1 NAME Nguyễn /Phụng/
+1 SEX M
 1 DEAT Y
-2 DATE 21 MAY 2015
-1 FAMC @F1@
-1 FAMS @F4@
-1 NOTE Lấy chồng về họ Vũ làng Cổ Lễ, vẹn tròn nghĩa vụ gia đình, luôn hướng về cội nguồn họ Nguyễn Mậu và hết lòng vì họ ngoại.
+1 FAMC @F26@
+1 FAMS @F27@
+1 NOTE Con trai Tổ Viễn. Xuất thân Võ cử nhân, năm Ất Sửu (1145) triều Lý Anh Tông phong Tả đô đốc.
 0 @I8@ INDI
-1 NAME Vũ Đình /Cường/
+1 NAME Nguyễn /Nộn/
 1 SEX M
-1 BIRT
-2 DATE 14 MAR 1926
 1 DEAT Y
-2 DATE 16 FEB 1998
-1 FAMS @F4@
-1 NOTE Cán bộ ngành thương nghiệp huyện Trực Ninh. Mộ tại Nghĩa trang thị trấn Cổ Lễ.
+2 DATE 1229
+1 FAMC @F27@
+1 FAMS @F28@
+1 NOTE Con trai Tổ Phụng. Văn võ kiêm toàn, tự xưng Đại Thắng Vương thời Lý Cao Tông. Năm Ất Dậu (1225) triều Trần phong Hoài Đạo Hiếu Vũ Vương, gả Công chúa Ngoan Thiềm. Mất năm Kỷ Sửu (1229). Đền thờ chính tại Phù Dực, Tiên Du, Bắc Ninh (gồm 72 đền thờ dọc sông Đuống đến Lục Đầu Giang).
 0 @I9@ INDI
-1 NAME Nguyễn Mậu /Duẩn/
+1 NAME Nguyễn Thế /Tứ/
 1 SEX M
-1 BIRT
-2 DATE 05 OCT 1934
 1 DEAT Y
-2 DATE 24 AUG 2018
-1 FAMC @F1@
-1 FAMS @F5@
-1 NOTE Tam nam Ngành 4. Cựu chiến binh, nguyên cán bộ Giao thông Vận tải Nam Hà. Sau về sinh sống tại thị trấn Cổ Lễ, tích cực tham gia ban khánh tiết Đền Thượng. Mộ tại Nghĩa trang Thượng Đền.
+1 FAMC @F28@
+1 FAMS @F29@
+1 NOTE Con trưởng Tổ Nguyễn Nộn. Làm tướng, được phong tước Đô Hiệu Điểm qua 3 triều vua Trần: Trần Thái Tông (1225-1257), Trần Thánh Tông (1258-1277), Trần Nhân Tông (1278-1292).
 0 @I10@ INDI
-1 NAME Hoàng Thị /Thược/
-1 SEX F
-1 BIRT
-2 DATE 12 JAN 1938
+1 NAME Nguyễn Nạp /Hoà/
+1 SEX M
 1 DEAT Y
-2 DATE 09 FEB 2021
-1 FAMS @F5@
-1 NOTE Hội viên Người cao tuổi gương mẫu thị trấn Cổ Lễ. Mộ tại Nghĩa trang Thượng Đền, Cổ Lễ.
+2 DATE 1377
+1 FAMC @F29@
+1 FAMS @F30@
+1 NOTE Con cả Tổ Thế Tứ. Xuất thân Võ cử nhân triều Trần Minh Tông (1314-1328). Làm quan qua các triều Trần Minh Tông, Hiến Tông, Dụ Tông, Nghệ Tông, Duệ Tông. Được phong Bình Nam Đại tướng quân giúp vua đánh Chiêm Thành năm 1377.
 0 @I11@ INDI
-1 NAME Nguyễn Mậu /Hùng/
+1 NAME Nguyễn Công /Luật/
 1 SEX M
-1 BIRT
-2 DATE 10 MAR 1948
 1 DEAT Y
-2 DATE 28 JUN 2020
-1 FAMC @F2@
-1 FAMS @F6@
-1 NOTE Trưởng nam chi trưởng đời 3. Kỹ sư cơ khí, nguyên trưởng tộc trông coi và duy trì nền nếp tế tự tại Từ đường Thôn Thượng Đền. Mộ tại Nghĩa trang Thượng Đền, Cổ Lễ.
+1 FAMC @F30@
+1 FAMS @F31@
+1 NOTE Con trưởng Tổ Nạp Hoà. Làm quan triều Trần Duệ Tông đến Phế Đế, chức Hữu Hiệu Điểm (1378). Cai quản quân phủ Thiên Trường. Tự là Tiểu Luật.
 0 @I12@ INDI
-1 NAME Đỗ Thị /Mai/
-1 SEX F
-1 BIRT
-2 DATE 18 JUL 1952
-1 FAMS @F6@
-1 NOTE Giáo viên tiểu học nghỉ hưu, hiện trông coi và phụng sự hương khói tại Từ đường họ Nguyễn Mậu Ngành 4 tại Thôn Thượng Đền.
+1 NAME Nguyễn Minh /Du/
+1 SEX M
+1 DEAT Y
+1 FAMC @F31@
+1 FAMS @F32@
+1 NOTE Con thứ 3 của Tổ Công Luật. Làm tướng quân chỉ huy quân Thiết Hổ triều Phế Đế Kiên Tân (1398-1399), trấn thủ Sơn Nam (Thái Bình, Nam Định) và Hải Dương. Được phong Thái phó.
 0 @I13@ INDI
-1 NAME Nguyễn Mậu /Cường/
+1 NAME Nguyễn Phi /Khanh/
 1 SEX M
 1 BIRT
-2 DATE 22 SEP 1953
-1 FAMC @F2@
-1 FAMS @F7@
-1 NOTE Bác sĩ Quân y nghỉ hưu, nguyên Trưởng khoa Bệnh viện Quân y. Hiện định cư và sinh hoạt dòng họ tại TP. Nam Định.
+2 DATE 1355
+1 DEAT Y
+2 DATE 1428
+1 FAMC @F32@
+1 FAMS @F33@
+1 NOTE Thái học sinh thời Trần - Hồ, thân phụ Anh hùng dân tộc Nguyễn Trãi.
 0 @I14@ INDI
-1 NAME Trịnh Thị /Lan/
-1 SEX F
+1 NAME Nguyễn /Trãi/
+1 SEX M
 1 BIRT
-2 DATE 05 DEC 1956
-1 FAMS @F7@
-1 NOTE Dược sĩ nghỉ hưu tại TP. Nam Định.
+2 DATE 1380
+1 DEAT Y
+2 DATE 1442
+1 FAMC @F33@
+1 FAMS @F1@
+1 NOTE Tự Ức Trai, Danh nhân văn hóa thế giới UNESCO vinh danh (1380-1980). Khai quốc công thần triều Hậu Lê, Nhập nội Hành khiển, Tuyên phụng Đại phu, Huệ Quốc Công, Tế văn thần. Tác giả Bình Ngô Đại Cáo.
 0 @I15@ INDI
-1 NAME Nguyễn Thị Kim /Dung/
+1 NAME Phạm Thị /Mẫn/
+1 SEX F
+1 DEAT Y
+1 FAMS @F1@
+1 NOTE Vợ kế của cụ Nguyễn Trãi, thân mẫu của cụ Nguyễn Anh Võ (Anh Vũ). Từng lánh nạn tại Gia Miêu, Sơn Động, Thanh Hoá.
+0 @I16@ INDI
+1 NAME Nguyễn Anh Võ (Nguyễn Anh /Vũ)/
+1 SEX M
+1 BIRT
+2 DATE 1442
+1 DEAT Y
+1 FAMC @F1@
+1 FAMS @F34@
+1 NOTE Tự Tùng Hạc, hiệu Phúc Sơ. Con trai thứ 6 của cụ Nguyễn Trãi và bà Phạm Thị Mẫn. Năm Quang Thuận thứ 5 (1464) vua Lê Thánh Tông minh oan, nhận ấn phong Tri châu và 100 mẫu ruộng lộc điền.
+0 @I17@ INDI
+1 NAME Nguyễn /Giám/
+1 SEX M
+1 DEAT Y
+1 FAMC @F34@
+1 FAMS @F35@
+1 NOTE Tự Giác Hiền. Con thứ 2 của Tổ Anh Võ. Đỗ quan Khảo trường Quốc Tử Giám triều Lê Hiến Tông năm Giáp Tý (1504).
+0 @I18@ INDI
+1 NAME Nguyễn Mậu /Trực/
+1 SEX M
+1 DEAT Y
+1 FAMC @F35@
+1 FAMS @F36@
+1 NOTE Tự Phúc Văn. Con trai Tổ Giác Hiền. Đỗ Tiến sĩ quan trường khảo triều Mạc - Quang Hoà thứ 6 năm Bính Ngọ (1546).
+0 @I19@ INDI
+1 NAME Nguyễn /Trung/
+1 SEX M
+1 DEAT Y
+1 FAMC @F36@
+1 FAMS @F37@
+1 NOTE Tự Phúc Hiếu. Con trai thứ 4 của Tổ Nguyễn Mậu Trực. Đỗ Tiến sĩ năm Quý Tỵ (1593) triều Lê.
+0 @I20@ INDI
+1 NAME Nguyễn Mậu /Kiên/
+1 SEX M
+1 DEAT Y
+1 FAMC @F37@
+1 FAMS @F38@
+1 NOTE Tự Phúc Hoà. Con trai Tổ Phúc Hiếu. Đỗ Tiến sĩ năm Bính Thìn (1619) triều Lê Thần Tông. Dạy học trong thành nội.
+0 @I21@ INDI
+1 NAME Nguyễn /Đăng/
+1 SEX M
+1 DEAT Y
+1 FAMC @F38@
+1 FAMS @F39@
+1 NOTE Tự Phúc Khải. Con trai Tổ Mậu Kiên. Đỗ Tiến sĩ năm Bính Tý (1639) triều Lê Kính Tông.
+0 @I22@ INDI
+1 NAME Nguyễn Mậu /Tài/
+1 SEX M
+1 DEAT Y
+1 FAMC @F39@
+1 FAMS @F2@
+1 NOTE Tự Mậu Tú, hiệu Phúc Thành / Viết Trai tiên sinh. Con thứ 5 của Tổ Nguyễn Đăng. Phó Đô ngự sử, Chánh sứ sang nhà Thanh (1673), Thượng thư Bộ Hình (1675), Thượng thư Bộ Binh (1676). Năm 1680 đem quân về dẹp loạn biển Thiên Trường rồi kết duyên với bà Lê Thị Tiểu Thư.
+0 @I23@ INDI
+1 NAME Lê Thị (Tiểu /Thư)/
+1 SEX F
+1 DEAT Y
+1 FAMS @F2@
+1 NOTE Thứ thiếp tam thứ của Thượng thư Nguyễn Mậu Tài. Thân mẫu của cụ Nguyễn Mậu Thái (Phúc Hội) - Thủy Tổ dòng họ Nguyễn Mậu tại Cổ Lễ.
+0 @I24@ INDI
+1 NAME Nguyễn Mậu Thái (Tự Phúc /Hội)/
+1 SEX M
+1 DEAT Y
+1 FAMC @F2@
+1 FAMS @F3@
+1 NOTE THỦY TỔ NGUYỄN MẬU TỘC tại Mặt Lãng Thượng (Thôn Thượng Đền, Cổ Lễ, Trực Ninh, Nam Định) năm Nhâm Tuất (1682). Con thứ 6 của Thượng thư Nguyễn Mậu Tài. Triều Lê phong tước Hậu Thần. Kỵ nhật ngày mồng 5 tháng 6 Âm lịch.
+0 @I25@ INDI
+1 NAME Nguyễn Thị /Ái/
+1 SEX F
+1 DEAT Y
+1 FAMS @F3@
+1 NOTE Chính thất của Thủy Tổ Nguyễn Mậu Thái (Phúc Hội). Kỵ nhật ngày 16 tháng 2 Âm lịch.
+0 @I26@ INDI
+1 NAME Nguyễn Mậu Trường (Tự Phúc /Tiên)/
+1 SEX M
+1 DEAT Y
+1 FAMC @F3@
+1 FAMS @F4@
+1 NOTE Tổ Khởi Lập NGÀNH NHẤT. Triều Lê - Hiến Vương Công Chúa phong chức Hậu Thần. Kỵ nhật ngày mồng 1 tháng 10 Âm lịch.
+0 @I27@ INDI
+1 NAME Nguyễn Thị /Trường/
+1 SEX F
+1 DEAT Y
+1 FAMS @F4@
+1 NOTE Tổ bà Ngành Nhất, kỵ nhật ngày mồng 1 tháng 10 Âm lịch.
+0 @I28@ INDI
+1 NAME Nguyễn Mậu Rong (Tự Phúc /Khoán)/
+1 SEX M
+1 DEAT Y
+1 FAMC @F3@
+1 FAMS @F5@
+1 NOTE Tổ Khởi Lập NGÀNH NHỊ. Triều Lê phong chức Hậu Thần. Kỵ nhật ngày 14 tháng 3 Âm lịch.
+0 @I29@ INDI
+1 NAME Nguyễn Thị /Rong/
+1 SEX F
+1 DEAT Y
+1 FAMS @F5@
+1 NOTE Tổ bà Ngành Nhị, kỵ nhật ngày 30 tháng Chạp Âm lịch.
+0 @I30@ INDI
+1 NAME Nguyễn Mậu Thiêm (Tự Pháp /Uyên)/
+1 SEX M
+1 DEAT Y
+1 FAMC @F3@
+1 FAMS @F6@
+1 NOTE Tổ Khởi Lập NGÀNH BA. Triều Lê phong chức Hậu Thần. Kỵ nhật ngày 30 tháng 9 Âm lịch.
+0 @I31@ INDI
+1 NAME Nguyễn Thị /Viên/
+1 SEX F
+1 DEAT Y
+1 FAMS @F6@
+1 NOTE Tổ bà Ngành Ba, kỵ nhật ngày 15 tháng 7 Âm lịch.
+0 @I32@ INDI
+1 NAME Nguyễn Mậu Hoàn (Tướng Công Tuấn /Thông)/
+1 SEX M
+1 BIRT
+2 DATE 1728
+1 DEAT Y
+2 DATE 1780
+1 FAMC @F3@
+1 FAMS @F7@
+1 NOTE Tổ Khởi Lập NGÀNH TƯ (Ngành 4). Sinh năm Mậu Thân (1728), mất năm Canh Tý (1780), thọ 53 tuổi. Tự Tuấn Thông / Tuấn Hoàn, hiệu Viết Nghĩa / Viết Mẫn tiên sinh. Tri huyện Mỹ Lộc, thăng Tá lang, Tri phủ Thiên Trường dũng phủ quân. Vua phong Tướng công, ban 100 mẫu ruộng cho con cháu và dân làng cúng tế. Kỵ nhật ngày 12 tháng Giêng Âm lịch.
+0 @I33@ INDI
+1 NAME Tổ Bà Ngành Tư (Vợ Tướng /Công)/
+1 SEX F
+1 DEAT Y
+1 FAMS @F7@
+1 NOTE Tổ bà Ngành Tư, kỵ nhật ngày 14 tháng 3 Âm lịch.
+0 @I34@ INDI
+1 NAME Nguyễn Mậu /Khải/
+1 SEX M
+1 DEAT Y
+1 FAMC @F4@
+1 FAMS @F8@
+1 NOTE Con trai Tổ Phúc Tiên (Ngành Nhất).
+0 @I35@ INDI
+1 NAME Nguyễn Thị /Khải/
+1 SEX F
+1 DEAT Y
+1 FAMS @F8@
+1 NOTE Vợ cụ Nguyễn Mậu Khải.
+0 @I36@ INDI
+1 NAME Nguyễn Mậu /Oai/
+1 SEX M
+1 DEAT Y
+1 FAMC @F5@
+1 FAMS @F40@
+1 NOTE Con trai trưởng Tổ Phúc Khoán (Ngành Nhị).
+0 @I37@ INDI
+1 NAME Nguyễn Mậu /Lực/
+1 SEX M
+1 DEAT Y
+1 FAMC @F5@
+1 FAMS @F41@
+1 NOTE Con trai thứ 2 Tổ Phúc Khoán (Ngành Nhị).
+0 @I38@ INDI
+1 NAME Nguyễn Mậu /Giám/
+1 SEX M
+1 DEAT Y
+1 FAMC @F5@
+1 FAMS @F9@
+1 NOTE Con trai thứ 3 Tổ Phúc Khoán (Ngành Nhị). Kỵ nhật ngày 3 tháng 11 Âm lịch.
+0 @I39@ INDI
+1 NAME Nguyễn Thị /Giám/
+1 SEX F
+1 DEAT Y
+1 FAMS @F9@
+1 NOTE Vợ cụ Nguyễn Mậu Giám. Kỵ nhật ngày 3 tháng 12 Âm lịch.
+0 @I40@ INDI
+1 NAME Nguyễn Mậu /Mễ/
+1 SEX M
+1 DEAT Y
+1 FAMC @F6@
+1 FAMS @F42@
+1 NOTE Con trưởng Tổ Pháp Uyên (Ngành Ba).
+0 @I41@ INDI
+1 NAME Nguyễn Mậu /Lang/
+1 SEX M
+1 DEAT Y
+1 FAMC @F6@
+1 FAMS @F43@
+1 NOTE Con thứ 2 Tổ Pháp Uyên (Ngành Ba).
+0 @I42@ INDI
+1 NAME Nguyễn Mậu /Điêu/
+1 SEX M
+1 DEAT Y
+1 FAMC @F6@
+1 NOTE Dưỡng tử Tổ Pháp Uyên (Ngành Ba). Sinh cụ Hạc -> cụ Kho -> cụ bà Nguyễn Thị Khe (1906).
+0 @I43@ INDI
+1 NAME Nguyễn Mậu Khoan (Cụ Cử /Khoan)/
+1 SEX M
+1 DEAT Y
+1 FAMC @F7@
+1 FAMS @F10@
+1 NOTE Con trưởng Tổ Tướng Công Tuấn Hoàn (Ngành 4). Đỗ Cử nhân, làm văn thư phủ Thiên Trường. Đời thường gọi là cụ Cử Khoan. Kỵ nhật ngày 15 tháng 8 Âm lịch (đồng giỗ với Cụ Bà).
+0 @I44@ INDI
+1 NAME Nguyễn Thị /Khoan/
+1 SEX F
+1 DEAT Y
+1 FAMS @F10@
+1 NOTE Vợ cụ Cử Khoan. Đồng giỗ với chồng ngày 15 tháng 8 Âm lịch.
+0 @I45@ INDI
+1 NAME Nguyễn Mậu /Giáo/
+1 SEX M
+1 DEAT Y
+1 FAMC @F7@
+1 FAMS @F44@
+1 NOTE Con thứ 2 Tổ Tướng Công Tuấn Hoàn (Ngành 4). Kỵ nhật ngày 24 tháng 6 Âm lịch.
+0 @I46@ INDI
+1 NAME Nguyễn Mậu /Hợi/
+1 SEX M
+1 DEAT Y
+1 FAMC @F7@
+1 FAMS @F45@
+1 NOTE Con thứ 3 Tổ Tướng Công Tuấn Hoàn (Ngành 4). Sinh 3 con: Mậu Lĩnh, Mậu Thuần, Mậu Tợi.
+0 @I47@ INDI
+1 NAME Nguyễn Mậu Bốn (Tuần /Bốn)/
+1 SEX M
+1 DEAT Y
+1 FAMC @F7@
+1 FAMS @F46@
+1 NOTE Con nuôi Tổ Tuấn Hoàn. Thi Hương, thi Hội đều đỗ đạt, làm quan Tuần phủ. Sinh cụ Đội Giang (Mậu Giang).
+0 @I48@ INDI
+1 NAME Nguyễn Thị Cúc /Hoa/
+1 SEX F
+1 DEAT Y
+1 FAMC @F7@
+1 NOTE Con gái Tổ Tuấn Hoàn, mất sớm khi còn nhỏ. Đồng giỗ với bà cô Ngọc Hoa ngày 27/02 Âm lịch.
+0 @I49@ INDI
+1 NAME Nguyễn Thị Ngọc /Hoa/
+1 SEX F
+1 DEAT Y
+1 FAMC @F7@
+1 NOTE Con gái Tổ Tuấn Hoàn, mất sớm khi còn nhỏ. Đồng giỗ ngày 27/02 Âm lịch.
+0 @I50@ INDI
+1 NAME Nguyễn Mậu /Ngợi/
+1 SEX M
+1 DEAT Y
+1 FAMC @F8@
+1 NOTE Con trai cụ Mậu Khải (Ngành 1). Sinh cụ Mậu Thân và cụ Mậu Hỗ.
+0 @I51@ INDI
+1 NAME Nguyễn Mậu /Sảng/
+1 SEX M
+1 DEAT Y
+1 FAMC @F40@
+1 NOTE Con trai cụ Mậu Oai (Ngành 2). Sinh 4 con: Mậu Sáng, Mậu Lung, Mậu Khoát, Mậu Ngưng.
+0 @I52@ INDI
+1 NAME Nguyễn Mậu /Thoa/
+1 SEX M
+1 DEAT Y
+1 FAMC @F41@
+1 NOTE Con trai cụ Mậu Lực (Ngành 2). Sinh cụ Mậu Thuyết.
+0 @I53@ INDI
+1 NAME Nguyễn Mậu /Thập/
+1 SEX M
+1 DEAT Y
+1 FAMC @F9@
+1 NOTE Con trai thứ 1 cụ Mậu Giám (Ngành 2). Sinh cụ Mậu Châu.
+0 @I54@ INDI
+1 NAME Nguyễn Mậu /Thử/
+1 SEX M
+1 DEAT Y
+1 FAMC @F9@
+1 NOTE Con trai thứ 2 cụ Mậu Giám (Ngành 2). Sinh cụ Mậu Đối, cụ Mậu Hiếu, cụ Mậu Tỵ.
+0 @I55@ INDI
+1 NAME Nguyễn Mậu /Tam/
+1 SEX M
+1 DEAT Y
+1 FAMC @F9@
+1 NOTE Con trai thứ 3 cụ Mậu Giám (Ngành 2). Sinh cụ Mậu Thất.
+0 @I56@ INDI
+1 NAME Nguyễn Mậu /Giá/
+1 SEX M
+1 DEAT Y
+1 FAMC @F42@
+1 NOTE Con trai cụ Mậu Mễ (Ngành 3). Sinh cụ Mậu Hanh, cụ Mậu Từ, cụ Mậu Côi, cụ Mậu Đỏ.
+0 @I57@ INDI
+1 NAME Nguyễn Mậu /Giảng/
+1 SEX M
+1 DEAT Y
+1 FAMC @F43@
+1 NOTE Con trai cụ Mậu Lang (Ngành 3). Sinh cụ Mậu Tố và các con gái.
+0 @I58@ INDI
+1 NAME Nguyễn Mậu /Mền/
+1 SEX M
+1 DEAT Y
+1 FAMC @F10@
+1 FAMS @F47@
+1 NOTE Con trai cụ Cử Khoan (Ngành 4). Sinh cụ Hương Ngung (Mậu Ngung).
+0 @I59@ INDI
+1 NAME Nguyễn Mậu /Việm/
+1 SEX M
+1 DEAT Y
+1 FAMC @F44@
+1 FAMS @F48@
+1 NOTE Con trai thứ 1 cụ Mậu Giáo (Ngành 4). Sinh cụ Mậu Kiền và cụ Mậu Lễ.
+0 @I60@ INDI
+1 NAME Nguyễn Mậu /Tự/
+1 SEX M
+1 DEAT Y
+1 FAMC @F44@
+1 NOTE Con trai thứ 2 cụ Mậu Giáo (Ngành 4). Nuôi cụ Mậu Chanh.
+0 @I61@ INDI
+1 NAME Nguyễn Mậu /Tạc/
+1 SEX M
+1 DEAT Y
+1 FAMC @F44@
+1 FAMS @F11@
+1 NOTE Con trai thứ 3 cụ Mậu Giáo (Ngành 4). Mất ngày 27/03 Âm lịch, thọ 49 tuổi. Vợ là cụ Nguyễn Thị Bòng (giỗ 23/3). Sinh cụ Mậu Yêng.
+0 @I62@ INDI
+1 NAME Nguyễn Thị /Bòng/
+1 SEX F
+1 DEAT Y
+1 FAMS @F11@
+1 NOTE Vợ cụ Nguyễn Mậu Tạc. Giỗ ngày 23 tháng 3 Âm lịch.
+0 @I63@ INDI
+1 NAME Nguyễn Mậu /Lĩnh/
+1 SEX M
+1 DEAT Y
+1 FAMC @F45@
+1 FAMS @F50@
+1 NOTE Con trai trưởng cụ Mậu Hợi (Ngành 4). Giỗ ngày 14 tháng 11 Âm lịch (đồng giỗ với cụ bà Nguyễn Thị Là). Sinh cụ Mậu Thống, cụ Mậu Khả, cụ bà Thị Tụng.
+0 @I64@ INDI
+1 NAME Nguyễn Mậu /Thuần/
+1 SEX M
+1 DEAT Y
+1 FAMC @F45@
+1 NOTE Con thứ 2 cụ Mậu Hợi (Ngành 4). Sinh cụ Mậu Đồng, cụ Mậu Tỵ.
+0 @I65@ INDI
+1 NAME Nguyễn Mậu /Tợi/
+1 SEX M
+1 DEAT Y
+1 FAMC @F45@
+1 FAMS @F51@
+1 NOTE Con thứ 3 cụ Mậu Hợi (Ngành 4). Giỗ ngày 9 tháng 5 Âm lịch. Vợ Nguyễn Thị Tợi giỗ 26/6. Sinh cụ Mậu Tiến, cụ Mậu Hinh.
+0 @I66@ INDI
+1 NAME Nguyễn Mậu Giang (Cụ Đội /Giang)/
+1 SEX M
+1 DEAT Y
+1 FAMC @F46@
+1 FAMS @F49@
+1 NOTE Con trai cụ Tuần Bốn (Ngành 4). Chánh suất đội triều Nguyễn. Giỗ 26/02 Âm lịch. Vợ là Nguyễn Thị Lý (Nhí) giỗ 12 tháng Chạp. Sinh cụ Mậu Vinh, cụ bà Thị Mùi.
+0 @I67@ INDI
+1 NAME Nguyễn Mậu Ngung (Cụ Hương /Ngung)/
+1 SEX M
+1 DEAT Y
+1 FAMC @F47@
+1 FAMS @F12@
+1 NOTE Con trai cụ Mậu Mền (Ngành 4). Giữ chức Hương hội nên gọi là cụ Hương Ngung. Giỗ 4/4 Âm lịch. Vợ là Nguyễn Thị Kiêm giỗ 20/6 Âm lịch.
+0 @I68@ INDI
+1 NAME Nguyễn Thị /Kiêm/
+1 SEX F
+1 DEAT Y
+1 FAMS @F12@
+1 NOTE Vợ cụ Hương Ngung. Giỗ ngày 20 tháng 6 Âm lịch.
+0 @I69@ INDI
+1 NAME Nguyễn Mậu /Yêng/
+1 SEX M
+1 BIRT
+2 DATE 1850
+1 DEAT Y
+2 DATE 13 MAY 1912
+1 FAMC @F11@
+1 FAMS @F13@
+1 FAMS @F14@
+1 NOTE Con trai cụ Mậu Tạc (Ngành 4). Sinh Canh Tuất 1850, mất 17/4 Nhâm Tý (13/5/1912), thọ 53 tuổi. Vợ cả Nguyễn Thị Thận (1851-1930) thọ 80 tuổi (giỗ 2/7). Vợ thứ Hoàng Thị Gái làng Vị Hoàng (giỗ 23/7).
+0 @I70@ INDI
+1 NAME Nguyễn Thị /Thận/
 1 SEX F
 1 BIRT
-2 DATE 15 APR 1958
-1 FAMC @F2@
-1 FAMS @F8@
-1 NOTE Cán bộ ngành Ngân hàng nghỉ hưu, hiện sinh sống tại Hà Nội. Luôn tích cực đóng góp quỹ khuyến học dòng họ.
-0 @I16@ INDI
-1 NAME Bùi Văn /Tuấn/
+2 DATE 1851
+1 DEAT Y
+2 DATE 1930
+1 FAMS @F13@
+1 NOTE Chính thất cụ Mậu Yêng. Sinh năm Tân Hợi (1851), giỗ 2/7 Canh Ngọ (25/8/1930), thọ 80 tuổi. Sinh cụ Phó Huỳnh và cụ bà Thị Chài.
+0 @I71@ INDI
+1 NAME Hoàng Thị Gái (Cụ /Trẻ)/
+1 SEX F
+1 DEAT Y
+1 FAMS @F14@
+1 NOTE Thứ thất cụ Mậu Yêng, người làng Vị Hoàng - Nam Định. Giỗ ngày 23/7 Ất Dậu (30/8/1945). Sinh cụ Tuần Liễn (Mậu Hiện).
+0 @I72@ INDI
+1 NAME Nguyễn Mậu /Lễ/
+1 SEX M
+1 DEAT Y
+1 FAMC @F48@
+1 FAMS @F52@
+1 NOTE Con trai thứ 2 cụ Mậu Việm (Ngành 4). Giỗ ngày 27/6 Âm lịch. Vợ Nguyễn Thị Nhiên giỗ 27/3 Âm lịch. Sinh cụ Lý Nhạc.
+0 @I73@ INDI
+1 NAME Nguyễn Mậu /Vinh/
+1 SEX M
+1 DEAT Y
+1 FAMC @F49@
+1 NOTE Con trai cụ Đội Giang (bà cả). Người tiến cúng bức đại tự Mậu Đức Hậu Công. Vợ là Nguyễn Thị Cộc. Sinh cụ Mậu Loan (1902).
+0 @I74@ INDI
+1 NAME Nguyễn Mậu Cẩm (Cụ Cửu /Linh)/
 1 SEX M
 1 BIRT
-2 DATE 20 JUN 1955
-1 FAMS @F8@
-1 NOTE Kỹ sư ngành Bưu điện nghỉ hưu tại Hà Nội.
-0 @I17@ INDI
-1 NAME Nguyễn Mậu /Thành/
+2 DATE 1901
+1 DEAT Y
+2 DATE 22 SEP 1975
+1 FAMC @F49@
+1 FAMS @F53@
+1 NOTE Con trai cụ Đội Giang (bà kế). Có tên tự là Linh ("Minh Linh"), phong chức cửu phẩm nên gọi là cụ Cửu Linh. Sinh 1901 mất 17/8 Ất Mão (22/9/1975) thọ 75 tuổi. Vợ 1 Nguyễn Thị Đọ (1901-1932), vợ 2 Lương Thị Phụng (1903-1990).
+0 @I75@ INDI
+1 NAME Nguyễn Mậu /Thống/
+1 SEX M
+1 DEAT Y
+1 FAMC @F50@
+1 NOTE Con trai cả cụ Mậu Lĩnh. Giỗ 6/6 Âm lịch. Vợ Nguyễn Thị Dùm giỗ 7/11. Sinh cụ Mậu Mục, cụ Mậu Mạc.
+0 @I76@ INDI
+1 NAME Nguyễn Mậu Hinh (Cụ Quản /Hinh)/
+1 SEX M
+1 DEAT Y
+1 FAMC @F51@
+1 NOTE Con thứ cụ Mậu Tợi. Sinh các cụ: Phúc (1902), Khánh (1904), Khương (1908), Hưởng (1918), Ruân (1920), Kình (1910).
+0 @I77@ INDI
+1 NAME Nguyễn Mậu Trắm (Cụ Quản /Trắm)/
+1 SEX M
+1 DEAT Y
+1 FAMC @F12@
+1 FAMS @F15@
+1 NOTE Con trai cả cụ Hương Ngung (Ngành 4). Giữ chức Quản Hội nên thường gọi cụ Quản Trắm. Giỗ 27/4 Âm lịch. Vợ Nguyễn Thị Thân giỗ 11/8 Âm lịch. Sinh cụ Nguyễn Mậu Hách (1934).
+0 @I78@ INDI
+1 NAME Nguyễn Thị /Thân/
+1 SEX F
+1 DEAT Y
+1 FAMS @F15@
+1 NOTE Vợ cụ Quản Trắm. Giỗ ngày 11 tháng 8 Âm lịch.
+0 @I79@ INDI
+1 NAME Nguyễn Mậu Huỳnh (Cụ Phó /Huỳnh)/
 1 SEX M
 1 BIRT
-2 DATE 02 NOV 1954
-1 FAMC @F3@
-1 FAMS @F9@
-1 NOTE Nhà giáo Ưu tú, nguyên Hiệu trưởng trường THPT tại Trực Ninh. Cố vấn lịch sử và biên tập phả ký dòng họ.
-0 @I18@ INDI
+2 DATE 1896
+1 DEAT Y
+2 DATE 19 FEB 1956
+1 FAMC @F13@
+1 FAMS @F16@
+1 NOTE Tác giả cuốn Chúc Phả chữ Hán Nôm năm Quý Tỵ (1953) lưu giữ nguồn gốc họ Nguyễn Mậu Cổ Lễ. Sinh năm Đinh Dậu 1896, mất 8/1 Bính Thân (19/2/1956), thọ 61 tuổi. Làm Phó lý.
+0 @I80@ INDI
+1 NAME Nguyễn Thị /Hạt/
+1 SEX F
+1 BIRT
+2 DATE 1903
+1 DEAT Y
+2 DATE 23 JUN 1971
+1 FAMS @F16@
+1 NOTE Vợ cụ Phó Huỳnh (con gái cụ Xiển). Sinh năm Quý Mão 1903, mất 01/5 nhuận Tân Hợi (23/6/1971), thọ 69 tuổi.
+0 @I81@ INDI
+1 NAME Nguyễn Mậu Hiện (Cụ Tuần /Liễn)/
+1 SEX M
+1 BIRT
+2 DATE 1903
+1 DEAT Y
+2 DATE 24 MAY 1981
+1 FAMC @F13@
+1 FAMC @F14@
+1 NOTE Con trai cụ Mậu Yêng (bà kế). Làm Tuần tổng nên gọi là Tuần Liễn. Sinh Quý Mão 1903, mất 21/4 Tân Dậu (24/5/1981), thọ 79 tuổi. Vợ chính Nguyễn Thị Hột (1905-1981), vợ thứ Nguyễn Thị Hồng (1923-1988).
+0 @I82@ INDI
+1 NAME Nguyễn Mậu Thích (Cụ Tuần /Riệp)/
+1 SEX M
+1 BIRT
+2 DATE 1916
+1 DEAT Y
+2 DATE 12 MAR 1964
+1 FAMC @F52@
+1 NOTE Tự là Nguyễn Mậu Riệp, làm Tuần Tổng. Sinh Bính Thìn 1916, mất 29/1 Giáp Thìn (12/3/1964), thọ 49 tuổi. Vợ chính Nguyễn Thị Nhỡ (1918-2000), vợ thứ Đàm Thị Cách (Mẹ VNAH, có con Liệt sĩ Nguyễn Mậu Đức).
+0 @I83@ INDI
+1 NAME Nguyễn Mậu Lê /Khanh/
+1 SEX M
+1 BIRT
+2 DATE 1927
+1 FAMC @F53@
+1 FAMS @F17@
+1 NOTE Con trai thứ nhất cụ Cửu Linh. Cán bộ Trung Ương Đoàn TNCS Hồ Chí Minh nghỉ hưu tại 43 phố Ngô Quyền, Hà Nội. Huân chương Kháng chiến chống Pháp hạng Ba, chống Mỹ hạng Nhất.
+0 @I84@ INDI
+1 NAME Đoàn Thị Kim /Liên/
+1 SEX F
+1 BIRT
+2 DATE 1928
+1 FAMS @F17@
+1 NOTE Vợ cụ Nguyễn Mậu Lê Khanh, quê làng Đô Quan, Nam Lợi, Nam Trực. Cán bộ Công ty Phục vụ Hà Nội.
+0 @I85@ INDI
+1 NAME Nguyễn Mậu /Hách/
+1 SEX M
+1 BIRT
+2 DATE 1934
+1 FAMC @F15@
+1 FAMS @F18@
+1 NOTE Trưởng nam Ngành 4 dòng họ Nguyễn Mậu. Sinh năm Giáp Tuất (1934). Cựu chiến binh, Chủ nhiệm HTX May mặc Nghĩa Lợi, Chủ tịch Ủy ban Mặt trận Tổ quốc Việt Nam Thị trấn Cổ Lễ. Huân chương Kháng chiến chống Mỹ hạng Nhất.
+0 @I86@ INDI
+1 NAME Nguyễn Thị /Áp/
+1 SEX F
+1 BIRT
+2 DATE 1933
+1 FAMS @F18@
+1 NOTE Vợ cụ Nguyễn Mậu Hách, sinh năm Quý Dậu (1933), con gái cụ Nguyễn Gia Ba cùng làng.
+0 @I87@ INDI
+1 NAME Nguyễn Mậu /Tường/
+1 SEX M
+1 BIRT
+2 DATE 1935
+1 FAMC @F16@
+1 FAMS @F19@
+1 NOTE Trưởng ban biên soạn Ngọc Phả Nguyễn Mậu Tộc năm 2001. Sinh năm Ất Hợi (1935), con thứ cụ Phó Huỳnh. Cán bộ GTVT, Đội trưởng Đội TNXP phục vụ tiền phương chống Mỹ. Bằng ghi công chiến sĩ giao thông không chiến hào, Huân chương Kháng chiến hạng Ba.
+0 @I88@ INDI
+1 NAME Nguyễn Thị /Loan/
+1 SEX F
+1 BIRT
+2 DATE 1940
+1 FAMS @F19@
+1 NOTE Vợ cụ Nguyễn Mậu Tường, sinh năm Canh Thìn (1940), người xứ Đông Thượng.
+0 @I89@ INDI
+1 NAME Nguyễn Mậu Điển (Tự Mậu /Linh)/
+1 SEX M
+1 BIRT
+2 DATE 1929
+1 DEAT Y
+2 DATE 13 APR 1998
+1 FAMC @F16@
+1 FAMS @F20@
+1 NOTE Con trai cụ Phó Huỳnh. Sinh năm Kỷ Tỵ (1929), mất 17/3 Mậu Dần (13/4/1998), thọ 70 tuổi. Huyện ủy viên huyện Trực Ninh. Huân chương Kháng chiến hạng Nhất.
+0 @I90@ INDI
+1 NAME Trần Thị /Nhu/
+1 SEX F
+1 BIRT
+2 DATE 1930
+1 FAMS @F20@
+1 NOTE Vợ cụ Nguyễn Mậu Điển, sinh Canh Ngọ 1930, người làng xứ Đông Thượng.
+0 @I91@ INDI
+1 NAME Nguyễn Mậu /Thịnh/
+1 SEX M
+1 BIRT
+2 DATE 1956
+1 FAMC @F18@
+1 FAMS @F21@
+1 NOTE Con trai trưởng cụ Mậu Hách. Sinh năm Bính Thân (1956). Tốt nghiệp Đại học An ninh, Thiếu tá Công an, Phó phòng Chính trị Công an tỉnh Đồng Nai.
+0 @I92@ INDI
+1 NAME Đoàn Thị Kim /Loan/
+1 SEX F
+1 BIRT
+2 DATE 1959
+1 FAMS @F21@
+1 NOTE Vợ ông Nguyễn Mậu Thịnh, sinh năm Kỷ Hợi (1959), quê Ý Yên.
+0 @I93@ INDI
+1 NAME Nguyễn Mậu /Quân/
+1 SEX M
+1 BIRT
+2 DATE 1961
+1 FAMC @F18@
+1 FAMS @F22@
+1 NOTE Con trai thứ 2 cụ Mậu Hách. Sinh năm Tân Sửu (1961). Chủ nhiệm HTX May mặc Nghĩa Lợi - Cổ Lễ (1988-1992).
+0 @I94@ INDI
 1 NAME Nguyễn Thị /Hạnh/
 1 SEX F
 1 BIRT
-2 DATE 14 AUG 1957
-1 FAMS @F9@
-1 NOTE Giáo viên dạy môn Ngữ văn trường cấp 3 nghỉ hưu.
-0 @I19@ INDI
-1 NAME Nguyễn Mậu /Đạt/
-1 SEX M
-1 BIRT
-2 DATE 28 MAY 1960
-1 FAMC @F3@
-1 FAMS @F10@
-1 NOTE Doanh nhân lĩnh vực Dệt may và Thương mại tại TP. Hồ Chí Minh. Thường niên tài trợ các hoạt động tu bổ từ đường họ.
-0 @I20@ INDI
-1 NAME Vũ Thị /Ngọc/
+2 DATE 1962
+1 FAMS @F22@
+1 NOTE Vợ ông Nguyễn Mậu Quân, sinh năm Nhâm Dần (1962), người thôn Nội, Nam Thanh.
+0 @I95@ INDI
+1 NAME Nguyễn Thị /Liên/
 1 SEX F
 1 BIRT
-2 DATE 19 OCT 1963
-1 FAMS @F10@
-1 NOTE Quản lý doanh nghiệp gia đình tại TP. Hồ Chí Minh.
-0 @I21@ INDI
-1 NAME Nguyễn Mậu /Thắng/
-1 SEX M
-1 BIRT
-2 DATE 16 JAN 1964
-1 FAMC @F5@
-1 FAMS @F11@
-1 NOTE Kỹ sư Xây dựng Cầu đường, hiện công tác tại Tổng công ty Xây dựng Giao thông tại Hà Nội.
-0 @I22@ INDI
-1 NAME Trần Thu /Hương/
-1 SEX F
-1 BIRT
-2 DATE 25 MAR 1968
-1 FAMS @F11@
-1 NOTE Công tác tại Viện Thiết kế Giao thông Vận tải Hà Nội.
-0 @I23@ INDI
-1 NAME Nguyễn Thị /Lệ/
-1 SEX F
-1 BIRT
-2 DATE 30 JUL 1969
-1 FAMC @F5@
-1 FAMS @F12@
-1 NOTE Cán bộ Y tế tại Trung tâm Y tế huyện Trực Ninh, Nam Định.
-0 @I24@ INDI
-1 NAME Đinh Văn /Hải/
-1 SEX M
-1 BIRT
-2 DATE 10 DEC 1966
-1 FAMS @F12@
-1 NOTE Cán bộ Viễn thông VNPT Trực Ninh, Nam Định.
-0 @I25@ INDI
-1 NAME Nguyễn Mậu /Tuấn/
-1 SEX M
-1 BIRT
-2 DATE 18 APR 1976
-1 FAMC @F6@
-1 FAMS @F13@
-1 NOTE Trưởng nam đời 4. Trưởng ban liên lạc dòng họ Nguyễn Mậu Ngành 4 tại Thôn Thượng Đền. Giám đốc Công ty Xây lắp & Thương mại tại Hà Nội và Nam Định.
-0 @I26@ INDI
-1 NAME Phạm Thị Hồng /Hạnh/
-1 SEX F
-1 BIRT
-2 DATE 22 AUG 1979
-1 FAMS @F13@
-1 NOTE Thạc sĩ Kinh tế, Kế toán trưởng Tổng công ty tại Hà Nội.
-0 @I27@ INDI
-1 NAME Nguyễn Thị Bích /Thủy/
-1 SEX F
-1 BIRT
-2 DATE 09 NOV 1981
-1 FAMC @F6@
-1 FAMS @F14@
-1 NOTE Giảng viên Khoa Kinh tế Trường Đại học Thương Mại Hà Nội.
-0 @I28@ INDI
-1 NAME Lê Hoàng /Long/
-1 SEX M
-1 BIRT
-2 DATE 14 MAY 1980
-1 FAMS @F14@
-1 NOTE Tiến sĩ Luật học, Trọng tài viên Thương mại tại Hà Nội.
-0 @I29@ INDI
-1 NAME Nguyễn Mậu /Tùng/
-1 SEX M
-1 BIRT
-2 DATE 26 FEB 1986
-1 FAMC @F6@
-1 FAMS @F15@
-1 NOTE Kỹ sư Phần mềm & Giải pháp Cloud, phụ trách số hóa gia phả trực tuyến GiaPha-OS cho dòng họ.
-0 @I30@ INDI
-1 NAME Ngô Phương /Linh/
-1 SEX F
-1 BIRT
-2 DATE 12 SEP 1989
-1 FAMS @F15@
-1 NOTE Chuyên gia Quản trị Nhân sự (HR Manager) tại Tập đoàn Công nghệ Hà Nội.
-0 @I31@ INDI
+2 DATE 1964
+1 FAMC @F18@
+1 NOTE Con gái cụ Mậu Hách. Sinh năm Giáp Thìn (1964), lấy chồng Đặng Minh Khang ở Liên Tỉnh, Nam Trực.
+0 @I96@ INDI
 1 NAME Nguyễn Mậu /Minh/
 1 SEX M
 1 BIRT
-2 DATE 03 JUL 1982
-1 FAMC @F7@
-1 FAMS @F16@
-1 NOTE Bác sĩ Ngoại khoa Bệnh viện Đa khoa Tỉnh Nam Định.
-0 @I32@ INDI
-1 NAME Hoàng Yến /Nhi/
-1 SEX F
-1 BIRT
-2 DATE 17 MAR 1985
-1 FAMS @F16@
-1 NOTE Bác sĩ Nhi khoa Bệnh viện Phụ sản Nam Định.
-0 @I33@ INDI
-1 NAME Nguyễn Thị Thùy /Linh/
-1 SEX F
-1 BIRT
-2 DATE 31 OCT 1988
-1 FAMC @F7@
-1 NOTE Dược sĩ, quản lý chuỗi nhà thuốc tại TP. Nam Định.
-0 @I34@ INDI
-1 NAME Nguyễn Mậu /Quang/
-1 SEX M
-1 BIRT
-2 DATE 01 DEC 1983
-1 FAMC @F9@
-1 FAMS @F17@
-1 NOTE Thạc sĩ Kiến trúc sư, chủ trì thiết kế công trình dân dụng & tâm linh tại Hà Nội.
-0 @I35@ INDI
-1 NAME Đặng Thu /Trang/
-1 SEX F
-1 BIRT
-2 DATE 08 JUN 1986
-1 FAMS @F17@
-1 NOTE Nhà thiết kế Nội thất tại Hà Nội.
-0 @I36@ INDI
-1 NAME Nguyễn Mậu /Tiến/
-1 SEX M
-1 BIRT
-2 DATE 19 AUG 1987
-1 FAMC @F9@
-1 NOTE Tiến sĩ Nông nghiệp Công nghệ cao, Giảng viên Học viện Nông nghiệp Việt Nam.
-0 @I37@ INDI
-1 NAME Nguyễn Mậu /Đức/
-1 SEX M
-1 BIRT
-2 DATE 25 APR 1990
-1 FAMC @F10@
-1 FAMS @F18@
-1 NOTE Giám đốc Kinh doanh Công ty Xuất nhập khẩu tại Quận 1, TP. Hồ Chí Minh.
-0 @I38@ INDI
-1 NAME Trương Kiều /Oanh/
-1 SEX F
-1 BIRT
-2 DATE 15 NOV 1993
-1 FAMS @F18@
-1 NOTE Chuyên viên Quan hệ Khách hàng Ngân hàng Quốc tế tại TP.HCM.
-0 @I39@ INDI
-1 NAME Nguyễn Mậu /Hoàng/
-1 SEX M
-1 BIRT
-2 DATE 07 SEP 1994
-1 FAMC @F11@
-1 NOTE Chuyên viên Phân tích Đầu tư Tài chính tại Hà Nội.
-0 @I40@ INDI
-1 NAME Nguyễn Mậu Minh /Khang/
-1 SEX M
-1 BIRT
-2 DATE 20 MAY 2004
-1 FAMC @F13@
-1 NOTE Sinh viên Khoa Khoa học Máy tính Đại học Bách Khoa Hà Nội, đạt giải Nhì Học sinh Giỏi Quốc gia Tin học.
-0 @I41@ INDI
-1 NAME Nguyễn Mậu Bảo /An/
-1 SEX M
-1 BIRT
-2 DATE 14 OCT 2009
-1 FAMC @F13@
-1 NOTE Học sinh THPT Chuyên Hà Nội - Amsterdam.
-0 @I42@ INDI
-1 NAME Nguyễn Mậu Đăng /Khoa/
-1 SEX M
-1 BIRT
-2 DATE 01 JUN 2016
-1 FAMC @F15@
-1 NOTE Học sinh Tiểu học tại Cầu Giấy, Hà Nội.
-0 @I43@ INDI
-1 NAME Nguyễn Tuệ /Mẫn/
-1 SEX F
-1 BIRT
-2 DATE 18 DEC 2020
-1 FAMC @F15@
-1 NOTE Cháu gái út chi trưởng đời 5.
-0 @I44@ INDI
-1 NAME Nguyễn Mậu Nhật /Nam/
-1 SEX M
-1 BIRT
-2 DATE 29 MAR 2012
-1 FAMC @F16@
-1 NOTE Học sinh THCS Lê Hồng Phong, TP. Nam Định.
-0 @I45@ INDI
-1 NAME Nguyễn Thảo /Nguyên/
-1 SEX F
-1 BIRT
-2 DATE 08 AUG 2015
-1 FAMC @F16@
-1 NOTE Học sinh Tiểu học tại TP. Nam Định.
-0 @I46@ INDI
-1 NAME Nguyễn Mậu Gia /Bảo/
-1 SEX M
-1 BIRT
-2 DATE 15 JAN 2014
-1 FAMC @F17@
-1 NOTE Học sinh Tiểu học tại Đống Đa, Hà Nội.
-0 @I47@ INDI
-1 NAME Nguyễn Ngọc Anh /Thư/
-1 SEX F
-1 BIRT
-2 DATE 23 NOV 2018
-1 FAMC @F17@
-1 NOTE Học sinh mầm non tại Hà Nội.
-0 @I48@ INDI
-1 NAME Nguyễn Mậu Thiên /Phú/
-1 SEX M
-1 BIRT
-2 DATE 30 APR 2021
+2 DATE 1972
 1 FAMC @F18@
-1 NOTE Cháu nội nhánh Sài Gòn đời 5.
+1 FAMS @F23@
+1 NOTE Con trai thứ 3 cụ Mậu Hách. Sinh năm Nhâm Tý (1972). Vợ là Đinh Thị Ngoãn sinh 1974 ở An Lãng.
+0 @I97@ INDI
+1 NAME Đinh Thị /Ngoãn/
+1 SEX F
+1 BIRT
+2 DATE 1974
+1 FAMS @F23@
+1 NOTE Vợ ông Nguyễn Mậu Minh, sinh Giáp Dần (1974), làng An Lãng - Trực Chính.
+0 @I98@ INDI
+1 NAME Nguyễn Mậu Thanh /Bằng/
+1 SEX M
+1 BIRT
+2 DATE 1974
+1 FAMC @F18@
+1 NOTE Con trai thứ 4 cụ Mậu Hách. Sinh năm Giáp Dần (1974). Cử nhân Kỹ sư Thủy lợi (1996), du học Tiến sĩ tại Nga, Viện Khoa học Thủy lợi Việt Nam.
+0 @I99@ INDI
+1 NAME Nguyễn Mậu /Tuấn/
+1 SEX M
+1 BIRT
+2 DATE 1976
+1 FAMC @F18@
+1 NOTE Con trai thứ 5 cụ Mậu Hách. Sinh năm Bính Thìn (1976). Cử nhân Quản lý xã hội (1999).
+0 @I100@ INDI
+1 NAME Nguyễn Thị Thùy /Dương/
+1 SEX F
+1 BIRT
+2 DATE 1981
+1 FAMC @F21@
+1 NOTE Con gái ông Nguyễn Mậu Thịnh, cháu nội cụ Mậu Hách. Sinh năm Tân Dậu (1981).
+0 @I101@ INDI
+1 NAME Nguyễn Thị Thúy /Vân/
+1 SEX F
+1 BIRT
+2 DATE 1984
+1 FAMC @F22@
+1 NOTE Con gái ông Nguyễn Mậu Quân, cháu nội cụ Mậu Hách. Sinh năm Giáp Tý (1984).
+0 @I102@ INDI
+1 NAME Nguyễn Mậu Trung /Anh/
+1 SEX M
+1 BIRT
+2 DATE 1987
+1 FAMC @F22@
+1 NOTE Con trai ông Nguyễn Mậu Quân, cháu nội cụ Mậu Hách. Sinh năm Đinh Mão (1987).
+0 @I103@ INDI
+1 NAME Nguyễn Thị Thu /Hiền/
+1 SEX F
+1 BIRT
+2 DATE 2000
+1 FAMC @F23@
+1 NOTE Con gái ông Nguyễn Mậu Minh, cháu nội cụ Mậu Hách. Sinh năm Canh Thìn (2000).
 0 @F1@ FAM
-1 HUSB @I1@
-1 WIFE @I2@
-1 CHIL @I3@
-1 CHIL @I5@
-1 CHIL @I7@
-1 CHIL @I9@
-0 @F2@ FAM
-1 HUSB @I3@
-1 WIFE @I4@
-1 CHIL @I11@
-1 CHIL @I13@
-1 CHIL @I15@
-0 @F3@ FAM
-1 HUSB @I5@
-1 WIFE @I6@
-1 CHIL @I17@
-1 CHIL @I19@
-0 @F4@ FAM
-1 HUSB @I8@
-1 WIFE @I7@
-0 @F5@ FAM
-1 HUSB @I9@
-1 WIFE @I10@
-1 CHIL @I21@
-1 CHIL @I23@
-0 @F6@ FAM
-1 HUSB @I11@
-1 WIFE @I12@
-1 CHIL @I25@
-1 CHIL @I27@
-1 CHIL @I29@
-0 @F7@ FAM
-1 HUSB @I13@
-1 WIFE @I14@
-1 CHIL @I31@
-1 CHIL @I33@
-0 @F8@ FAM
-1 HUSB @I16@
+1 HUSB @I14@
 1 WIFE @I15@
-0 @F9@ FAM
-1 HUSB @I17@
-1 WIFE @I18@
-1 CHIL @I34@
-1 CHIL @I36@
-0 @F10@ FAM
-1 HUSB @I19@
-1 WIFE @I20@
-1 CHIL @I37@
-0 @F11@ FAM
-1 HUSB @I21@
-1 WIFE @I22@
-1 CHIL @I39@
-0 @F12@ FAM
-1 HUSB @I24@
+1 CHIL @I16@
+0 @F2@ FAM
+1 HUSB @I22@
 1 WIFE @I23@
-0 @F13@ FAM
-1 HUSB @I25@
-1 WIFE @I26@
+1 CHIL @I24@
+0 @F3@ FAM
+1 HUSB @I24@
+1 WIFE @I25@
+1 CHIL @I26@
+1 CHIL @I28@
+1 CHIL @I30@
+1 CHIL @I32@
+0 @F4@ FAM
+1 HUSB @I26@
+1 WIFE @I27@
+1 CHIL @I34@
+0 @F5@ FAM
+1 HUSB @I28@
+1 WIFE @I29@
+1 CHIL @I36@
+1 CHIL @I37@
+1 CHIL @I38@
+0 @F6@ FAM
+1 HUSB @I30@
+1 WIFE @I31@
 1 CHIL @I40@
 1 CHIL @I41@
-0 @F14@ FAM
-1 HUSB @I28@
-1 WIFE @I27@
-0 @F15@ FAM
-1 HUSB @I29@
-1 WIFE @I30@
 1 CHIL @I42@
+0 @F7@ FAM
+1 HUSB @I32@
+1 WIFE @I33@
 1 CHIL @I43@
-0 @F16@ FAM
-1 HUSB @I31@
-1 WIFE @I32@
-1 CHIL @I44@
 1 CHIL @I45@
-0 @F17@ FAM
-1 HUSB @I34@
-1 WIFE @I35@
 1 CHIL @I46@
 1 CHIL @I47@
-0 @F18@ FAM
-1 HUSB @I37@
-1 WIFE @I38@
 1 CHIL @I48@
+1 CHIL @I49@
+0 @F8@ FAM
+1 HUSB @I34@
+1 WIFE @I35@
+1 CHIL @I50@
+0 @F9@ FAM
+1 HUSB @I38@
+1 WIFE @I39@
+1 CHIL @I53@
+1 CHIL @I54@
+1 CHIL @I55@
+0 @F10@ FAM
+1 HUSB @I43@
+1 WIFE @I44@
+1 CHIL @I58@
+0 @F11@ FAM
+1 HUSB @I61@
+1 WIFE @I62@
+1 CHIL @I69@
+0 @F12@ FAM
+1 HUSB @I67@
+1 WIFE @I68@
+1 CHIL @I77@
+0 @F13@ FAM
+1 HUSB @I69@
+1 WIFE @I70@
+1 CHIL @I79@
+1 CHIL @I81@
+0 @F14@ FAM
+1 HUSB @I69@
+1 WIFE @I71@
+1 CHIL @I81@
+0 @F15@ FAM
+1 HUSB @I77@
+1 WIFE @I78@
+1 CHIL @I85@
+0 @F16@ FAM
+1 HUSB @I79@
+1 WIFE @I80@
+1 CHIL @I87@
+1 CHIL @I89@
+0 @F17@ FAM
+1 HUSB @I83@
+1 WIFE @I84@
+0 @F18@ FAM
+1 HUSB @I85@
+1 WIFE @I86@
+1 CHIL @I91@
+1 CHIL @I93@
+1 CHIL @I95@
+1 CHIL @I96@
+1 CHIL @I98@
+1 CHIL @I99@
+0 @F19@ FAM
+1 HUSB @I87@
+1 WIFE @I88@
+0 @F20@ FAM
+1 HUSB @I89@
+1 WIFE @I90@
+0 @F21@ FAM
+1 HUSB @I91@
+1 WIFE @I92@
+1 CHIL @I100@
+0 @F22@ FAM
+1 HUSB @I93@
+1 WIFE @I94@
+1 CHIL @I101@
+1 CHIL @I102@
+0 @F23@ FAM
+1 HUSB @I96@
+1 WIFE @I97@
+1 CHIL @I103@
+0 @F24@ FAM
+1 HUSB @I1@
+1 CHIL @I2@
+1 CHIL @I3@
+0 @F25@ FAM
+1 HUSB @I2@
+1 CHIL @I4@
+1 CHIL @I5@
+1 CHIL @I6@
+0 @F26@ FAM
+1 HUSB @I4@
+1 CHIL @I7@
+0 @F27@ FAM
+1 HUSB @I7@
+1 CHIL @I8@
+0 @F28@ FAM
+1 HUSB @I8@
+1 CHIL @I9@
+0 @F29@ FAM
+1 HUSB @I9@
+1 CHIL @I10@
+0 @F30@ FAM
+1 HUSB @I10@
+1 CHIL @I11@
+0 @F31@ FAM
+1 HUSB @I11@
+1 CHIL @I12@
+0 @F32@ FAM
+1 HUSB @I12@
+1 CHIL @I13@
+0 @F33@ FAM
+1 HUSB @I13@
+1 CHIL @I14@
+0 @F34@ FAM
+1 HUSB @I16@
+1 CHIL @I17@
+0 @F35@ FAM
+1 HUSB @I17@
+1 CHIL @I18@
+0 @F36@ FAM
+1 HUSB @I18@
+1 CHIL @I19@
+0 @F37@ FAM
+1 HUSB @I19@
+1 CHIL @I20@
+0 @F38@ FAM
+1 HUSB @I20@
+1 CHIL @I21@
+0 @F39@ FAM
+1 HUSB @I21@
+1 CHIL @I22@
+0 @F40@ FAM
+1 HUSB @I36@
+1 CHIL @I51@
+0 @F41@ FAM
+1 HUSB @I37@
+1 CHIL @I52@
+0 @F42@ FAM
+1 HUSB @I40@
+1 CHIL @I56@
+0 @F43@ FAM
+1 HUSB @I41@
+1 CHIL @I57@
+0 @F44@ FAM
+1 HUSB @I45@
+1 CHIL @I59@
+1 CHIL @I60@
+1 CHIL @I61@
+0 @F45@ FAM
+1 HUSB @I46@
+1 CHIL @I63@
+1 CHIL @I64@
+1 CHIL @I65@
+0 @F46@ FAM
+1 HUSB @I47@
+1 CHIL @I66@
+0 @F47@ FAM
+1 HUSB @I58@
+1 CHIL @I67@
+0 @F48@ FAM
+1 HUSB @I59@
+1 CHIL @I72@
+0 @F49@ FAM
+1 HUSB @I66@
+1 CHIL @I73@
+1 CHIL @I74@
+0 @F50@ FAM
+1 HUSB @I63@
+1 CHIL @I75@
+0 @F51@ FAM
+1 HUSB @I65@
+1 CHIL @I76@
+0 @F52@ FAM
+1 HUSB @I72@
+1 CHIL @I82@
+0 @F53@ FAM
+1 HUSB @I74@
+1 CHIL @I83@
 0 TRLR

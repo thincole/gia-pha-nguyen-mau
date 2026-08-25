@@ -1,594 +1,376 @@
--- ============================================================
--- GIA PHẢ DÒNG HỌ NGUYỄN MẬU (NGÀNH 4)
--- Địa chỉ: Thôn Thượng Đền, Thị trấn Cổ Lễ, Huyện Trực Ninh, Tỉnh Nam Định
--- Cơ sở dữ liệu: Supabase / PostgreSQL (chuẩn GiaPha-OS)
--- ============================================================
+-- =============================================================================
+-- GIA PHẢ DÒNG HỌ NGUYỄN MẬU (CỔ LỄ, TRỰC NINH, NAM ĐỊNH) - SEED CHUẨN XÁC 100%
+-- Trích từ: NGỌC PHẢ NGUYỄN MẬU TỘC (Năm 2001 - 128 trang)
+-- =============================================================================
 
--- 1. Xóa dữ liệu cũ (chỉ dùng khi muốn làm mới hoàn toàn phả hệ)
-TRUNCATE TABLE custom_events CASCADE;
-TRUNCATE TABLE relationships CASCADE;
-TRUNCATE TABLE person_details_private CASCADE;
-TRUNCATE TABLE persons CASCADE;
+BEGIN;
 
--- ============================================================
--- ĐỜI 1: CỤ KHỞI TỔ NGÀNH 4
--- ============================================================
-INSERT INTO persons (id, full_name, gender, birth_year, birth_month, birth_day, death_year, death_month, death_day, death_lunar_year, death_lunar_month, death_lunar_day, is_deceased, is_in_law, generation, birth_order, other_names, note)
-VALUES
-(
-  '10000000-0000-0000-0000-000000000001',
-  'Nguyễn Mậu Phúc',
-  'male', 1895, 4, 12, 1968, 10, 6, 1968, 8, 15, TRUE, FALSE, 1, NULL,
-  'Tự: Thuần Hậu, Hiệu: Phúc Điền Cư Sĩ',
-  'Cụ Khởi Tổ Ngành 4 dòng họ Nguyễn Mậu tại Thôn Thượng Đền, Cổ Lễ, Trực Ninh. Sinh thời đức độ, nho nhã, tinh thông y thuật và phong thủy, có công tạo dựng cơ nghiệp và quy hoạch từ đường ngành 4. Phần mộ an táng tại Khu Lăng Mộ dòng họ Nguyễn Mậu, Thôn Thượng Đền, Cổ Lễ.'
-),
-(
-  '10000000-0000-0000-0000-000000000002',
-  'Trần Thị Đoan',
-  'female', 1898, 9, 20, 1972, 11, 27, 1972, 10, 22, TRUE, TRUE, 1, NULL,
-  'Hiệu: Từ Tâm Nhu Thuận',
-  'Cụ Bà Chính Thất, người làng Chùa Cổ Lễ, hiền thục nết na, tần tảo cùng Cụ Ông nuôi dạy con cháu giữ trọn nền nếp gia phong. Mộ an táng tại Khu Lăng Mộ dòng họ Nguyễn Mậu, Thôn Thượng Đền.'
-);
+-- 1. Xóa dữ liệu cũ
+DELETE FROM custom_events;
+DELETE FROM relationships;
+DELETE FROM person_details_private;
+DELETE FROM persons;
 
--- ============================================================
--- ĐỜI 2: CÁC CHI TRƯỞNG & THỨ NGÀNH 4
--- ============================================================
-INSERT INTO persons (id, full_name, gender, birth_year, birth_month, birth_day, death_year, death_month, death_day, death_lunar_year, death_lunar_month, death_lunar_day, is_deceased, is_in_law, generation, birth_order, other_names, note)
-VALUES
--- Nhánh Trưởng (Cụ Trọng)
-(
-  '20000000-0000-0000-0000-000000000001',
-  'Nguyễn Mậu Trọng',
-  'male', 1920, 2, 8, 1995, 4, 11, 1995, 3, 12, TRUE, FALSE, 2, 1,
-  'Tự: Minh Chính',
-  'Trưởng nam Ngành 4. Tham gia kháng chiến chống Pháp, phụ trách công tác thủ công nghiệp địa phương tại Cổ Lễ. Người giữ gìn gia phả chữ Hán Nôm và hưng công trùng tu Từ đường họ. Mộ tại Nghĩa trang Thượng Đền.'
-),
-(
-  '20000000-0000-0000-0000-000000000002',
-  'Lê Thị Mùi',
-  'female', 1923, 5, 15, 2002, 7, 15, 2002, 6, 6, TRUE, TRUE, 2, NULL,
-  'Dâu trưởng đời 2',
-  'Cụ bà đảm đang, phụ trách việc tế lễ họ nhiều năm, phúc hậu, thương yêu con cháu. Mộ tại Nghĩa trang Thượng Đền, Cổ Lễ.'
-),
--- Nhánh Thứ Hai (Cụ Khoa)
-(
-  '20000000-0000-0000-0000-000000000003',
-  'Nguyễn Mậu Khoa',
-  'male', 1925, 8, 19, 2005, 12, 18, 2005, 11, 18, TRUE, FALSE, 2, 2,
-  'Tự: Văn Bác',
-  'Nhị nam Ngành 4. Nhà giáo dạy chữ Nho và chữ Quốc ngữ nhiều năm tại vùng Cổ Lễ, Trực Ninh. Học trò khắp vùng kính trọng về phẩm hạnh. Mộ tại Nghĩa trang Đồng Thượng, Cổ Lễ.'
-),
-(
-  '20000000-0000-0000-0000-000000000004',
-  'Phạm Thị Nhàn',
-  'female', 1928, 11, 10, 2010, 10, 16, 2010, 9, 9, TRUE, TRUE, 2, NULL,
-  'Dâu thứ đời 2',
-  'Xuất thân gia đình Nho học Trực Ninh, mẫu mực lễ giáo, đức độ dịu hiền. Mộ tại Nghĩa trang Đồng Thượng, Cổ Lễ.'
-),
--- Nhánh Thứ Ba (Bà Cô - Cụ Thanh)
-(
-  '20000000-0000-0000-0000-000000000005',
-  'Nguyễn Thị Thanh',
-  'female', 1929, 6, 25, 2015, 5, 21, 2015, 4, 4, TRUE, FALSE, 2, 3,
-  'Trưởng nữ Ngành 4',
-  'Lấy chồng về họ Vũ làng Cổ Lễ, vẹn tròn nghĩa vụ gia đình, luôn hướng về cội nguồn họ Nguyễn Mậu và hết lòng vì họ ngoại.'
-),
-(
-  '20000000-0000-0000-0000-000000000006',
-  'Vũ Đình Cường',
-  'male', 1926, 3, 14, 1998, 2, 16, 1998, 1, 20, TRUE, TRUE, 2, NULL,
-  'Rể họ Nguyễn Mậu',
-  'Cán bộ ngành thương nghiệp huyện Trực Ninh. Mộ tại Nghĩa trang thị trấn Cổ Lễ.'
-),
--- Nhánh Thứ Tư (Cụ Duẩn)
-(
-  '20000000-0000-0000-0000-000000000007',
-  'Nguyễn Mậu Duẩn',
-  'male', 1934, 10, 5, 2018, 8, 24, 2018, 7, 14, TRUE, FALSE, 2, 4,
-  'Tự: Hữu Chí',
-  'Tam nam Ngành 4. Cựu chiến binh, nguyên cán bộ Giao thông Vận tải Nam Hà. Sau về sinh sống tại thị trấn Cổ Lễ, tích cực tham gia ban khánh tiết Đền Thượng. Mộ tại Nghĩa trang Thượng Đền.'
-),
-(
-  '20000000-0000-0000-0000-000000000008',
-  'Hoàng Thị Thược',
-  'female', 1938, 1, 12, 2021, 2, 9, 2020, 12, 28, TRUE, TRUE, 2, NULL,
-  'Dâu út đời 2',
-  'Hội viên Người cao tuổi gương mẫu thị trấn Cổ Lễ. Mộ tại Nghĩa trang Thượng Đền, Cổ Lễ.'
-);
+-- 2. Thêm danh sách Thành viên (persons)
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-0100-0001-000000000000', 'Nguyễn Bặc', 'male', 1, 1, false, true, NULL, NULL, 904, NULL, NULL, 979, NULL, NULL, NULL, false, 'Khởi Tổ Nguyên Đương họ Nguyễn. Sinh năm Giáp Tý (904), mất năm Kỷ Mão (979), thọ 76 tuổi. Quê Đại Hữu, Đại Hoàng, Gia Viễn, Ninh Bình. Bạn cờ lau tam đồng với Đinh Bộ Lĩnh. Đại tướng số 1 dẹp loạn 12 sứ quân, Thừa tướng phụ Quốc Định Quốc Công. Triều Lý Thái Tổ truy phong Trung Liệt Đại Vương Thượng Đẳng Phúc Thần.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-0200-0001-000000000000', 'Nguyễn Đệ', 'male', 2, 1, false, true, NULL, NULL, NULL, NULL, NULL, 1028, NULL, NULL, NULL, false, 'Con trưởng Tổ Bặc. Mất năm Mậu Thìn (1028). Triều Tiền Lê phong Điện Tiền đô chỉ huy Sứ. Triều Lý Thái Tổ phong Đô hiệu Điểm Tước hầu (1010-1028).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-0200-0002-000000000000', 'Nguyễn Phúc Đạt', 'male', 2, 2, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con thứ 2 của Khởi Tổ Nguyễn Bặc.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-0300-0001-000000000000', 'Nguyễn Viễn', 'male', 3, 2, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai thứ 2 của Tổ Nguyễn Đệ. Quan triều Lý Thánh Tông (1054-1071). Triều Lý Nhân Tông (1072-1127) được phong Tả tướng Quốc - Tham tri sự.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-0300-0002-000000000000', 'Nguyễn Quang Lợi', 'male', 3, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con thứ nhất của Tổ Nguyễn Đệ.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-0300-0003-000000000000', 'Nguyễn Phúc Lịch', 'male', 3, 3, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con thứ 3 của Tổ Nguyễn Đệ.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-0400-0001-000000000000', 'Nguyễn Phụng', 'male', 4, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai Tổ Viễn. Xuất thân Võ cử nhân, năm Ất Sửu (1145) triều Lý Anh Tông phong Tả đô đốc.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-0500-0001-000000000000', 'Nguyễn Nộn', 'male', 5, 1, false, true, NULL, NULL, NULL, NULL, NULL, 1229, NULL, NULL, NULL, false, 'Con trai Tổ Phụng. Văn võ kiêm toàn, tự xưng Đại Thắng Vương thời Lý Cao Tông. Năm Ất Dậu (1225) triều Trần phong Hoài Đạo Hiếu Vũ Vương, gả Công chúa Ngoan Thiềm. Mất năm Kỷ Sửu (1229). Đền thờ chính tại Phù Dực, Tiên Du, Bắc Ninh (gồm 72 đền thờ dọc sông Đuống đến Lục Đầu Giang).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-0600-0001-000000000000', 'Nguyễn Thế Tứ', 'male', 6, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trưởng Tổ Nguyễn Nộn. Làm tướng, được phong tước Đô Hiệu Điểm qua 3 triều vua Trần: Trần Thái Tông (1225-1257), Trần Thánh Tông (1258-1277), Trần Nhân Tông (1278-1292).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-0700-0001-000000000000', 'Nguyễn Nạp Hoà', 'male', 7, 1, false, true, NULL, NULL, NULL, NULL, NULL, 1377, NULL, NULL, NULL, false, 'Con cả Tổ Thế Tứ. Xuất thân Võ cử nhân triều Trần Minh Tông (1314-1328). Làm quan qua các triều Trần Minh Tông, Hiến Tông, Dụ Tông, Nghệ Tông, Duệ Tông. Được phong Bình Nam Đại tướng quân giúp vua đánh Chiêm Thành năm 1377.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-0800-0001-000000000000', 'Nguyễn Công Luật', 'male', 8, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trưởng Tổ Nạp Hoà. Làm quan triều Trần Duệ Tông đến Phế Đế, chức Hữu Hiệu Điểm (1378). Cai quản quân phủ Thiên Trường. Tự là Tiểu Luật.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-0900-0001-000000000000', 'Nguyễn Minh Du', 'male', 9, 3, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con thứ 3 của Tổ Công Luật. Làm tướng quân chỉ huy quân Thiết Hổ triều Phế Đế Kiên Tân (1398-1399), trấn thủ Sơn Nam (Thái Bình, Nam Định) và Hải Dương. Được phong Thái phó.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-1000-0001-000000000000', 'Nguyễn Phi Khanh', 'male', 10, 1, false, true, NULL, NULL, 1355, NULL, NULL, 1428, NULL, NULL, NULL, false, 'Thái học sinh thời Trần - Hồ, thân phụ Anh hùng dân tộc Nguyễn Trãi.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-1100-0001-000000000000', 'Nguyễn Trãi', 'male', 11, 1, false, true, NULL, NULL, 1380, NULL, NULL, 1442, 16, 8, 1442, false, 'Tự Ức Trai, Danh nhân văn hóa thế giới UNESCO vinh danh (1380-1980). Khai quốc công thần triều Hậu Lê, Nhập nội Hành khiển, Tuyên phụng Đại phu, Huệ Quốc Công, Tế văn thần. Tác giả Bình Ngô Đại Cáo.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-1100-0002-000000000000', 'Phạm Thị Mẫn', 'female', 11, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Vợ kế của cụ Nguyễn Trãi, thân mẫu của cụ Nguyễn Anh Võ (Anh Vũ). Từng lánh nạn tại Gia Miêu, Sơn Động, Thanh Hoá.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-1200-0001-000000000000', 'Nguyễn Anh Võ (Nguyễn Anh Vũ)', 'male', 12, 6, false, true, NULL, NULL, 1442, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Tự Tùng Hạc, hiệu Phúc Sơ. Con trai thứ 6 của cụ Nguyễn Trãi và bà Phạm Thị Mẫn. Năm Quang Thuận thứ 5 (1464) vua Lê Thánh Tông minh oan, nhận ấn phong Tri châu và 100 mẫu ruộng lộc điền.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-1300-0001-000000000000', 'Nguyễn Giám', 'male', 13, 2, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Tự Giác Hiền. Con thứ 2 của Tổ Anh Võ. Đỗ quan Khảo trường Quốc Tử Giám triều Lê Hiến Tông năm Giáp Tý (1504).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-1400-0001-000000000000', 'Nguyễn Mậu Trực', 'male', 14, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Tự Phúc Văn. Con trai Tổ Giác Hiền. Đỗ Tiến sĩ quan trường khảo triều Mạc - Quang Hoà thứ 6 năm Bính Ngọ (1546).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-1500-0001-000000000000', 'Nguyễn Trung', 'male', 15, 4, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Tự Phúc Hiếu. Con trai thứ 4 của Tổ Nguyễn Mậu Trực. Đỗ Tiến sĩ năm Quý Tỵ (1593) triều Lê.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-1600-0001-000000000000', 'Nguyễn Mậu Kiên', 'male', 16, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Tự Phúc Hoà. Con trai Tổ Phúc Hiếu. Đỗ Tiến sĩ năm Bính Thìn (1619) triều Lê Thần Tông. Dạy học trong thành nội.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-1700-0001-000000000000', 'Nguyễn Đăng', 'male', 17, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Tự Phúc Khải. Con trai Tổ Mậu Kiên. Đỗ Tiến sĩ năm Bính Tý (1639) triều Lê Kính Tông.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-1800-0001-000000000000', 'Nguyễn Mậu Tài', 'male', 18, 5, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Tự Mậu Tú, hiệu Phúc Thành / Viết Trai tiên sinh. Con thứ 5 của Tổ Nguyễn Đăng. Phó Đô ngự sử, Chánh sứ sang nhà Thanh (1673), Thượng thư Bộ Hình (1675), Thượng thư Bộ Binh (1676). Năm 1680 đem quân về dẹp loạn biển Thiên Trường rồi kết duyên với bà Lê Thị Tiểu Thư.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-1800-0002-000000000000', 'Lê Thị (Tiểu Thư)', 'female', 18, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Thứ thiếp tam thứ của Thượng thư Nguyễn Mậu Tài. Thân mẫu của cụ Nguyễn Mậu Thái (Phúc Hội) - Thủy Tổ dòng họ Nguyễn Mậu tại Cổ Lễ.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-1900-0001-000000000000', 'Nguyễn Mậu Thái (Tự Phúc Hội)', 'male', 19, 6, false, true, NULL, NULL, NULL, NULL, NULL, NULL, 5, 6, NULL, false, 'THỦY TỔ NGUYỄN MẬU TỘC tại Mặt Lãng Thượng (Thôn Thượng Đền, Cổ Lễ, Trực Ninh, Nam Định) năm Nhâm Tuất (1682). Con thứ 6 của Thượng thư Nguyễn Mậu Tài. Triều Lê phong tước Hậu Thần. Kỵ nhật ngày mồng 5 tháng 6 Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-1900-0002-000000000000', 'Nguyễn Thị Ái', 'female', 19, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, 16, 2, NULL, false, 'Chính thất của Thủy Tổ Nguyễn Mậu Thái (Phúc Hội). Kỵ nhật ngày 16 tháng 2 Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2001-0001-000000000000', 'Nguyễn Mậu Trường (Tự Phúc Tiên)', 'male', 20, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, 1, 10, NULL, false, 'Tổ Khởi Lập NGÀNH NHẤT. Triều Lê - Hiến Vương Công Chúa phong chức Hậu Thần. Kỵ nhật ngày mồng 1 tháng 10 Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2001-0002-000000000000', 'Nguyễn Thị Trường', 'female', 20, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, 1, 10, NULL, false, 'Tổ bà Ngành Nhất, kỵ nhật ngày mồng 1 tháng 10 Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2002-0001-000000000000', 'Nguyễn Mậu Rong (Tự Phúc Khoán)', 'male', 20, 2, false, true, NULL, NULL, NULL, NULL, NULL, NULL, 14, 3, NULL, false, 'Tổ Khởi Lập NGÀNH NHỊ. Triều Lê phong chức Hậu Thần. Kỵ nhật ngày 14 tháng 3 Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2002-0002-000000000000', 'Nguyễn Thị Rong', 'female', 20, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, 30, 12, NULL, false, 'Tổ bà Ngành Nhị, kỵ nhật ngày 30 tháng Chạp Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2003-0001-000000000000', 'Nguyễn Mậu Thiêm (Tự Pháp Uyên)', 'male', 20, 3, false, true, NULL, NULL, NULL, NULL, NULL, NULL, 30, 9, NULL, false, 'Tổ Khởi Lập NGÀNH BA. Triều Lê phong chức Hậu Thần. Kỵ nhật ngày 30 tháng 9 Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2003-0002-000000000000', 'Nguyễn Thị Viên', 'female', 20, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, 15, 7, NULL, false, 'Tổ bà Ngành Ba, kỵ nhật ngày 15 tháng 7 Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2004-0001-000000000000', 'Nguyễn Mậu Hoàn (Tướng Công Tuấn Thông)', 'male', 20, 4, false, true, NULL, NULL, 1728, NULL, NULL, 1780, 12, 1, 1780, false, 'Tổ Khởi Lập NGÀNH TƯ (Ngành 4). Sinh năm Mậu Thân (1728), mất năm Canh Tý (1780), thọ 53 tuổi. Tự Tuấn Thông / Tuấn Hoàn, hiệu Viết Nghĩa / Viết Mẫn tiên sinh. Tri huyện Mỹ Lộc, thăng Tá lang, Tri phủ Thiên Trường dũng phủ quân. Vua phong Tướng công, ban 100 mẫu ruộng cho con cháu và dân làng cúng tế. Kỵ nhật ngày 12 tháng Giêng Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2004-0002-000000000000', 'Tổ Bà Ngành Tư (Vợ Tướng Công)', 'female', 20, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, 14, 3, NULL, false, 'Tổ bà Ngành Tư, kỵ nhật ngày 14 tháng 3 Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2101-0001-000000000000', 'Nguyễn Mậu Khải', 'male', 21, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai Tổ Phúc Tiên (Ngành Nhất).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2101-0002-000000000000', 'Nguyễn Thị Khải', 'female', 21, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Vợ cụ Nguyễn Mậu Khải.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2102-0001-000000000000', 'Nguyễn Mậu Oai', 'male', 21, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai trưởng Tổ Phúc Khoán (Ngành Nhị).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2102-0002-000000000000', 'Nguyễn Mậu Lực', 'male', 21, 2, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai thứ 2 Tổ Phúc Khoán (Ngành Nhị).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2102-0003-000000000000', 'Nguyễn Mậu Giám', 'male', 21, 3, false, true, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL, false, 'Con trai thứ 3 Tổ Phúc Khoán (Ngành Nhị). Kỵ nhật ngày 3 tháng 11 Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2102-0004-000000000000', 'Nguyễn Thị Giám', 'female', 21, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, 3, 12, NULL, false, 'Vợ cụ Nguyễn Mậu Giám. Kỵ nhật ngày 3 tháng 12 Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2103-0001-000000000000', 'Nguyễn Mậu Mễ', 'male', 21, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trưởng Tổ Pháp Uyên (Ngành Ba).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2103-0002-000000000000', 'Nguyễn Mậu Lang', 'male', 21, 2, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con thứ 2 Tổ Pháp Uyên (Ngành Ba).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2103-0003-000000000000', 'Nguyễn Mậu Điêu', 'male', 21, 3, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Dưỡng tử Tổ Pháp Uyên (Ngành Ba). Sinh cụ Hạc -> cụ Kho -> cụ bà Nguyễn Thị Khe (1906).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2104-0001-000000000000', 'Nguyễn Mậu Khoan (Cụ Cử Khoan)', 'male', 21, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, 15, 8, NULL, false, 'Con trưởng Tổ Tướng Công Tuấn Hoàn (Ngành 4). Đỗ Cử nhân, làm văn thư phủ Thiên Trường. Đời thường gọi là cụ Cử Khoan. Kỵ nhật ngày 15 tháng 8 Âm lịch (đồng giỗ với Cụ Bà).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2104-0002-000000000000', 'Nguyễn Thị Khoan', 'female', 21, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, 15, 8, NULL, false, 'Vợ cụ Cử Khoan. Đồng giỗ với chồng ngày 15 tháng 8 Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2104-0003-000000000000', 'Nguyễn Mậu Giáo', 'male', 21, 2, false, true, NULL, NULL, NULL, NULL, NULL, NULL, 24, 6, NULL, false, 'Con thứ 2 Tổ Tướng Công Tuấn Hoàn (Ngành 4). Kỵ nhật ngày 24 tháng 6 Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2104-0004-000000000000', 'Nguyễn Mậu Hợi', 'male', 21, 3, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con thứ 3 Tổ Tướng Công Tuấn Hoàn (Ngành 4). Sinh 3 con: Mậu Lĩnh, Mậu Thuần, Mậu Tợi.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2104-0005-000000000000', 'Nguyễn Mậu Bốn (Tuần Bốn)', 'male', 21, 4, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con nuôi Tổ Tuấn Hoàn. Thi Hương, thi Hội đều đỗ đạt, làm quan Tuần phủ. Sinh cụ Đội Giang (Mậu Giang).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2104-0006-000000000000', 'Nguyễn Thị Cúc Hoa', 'female', 21, 5, false, true, NULL, NULL, NULL, NULL, NULL, NULL, 27, 2, NULL, false, 'Con gái Tổ Tuấn Hoàn, mất sớm khi còn nhỏ. Đồng giỗ với bà cô Ngọc Hoa ngày 27/02 Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2104-0007-000000000000', 'Nguyễn Thị Ngọc Hoa', 'female', 21, 6, false, true, NULL, NULL, NULL, NULL, NULL, NULL, 27, 2, NULL, false, 'Con gái Tổ Tuấn Hoàn, mất sớm khi còn nhỏ. Đồng giỗ ngày 27/02 Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2201-0001-000000000000', 'Nguyễn Mậu Ngợi', 'male', 22, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai cụ Mậu Khải (Ngành 1). Sinh cụ Mậu Thân và cụ Mậu Hỗ.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2202-0001-000000000000', 'Nguyễn Mậu Sảng', 'male', 22, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai cụ Mậu Oai (Ngành 2). Sinh 4 con: Mậu Sáng, Mậu Lung, Mậu Khoát, Mậu Ngưng.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2202-0002-000000000000', 'Nguyễn Mậu Thoa', 'male', 22, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai cụ Mậu Lực (Ngành 2). Sinh cụ Mậu Thuyết.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2202-0003-000000000000', 'Nguyễn Mậu Thập', 'male', 22, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai thứ 1 cụ Mậu Giám (Ngành 2). Sinh cụ Mậu Châu.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2202-0004-000000000000', 'Nguyễn Mậu Thử', 'male', 22, 2, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai thứ 2 cụ Mậu Giám (Ngành 2). Sinh cụ Mậu Đối, cụ Mậu Hiếu, cụ Mậu Tỵ.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2202-0005-000000000000', 'Nguyễn Mậu Tam', 'male', 22, 3, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai thứ 3 cụ Mậu Giám (Ngành 2). Sinh cụ Mậu Thất.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2203-0001-000000000000', 'Nguyễn Mậu Giá', 'male', 22, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai cụ Mậu Mễ (Ngành 3). Sinh cụ Mậu Hanh, cụ Mậu Từ, cụ Mậu Côi, cụ Mậu Đỏ.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2203-0002-000000000000', 'Nguyễn Mậu Giảng', 'male', 22, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai cụ Mậu Lang (Ngành 3). Sinh cụ Mậu Tố và các con gái.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2204-0001-000000000000', 'Nguyễn Mậu Mền', 'male', 22, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai cụ Cử Khoan (Ngành 4). Sinh cụ Hương Ngung (Mậu Ngung).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2204-0002-000000000000', 'Nguyễn Mậu Việm', 'male', 22, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai thứ 1 cụ Mậu Giáo (Ngành 4). Sinh cụ Mậu Kiền và cụ Mậu Lễ.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2204-0003-000000000000', 'Nguyễn Mậu Tự', 'male', 22, 2, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai thứ 2 cụ Mậu Giáo (Ngành 4). Nuôi cụ Mậu Chanh.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2204-0004-000000000000', 'Nguyễn Mậu Tạc', 'male', 22, 3, false, true, NULL, NULL, NULL, NULL, NULL, NULL, 27, 3, NULL, false, 'Con trai thứ 3 cụ Mậu Giáo (Ngành 4). Mất ngày 27/03 Âm lịch, thọ 49 tuổi. Vợ là cụ Nguyễn Thị Bòng (giỗ 23/3). Sinh cụ Mậu Yêng.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2204-0005-000000000000', 'Nguyễn Thị Bòng', 'female', 22, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, 23, 3, NULL, false, 'Vợ cụ Nguyễn Mậu Tạc. Giỗ ngày 23 tháng 3 Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2204-0006-000000000000', 'Nguyễn Mậu Lĩnh', 'male', 22, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, 14, 11, NULL, false, 'Con trai trưởng cụ Mậu Hợi (Ngành 4). Giỗ ngày 14 tháng 11 Âm lịch (đồng giỗ với cụ bà Nguyễn Thị Là). Sinh cụ Mậu Thống, cụ Mậu Khả, cụ bà Thị Tụng.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2204-0007-000000000000', 'Nguyễn Mậu Thuần', 'male', 22, 2, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con thứ 2 cụ Mậu Hợi (Ngành 4). Sinh cụ Mậu Đồng, cụ Mậu Tỵ.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2204-0008-000000000000', 'Nguyễn Mậu Tợi', 'male', 22, 3, false, true, NULL, NULL, NULL, NULL, NULL, NULL, 9, 5, NULL, false, 'Con thứ 3 cụ Mậu Hợi (Ngành 4). Giỗ ngày 9 tháng 5 Âm lịch. Vợ Nguyễn Thị Tợi giỗ 26/6. Sinh cụ Mậu Tiến, cụ Mậu Hinh.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2204-0009-000000000000', 'Nguyễn Mậu Giang (Cụ Đội Giang)', 'male', 22, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, 26, 2, NULL, false, 'Con trai cụ Tuần Bốn (Ngành 4). Chánh suất đội triều Nguyễn. Giỗ 26/02 Âm lịch. Vợ là Nguyễn Thị Lý (Nhí) giỗ 12 tháng Chạp. Sinh cụ Mậu Vinh, cụ bà Thị Mùi.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2304-0001-000000000000', 'Nguyễn Mậu Ngung (Cụ Hương Ngung)', 'male', 23, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, 4, 4, NULL, false, 'Con trai cụ Mậu Mền (Ngành 4). Giữ chức Hương hội nên gọi là cụ Hương Ngung. Giỗ 4/4 Âm lịch. Vợ là Nguyễn Thị Kiêm giỗ 20/6 Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2304-0002-000000000000', 'Nguyễn Thị Kiêm', 'female', 23, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, 20, 6, NULL, false, 'Vợ cụ Hương Ngung. Giỗ ngày 20 tháng 6 Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2304-0003-000000000000', 'Nguyễn Mậu Yêng', 'male', 23, 1, false, true, NULL, NULL, 1850, 13, 5, 1912, 17, 4, 1912, false, 'Con trai cụ Mậu Tạc (Ngành 4). Sinh Canh Tuất 1850, mất 17/4 Nhâm Tý (13/5/1912), thọ 53 tuổi. Vợ cả Nguyễn Thị Thận (1851-1930) thọ 80 tuổi (giỗ 2/7). Vợ thứ Hoàng Thị Gái làng Vị Hoàng (giỗ 23/7).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2304-0004-000000000000', 'Nguyễn Thị Thận', 'female', 23, NULL, true, true, NULL, NULL, 1851, NULL, NULL, 1930, 2, 7, 1930, false, 'Chính thất cụ Mậu Yêng. Sinh năm Tân Hợi (1851), giỗ 2/7 Canh Ngọ (25/8/1930), thọ 80 tuổi. Sinh cụ Phó Huỳnh và cụ bà Thị Chài.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2304-0005-000000000000', 'Hoàng Thị Gái (Cụ Trẻ)', 'female', 23, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, 23, 7, 1945, false, 'Thứ thất cụ Mậu Yêng, người làng Vị Hoàng - Nam Định. Giỗ ngày 23/7 Ất Dậu (30/8/1945). Sinh cụ Tuần Liễn (Mậu Hiện).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2304-0006-000000000000', 'Nguyễn Mậu Lễ', 'male', 23, 2, false, true, NULL, NULL, NULL, NULL, NULL, NULL, 27, 6, NULL, false, 'Con trai thứ 2 cụ Mậu Việm (Ngành 4). Giỗ ngày 27/6 Âm lịch. Vợ Nguyễn Thị Nhiên giỗ 27/3 Âm lịch. Sinh cụ Lý Nhạc.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2304-0007-000000000000', 'Nguyễn Mậu Vinh', 'male', 23, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai cụ Đội Giang (bà cả). Người tiến cúng bức đại tự Mậu Đức Hậu Công. Vợ là Nguyễn Thị Cộc. Sinh cụ Mậu Loan (1902).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2304-0008-000000000000', 'Nguyễn Mậu Cẩm (Cụ Cửu Linh)', 'male', 23, 2, false, true, NULL, NULL, 1901, 22, 9, 1975, 17, 8, 1975, false, 'Con trai cụ Đội Giang (bà kế). Có tên tự là Linh ("Minh Linh"), phong chức cửu phẩm nên gọi là cụ Cửu Linh. Sinh 1901 mất 17/8 Ất Mão (22/9/1975) thọ 75 tuổi. Vợ 1 Nguyễn Thị Đọ (1901-1932), vợ 2 Lương Thị Phụng (1903-1990).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2304-0009-000000000000', 'Nguyễn Mậu Thống', 'male', 23, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, 6, 6, NULL, false, 'Con trai cả cụ Mậu Lĩnh. Giỗ 6/6 Âm lịch. Vợ Nguyễn Thị Dùm giỗ 7/11. Sinh cụ Mậu Mục, cụ Mậu Mạc.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2304-0010-000000000000', 'Nguyễn Mậu Hinh (Cụ Quản Hinh)', 'male', 23, 2, false, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con thứ cụ Mậu Tợi. Sinh các cụ: Phúc (1902), Khánh (1904), Khương (1908), Hưởng (1918), Ruân (1920), Kình (1910).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2404-0001-000000000000', 'Nguyễn Mậu Trắm (Cụ Quản Trắm)', 'male', 24, 1, false, true, NULL, NULL, NULL, NULL, NULL, NULL, 27, 4, NULL, false, 'Con trai cả cụ Hương Ngung (Ngành 4). Giữ chức Quản Hội nên thường gọi cụ Quản Trắm. Giỗ 27/4 Âm lịch. Vợ Nguyễn Thị Thân giỗ 11/8 Âm lịch. Sinh cụ Nguyễn Mậu Hách (1934).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2404-0002-000000000000', 'Nguyễn Thị Thân', 'female', 24, NULL, true, true, NULL, NULL, NULL, NULL, NULL, NULL, 11, 8, NULL, false, 'Vợ cụ Quản Trắm. Giỗ ngày 11 tháng 8 Âm lịch.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2404-0003-000000000000', 'Nguyễn Mậu Huỳnh (Cụ Phó Huỳnh)', 'male', 24, 1, false, true, NULL, NULL, 1896, 19, 2, 1956, 8, 1, 1956, false, 'Tác giả cuốn Chúc Phả chữ Hán Nôm năm Quý Tỵ (1953) lưu giữ nguồn gốc họ Nguyễn Mậu Cổ Lễ. Sinh năm Đinh Dậu 1896, mất 8/1 Bính Thân (19/2/1956), thọ 61 tuổi. Làm Phó lý.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2404-0004-000000000000', 'Nguyễn Thị Hạt', 'female', 24, NULL, true, true, NULL, NULL, 1903, 23, 6, 1971, 1, 5, 1971, false, 'Vợ cụ Phó Huỳnh (con gái cụ Xiển). Sinh năm Quý Mão 1903, mất 01/5 nhuận Tân Hợi (23/6/1971), thọ 69 tuổi.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2404-0005-000000000000', 'Nguyễn Mậu Hiện (Cụ Tuần Liễn)', 'male', 24, 2, false, true, NULL, NULL, 1903, 24, 5, 1981, 21, 4, 1981, false, 'Con trai cụ Mậu Yêng (bà kế). Làm Tuần tổng nên gọi là Tuần Liễn. Sinh Quý Mão 1903, mất 21/4 Tân Dậu (24/5/1981), thọ 79 tuổi. Vợ chính Nguyễn Thị Hột (1905-1981), vợ thứ Nguyễn Thị Hồng (1923-1988).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2404-0006-000000000000', 'Nguyễn Mậu Thích (Cụ Tuần Riệp)', 'male', 24, 3, false, true, NULL, NULL, 1916, 12, 3, 1964, 29, 1, 1964, false, 'Tự là Nguyễn Mậu Riệp, làm Tuần Tổng. Sinh Bính Thìn 1916, mất 29/1 Giáp Thìn (12/3/1964), thọ 49 tuổi. Vợ chính Nguyễn Thị Nhỡ (1918-2000), vợ thứ Đàm Thị Cách (Mẹ VNAH, có con Liệt sĩ Nguyễn Mậu Đức).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2404-0007-000000000000', 'Nguyễn Mậu Lê Khanh', 'male', 24, 1, false, false, NULL, NULL, 1927, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai thứ nhất cụ Cửu Linh. Cán bộ Trung Ương Đoàn TNCS Hồ Chí Minh nghỉ hưu tại 43 phố Ngô Quyền, Hà Nội. Huân chương Kháng chiến chống Pháp hạng Ba, chống Mỹ hạng Nhất.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2404-0008-000000000000', 'Đoàn Thị Kim Liên', 'female', 24, NULL, true, false, NULL, NULL, 1928, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Vợ cụ Nguyễn Mậu Lê Khanh, quê làng Đô Quan, Nam Lợi, Nam Trực. Cán bộ Công ty Phục vụ Hà Nội.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2504-0001-000000000000', 'Nguyễn Mậu Hách', 'male', 25, 1, false, false, NULL, NULL, 1934, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Trưởng nam Ngành 4 dòng họ Nguyễn Mậu. Sinh năm Giáp Tuất (1934). Cựu chiến binh, Chủ nhiệm HTX May mặc Nghĩa Lợi, Chủ tịch Ủy ban Mặt trận Tổ quốc Việt Nam Thị trấn Cổ Lễ. Huân chương Kháng chiến chống Mỹ hạng Nhất.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2504-0002-000000000000', 'Nguyễn Thị Áp', 'female', 25, NULL, true, false, NULL, NULL, 1933, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Vợ cụ Nguyễn Mậu Hách, sinh năm Quý Dậu (1933), con gái cụ Nguyễn Gia Ba cùng làng.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2504-0003-000000000000', 'Nguyễn Mậu Tường', 'male', 25, 7, false, false, NULL, NULL, 1935, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Trưởng ban biên soạn Ngọc Phả Nguyễn Mậu Tộc năm 2001. Sinh năm Ất Hợi (1935), con thứ cụ Phó Huỳnh. Cán bộ GTVT, Đội trưởng Đội TNXP phục vụ tiền phương chống Mỹ. Bằng ghi công chiến sĩ giao thông không chiến hào, Huân chương Kháng chiến hạng Ba.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2504-0004-000000000000', 'Nguyễn Thị Loan', 'female', 25, NULL, true, false, NULL, NULL, 1940, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Vợ cụ Nguyễn Mậu Tường, sinh năm Canh Thìn (1940), người xứ Đông Thượng.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2504-0005-000000000000', 'Nguyễn Mậu Điển (Tự Mậu Linh)', 'male', 25, 3, false, true, NULL, NULL, 1929, 13, 4, 1998, 17, 3, 1998, false, 'Con trai cụ Phó Huỳnh. Sinh năm Kỷ Tỵ (1929), mất 17/3 Mậu Dần (13/4/1998), thọ 70 tuổi. Huyện ủy viên huyện Trực Ninh. Huân chương Kháng chiến hạng Nhất.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2504-0006-000000000000', 'Trần Thị Nhu', 'female', 25, NULL, true, false, NULL, NULL, 1930, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Vợ cụ Nguyễn Mậu Điển, sinh Canh Ngọ 1930, người làng xứ Đông Thượng.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2604-0001-000000000000', 'Nguyễn Mậu Thịnh', 'male', 26, 1, false, false, NULL, NULL, 1956, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai trưởng cụ Mậu Hách. Sinh năm Bính Thân (1956). Tốt nghiệp Đại học An ninh, Thiếu tá Công an, Phó phòng Chính trị Công an tỉnh Đồng Nai.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2604-0002-000000000000', 'Đoàn Thị Kim Loan', 'female', 26, NULL, true, false, NULL, NULL, 1959, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Vợ ông Nguyễn Mậu Thịnh, sinh năm Kỷ Hợi (1959), quê Ý Yên.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2604-0003-000000000000', 'Nguyễn Mậu Quân', 'male', 26, 2, false, false, NULL, NULL, 1961, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai thứ 2 cụ Mậu Hách. Sinh năm Tân Sửu (1961). Chủ nhiệm HTX May mặc Nghĩa Lợi - Cổ Lễ (1988-1992).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2604-0004-000000000000', 'Nguyễn Thị Hạnh', 'female', 26, NULL, true, false, NULL, NULL, 1962, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Vợ ông Nguyễn Mậu Quân, sinh năm Nhâm Dần (1962), người thôn Nội, Nam Thanh.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2604-0005-000000000000', 'Nguyễn Thị Liên', 'female', 26, 3, false, false, NULL, NULL, 1964, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con gái cụ Mậu Hách. Sinh năm Giáp Thìn (1964), lấy chồng Đặng Minh Khang ở Liên Tỉnh, Nam Trực.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2604-0006-000000000000', 'Nguyễn Mậu Minh', 'male', 26, 4, false, false, NULL, NULL, 1972, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai thứ 3 cụ Mậu Hách. Sinh năm Nhâm Tý (1972). Vợ là Đinh Thị Ngoãn sinh 1974 ở An Lãng.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2604-0007-000000000000', 'Đinh Thị Ngoãn', 'female', 26, NULL, true, false, NULL, NULL, 1974, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Vợ ông Nguyễn Mậu Minh, sinh Giáp Dần (1974), làng An Lãng - Trực Chính.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2604-0008-000000000000', 'Nguyễn Mậu Thanh Bằng', 'male', 26, 5, false, false, NULL, NULL, 1974, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai thứ 4 cụ Mậu Hách. Sinh năm Giáp Dần (1974). Cử nhân Kỹ sư Thủy lợi (1996), du học Tiến sĩ tại Nga, Viện Khoa học Thủy lợi Việt Nam.');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2604-0009-000000000000', 'Nguyễn Mậu Tuấn', 'male', 26, 6, false, false, NULL, NULL, 1976, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai thứ 5 cụ Mậu Hách. Sinh năm Bính Thìn (1976). Cử nhân Quản lý xã hội (1999).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2704-0001-000000000000', 'Nguyễn Thị Thùy Dương', 'female', 27, 1, false, false, NULL, NULL, 1981, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con gái ông Nguyễn Mậu Thịnh, cháu nội cụ Mậu Hách. Sinh năm Tân Dậu (1981).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2704-0002-000000000000', 'Nguyễn Thị Thúy Vân', 'female', 27, 1, false, false, NULL, NULL, 1984, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con gái ông Nguyễn Mậu Quân, cháu nội cụ Mậu Hách. Sinh năm Giáp Tý (1984).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2704-0003-000000000000', 'Nguyễn Mậu Trung Anh', 'male', 27, 2, false, false, NULL, NULL, 1987, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con trai ông Nguyễn Mậu Quân, cháu nội cụ Mậu Hách. Sinh năm Đinh Mão (1987).');
+INSERT INTO persons (id, full_name, gender, generation, birth_order, is_in_law, is_deceased, birth_day, birth_month, birth_year, death_day, death_month, death_year, death_lunar_day, death_lunar_month, death_lunar_year, death_lunar_is_leap, note)
+VALUES ('00000000-0000-2704-0004-000000000000', 'Nguyễn Thị Thu Hiền', 'female', 27, 1, false, false, NULL, NULL, 2000, NULL, NULL, NULL, NULL, NULL, NULL, false, 'Con gái ông Nguyễn Mậu Minh, cháu nội cụ Mậu Hách. Sinh năm Canh Thìn (2000).');
 
--- ============================================================
--- ĐỜI 3: THẾ HỆ KIẾN THIẾT & CÔNG TÁC
--- ============================================================
-INSERT INTO persons (id, full_name, gender, birth_year, birth_month, birth_day, death_year, death_month, death_day, death_lunar_year, death_lunar_month, death_lunar_day, is_deceased, is_in_law, generation, birth_order, other_names, note)
-VALUES
--- Con cụ Trọng & cụ Mùi
-(
-  '30000000-0000-0000-0000-000000000001',
-  'Nguyễn Mậu Hùng',
-  'male', 1948, 3, 10, 2020, 6, 28, 2020, 5, 8, TRUE, FALSE, 3, 1,
-  'Bác Hùng - Trưởng tộc đời 3',
-  'Trưởng nam chi trưởng đời 3. Kỹ sư cơ khí, nguyên trưởng tộc trông coi và duy trì nền nếp tế tự tại Từ đường Thôn Thượng Đền. Mộ tại Nghĩa trang Thượng Đền, Cổ Lễ.'
-),
-(
-  '30000000-0000-0000-0000-000000000002',
-  'Đỗ Thị Mai',
-  'female', 1952, 7, 18, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, 3, NULL,
-  'Bác gái Mai',
-  'Giáo viên tiểu học nghỉ hưu, hiện trông coi và phụng sự hương khói tại Từ đường họ Nguyễn Mậu Ngành 4 tại Thôn Thượng Đền.'
-),
-(
-  '30000000-0000-0000-0000-000000000003',
-  'Nguyễn Mậu Cường',
-  'male', 1953, 9, 22, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 3, 2,
-  'Bác Cường (Bác sĩ)',
-  'Bác sĩ Quân y nghỉ hưu, nguyên Trưởng khoa Bệnh viện Quân y. Hiện định cư và sinh hoạt dòng họ tại TP. Nam Định.'
-),
-(
-  '30000000-0000-0000-0000-000000000004',
-  'Trịnh Thị Lan',
-  'female', 1956, 12, 5, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, 3, NULL,
-  'Bác Lan',
-  'Dược sĩ nghỉ hưu tại TP. Nam Định.'
-),
-(
-  '30000000-0000-0000-0000-000000000005',
-  'Nguyễn Thị Kim Dung',
-  'female', 1958, 4, 15, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 3, 3,
-  'Cô Dung',
-  'Cán bộ ngành Ngân hàng nghỉ hưu, hiện sinh sống tại Hà Nội. Luôn tích cực đóng góp quỹ khuyến học dòng họ.'
-),
-(
-  '30000000-0000-0000-0000-000000000006',
-  'Bùi Văn Tuấn',
-  'male', 1955, 6, 20, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, 3, NULL,
-  'Chú Tuấn',
-  'Kỹ sư ngành Bưu điện nghỉ hưu tại Hà Nội.'
-),
+-- 3. Thêm Mối quan hệ Gia đình (relationships)
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000001', '00000000-0000-0100-0001-000000000000', '00000000-0000-0200-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000002', '00000000-0000-0100-0001-000000000000', '00000000-0000-0200-0002-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000003', '00000000-0000-0200-0001-000000000000', '00000000-0000-0300-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000004', '00000000-0000-0200-0001-000000000000', '00000000-0000-0300-0002-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000005', '00000000-0000-0200-0001-000000000000', '00000000-0000-0300-0003-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000006', '00000000-0000-0300-0001-000000000000', '00000000-0000-0400-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000007', '00000000-0000-0400-0001-000000000000', '00000000-0000-0500-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000008', '00000000-0000-0500-0001-000000000000', '00000000-0000-0600-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000009', '00000000-0000-0600-0001-000000000000', '00000000-0000-0700-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000010', '00000000-0000-0700-0001-000000000000', '00000000-0000-0800-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000011', '00000000-0000-0800-0001-000000000000', '00000000-0000-0900-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000012', '00000000-0000-0900-0001-000000000000', '00000000-0000-1000-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000013', '00000000-0000-1000-0001-000000000000', '00000000-0000-1100-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000014', '00000000-0000-1100-0001-000000000000', '00000000-0000-1100-0002-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000015', '00000000-0000-1100-0001-000000000000', '00000000-0000-1200-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000016', '00000000-0000-1100-0002-000000000000', '00000000-0000-1200-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000017', '00000000-0000-1200-0001-000000000000', '00000000-0000-1300-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000018', '00000000-0000-1300-0001-000000000000', '00000000-0000-1400-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000019', '00000000-0000-1400-0001-000000000000', '00000000-0000-1500-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000020', '00000000-0000-1500-0001-000000000000', '00000000-0000-1600-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000021', '00000000-0000-1600-0001-000000000000', '00000000-0000-1700-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000022', '00000000-0000-1700-0001-000000000000', '00000000-0000-1800-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000023', '00000000-0000-1800-0001-000000000000', '00000000-0000-1800-0002-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000024', '00000000-0000-1800-0001-000000000000', '00000000-0000-1900-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000025', '00000000-0000-1800-0002-000000000000', '00000000-0000-1900-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000026', '00000000-0000-1900-0001-000000000000', '00000000-0000-1900-0002-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000027', '00000000-0000-1900-0001-000000000000', '00000000-0000-2001-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000028', '00000000-0000-1900-0002-000000000000', '00000000-0000-2001-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000029', '00000000-0000-2001-0001-000000000000', '00000000-0000-2001-0002-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000030', '00000000-0000-1900-0001-000000000000', '00000000-0000-2002-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000031', '00000000-0000-1900-0002-000000000000', '00000000-0000-2002-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000032', '00000000-0000-2002-0001-000000000000', '00000000-0000-2002-0002-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000033', '00000000-0000-1900-0001-000000000000', '00000000-0000-2003-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000034', '00000000-0000-1900-0002-000000000000', '00000000-0000-2003-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000035', '00000000-0000-2003-0001-000000000000', '00000000-0000-2003-0002-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000036', '00000000-0000-1900-0001-000000000000', '00000000-0000-2004-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000037', '00000000-0000-1900-0002-000000000000', '00000000-0000-2004-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000038', '00000000-0000-2004-0001-000000000000', '00000000-0000-2004-0002-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000039', '00000000-0000-2001-0001-000000000000', '00000000-0000-2101-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000040', '00000000-0000-2001-0002-000000000000', '00000000-0000-2101-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000041', '00000000-0000-2101-0001-000000000000', '00000000-0000-2101-0002-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000042', '00000000-0000-2002-0001-000000000000', '00000000-0000-2102-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000043', '00000000-0000-2002-0002-000000000000', '00000000-0000-2102-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000044', '00000000-0000-2002-0001-000000000000', '00000000-0000-2102-0002-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000045', '00000000-0000-2002-0002-000000000000', '00000000-0000-2102-0002-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000046', '00000000-0000-2002-0001-000000000000', '00000000-0000-2102-0003-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000047', '00000000-0000-2002-0002-000000000000', '00000000-0000-2102-0003-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000048', '00000000-0000-2102-0003-000000000000', '00000000-0000-2102-0004-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000049', '00000000-0000-2003-0001-000000000000', '00000000-0000-2103-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000050', '00000000-0000-2003-0002-000000000000', '00000000-0000-2103-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000051', '00000000-0000-2003-0001-000000000000', '00000000-0000-2103-0002-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000052', '00000000-0000-2003-0002-000000000000', '00000000-0000-2103-0002-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000053', '00000000-0000-2003-0001-000000000000', '00000000-0000-2103-0003-000000000000', 'adopted_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000054', '00000000-0000-2004-0001-000000000000', '00000000-0000-2104-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000055', '00000000-0000-2004-0002-000000000000', '00000000-0000-2104-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000056', '00000000-0000-2104-0001-000000000000', '00000000-0000-2104-0002-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000057', '00000000-0000-2004-0001-000000000000', '00000000-0000-2104-0003-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000058', '00000000-0000-2004-0002-000000000000', '00000000-0000-2104-0003-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000059', '00000000-0000-2004-0001-000000000000', '00000000-0000-2104-0004-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000060', '00000000-0000-2004-0002-000000000000', '00000000-0000-2104-0004-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000061', '00000000-0000-2004-0001-000000000000', '00000000-0000-2104-0005-000000000000', 'adopted_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000062', '00000000-0000-2004-0001-000000000000', '00000000-0000-2104-0006-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000063', '00000000-0000-2004-0002-000000000000', '00000000-0000-2104-0006-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000064', '00000000-0000-2004-0001-000000000000', '00000000-0000-2104-0007-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000065', '00000000-0000-2004-0002-000000000000', '00000000-0000-2104-0007-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000066', '00000000-0000-2101-0001-000000000000', '00000000-0000-2201-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000067', '00000000-0000-2101-0002-000000000000', '00000000-0000-2201-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000068', '00000000-0000-2102-0001-000000000000', '00000000-0000-2202-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000069', '00000000-0000-2102-0002-000000000000', '00000000-0000-2202-0002-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000070', '00000000-0000-2102-0003-000000000000', '00000000-0000-2202-0003-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000071', '00000000-0000-2102-0004-000000000000', '00000000-0000-2202-0003-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000072', '00000000-0000-2102-0003-000000000000', '00000000-0000-2202-0004-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000073', '00000000-0000-2102-0004-000000000000', '00000000-0000-2202-0004-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000074', '00000000-0000-2102-0003-000000000000', '00000000-0000-2202-0005-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000075', '00000000-0000-2102-0004-000000000000', '00000000-0000-2202-0005-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000076', '00000000-0000-2103-0001-000000000000', '00000000-0000-2203-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000077', '00000000-0000-2103-0002-000000000000', '00000000-0000-2203-0002-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000078', '00000000-0000-2104-0001-000000000000', '00000000-0000-2204-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000079', '00000000-0000-2104-0002-000000000000', '00000000-0000-2204-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000080', '00000000-0000-2104-0003-000000000000', '00000000-0000-2204-0002-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000081', '00000000-0000-2104-0003-000000000000', '00000000-0000-2204-0003-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000082', '00000000-0000-2104-0003-000000000000', '00000000-0000-2204-0004-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000083', '00000000-0000-2204-0004-000000000000', '00000000-0000-2204-0005-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000084', '00000000-0000-2104-0004-000000000000', '00000000-0000-2204-0006-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000085', '00000000-0000-2104-0004-000000000000', '00000000-0000-2204-0007-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000086', '00000000-0000-2104-0004-000000000000', '00000000-0000-2204-0008-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000087', '00000000-0000-2104-0005-000000000000', '00000000-0000-2204-0009-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000088', '00000000-0000-2204-0001-000000000000', '00000000-0000-2304-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000089', '00000000-0000-2304-0001-000000000000', '00000000-0000-2304-0002-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000090', '00000000-0000-2204-0004-000000000000', '00000000-0000-2304-0003-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000091', '00000000-0000-2204-0005-000000000000', '00000000-0000-2304-0003-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000092', '00000000-0000-2304-0003-000000000000', '00000000-0000-2304-0004-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000093', '00000000-0000-2304-0003-000000000000', '00000000-0000-2304-0005-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000094', '00000000-0000-2204-0002-000000000000', '00000000-0000-2304-0006-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000095', '00000000-0000-2204-0009-000000000000', '00000000-0000-2304-0007-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000096', '00000000-0000-2204-0009-000000000000', '00000000-0000-2304-0008-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000097', '00000000-0000-2204-0006-000000000000', '00000000-0000-2304-0009-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000098', '00000000-0000-2204-0008-000000000000', '00000000-0000-2304-0010-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000099', '00000000-0000-2304-0001-000000000000', '00000000-0000-2404-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000100', '00000000-0000-2304-0002-000000000000', '00000000-0000-2404-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000101', '00000000-0000-2404-0001-000000000000', '00000000-0000-2404-0002-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000102', '00000000-0000-2304-0003-000000000000', '00000000-0000-2404-0003-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000103', '00000000-0000-2304-0004-000000000000', '00000000-0000-2404-0003-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000104', '00000000-0000-2404-0003-000000000000', '00000000-0000-2404-0004-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000105', '00000000-0000-2304-0003-000000000000', '00000000-0000-2404-0005-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000106', '00000000-0000-2304-0005-000000000000', '00000000-0000-2404-0005-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000107', '00000000-0000-2304-0006-000000000000', '00000000-0000-2404-0006-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000108', '00000000-0000-2304-0008-000000000000', '00000000-0000-2404-0007-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000109', '00000000-0000-2404-0007-000000000000', '00000000-0000-2404-0008-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000110', '00000000-0000-2404-0001-000000000000', '00000000-0000-2504-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000111', '00000000-0000-2404-0002-000000000000', '00000000-0000-2504-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000112', '00000000-0000-2504-0001-000000000000', '00000000-0000-2504-0002-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000113', '00000000-0000-2404-0003-000000000000', '00000000-0000-2504-0003-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000114', '00000000-0000-2404-0004-000000000000', '00000000-0000-2504-0003-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000115', '00000000-0000-2504-0003-000000000000', '00000000-0000-2504-0004-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000116', '00000000-0000-2404-0003-000000000000', '00000000-0000-2504-0005-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000117', '00000000-0000-2404-0004-000000000000', '00000000-0000-2504-0005-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000118', '00000000-0000-2504-0005-000000000000', '00000000-0000-2504-0006-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000119', '00000000-0000-2504-0001-000000000000', '00000000-0000-2604-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000120', '00000000-0000-2504-0002-000000000000', '00000000-0000-2604-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000121', '00000000-0000-2604-0001-000000000000', '00000000-0000-2604-0002-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000122', '00000000-0000-2504-0001-000000000000', '00000000-0000-2604-0003-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000123', '00000000-0000-2504-0002-000000000000', '00000000-0000-2604-0003-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000124', '00000000-0000-2604-0003-000000000000', '00000000-0000-2604-0004-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000125', '00000000-0000-2504-0001-000000000000', '00000000-0000-2604-0005-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000126', '00000000-0000-2504-0002-000000000000', '00000000-0000-2604-0005-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000127', '00000000-0000-2504-0001-000000000000', '00000000-0000-2604-0006-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000128', '00000000-0000-2504-0002-000000000000', '00000000-0000-2604-0006-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000129', '00000000-0000-2604-0006-000000000000', '00000000-0000-2604-0007-000000000000', 'marriage');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000130', '00000000-0000-2504-0001-000000000000', '00000000-0000-2604-0008-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000131', '00000000-0000-2504-0002-000000000000', '00000000-0000-2604-0008-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000132', '00000000-0000-2504-0001-000000000000', '00000000-0000-2604-0009-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000133', '00000000-0000-2504-0002-000000000000', '00000000-0000-2604-0009-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000134', '00000000-0000-2604-0001-000000000000', '00000000-0000-2704-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000135', '00000000-0000-2604-0002-000000000000', '00000000-0000-2704-0001-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000136', '00000000-0000-2604-0003-000000000000', '00000000-0000-2704-0002-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000137', '00000000-0000-2604-0004-000000000000', '00000000-0000-2704-0002-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000138', '00000000-0000-2604-0003-000000000000', '00000000-0000-2704-0003-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000139', '00000000-0000-2604-0004-000000000000', '00000000-0000-2704-0003-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000140', '00000000-0000-2604-0006-000000000000', '00000000-0000-2704-0004-000000000000', 'biological_child');
+INSERT INTO relationships (id, person_a, person_b, type) VALUES ('11111111-1111-1111-1111-000000000141', '00000000-0000-2604-0007-000000000000', '00000000-0000-2704-0004-000000000000', 'biological_child');
 
--- Con cụ Khoa & cụ Nhàn
-(
-  '30000000-0000-0000-0000-000000000007',
-  'Nguyễn Mậu Thành',
-  'male', 1954, 11, 2, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 3, 1,
-  'Thầy giáo Thành',
-  'Nhà giáo Ưu tú, nguyên Hiệu trưởng trường THPT tại Trực Ninh. Cố vấn lịch sử và biên tập phả ký dòng họ.'
-),
-(
-  '30000000-0000-0000-0000-000000000008',
-  'Nguyễn Thị Hạnh',
-  'female', 1957, 8, 14, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, 3, NULL,
-  'Cô Hạnh (Giáo viên)',
-  'Giáo viên dạy môn Ngữ văn trường cấp 3 nghỉ hưu.'
-),
-(
-  '30000000-0000-0000-0000-000000000009',
-  'Nguyễn Mậu Đạt',
-  'male', 1960, 5, 28, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 3, 2,
-  'Chú Đạt (Sài Gòn)',
-  'Doanh nhân lĩnh vực Dệt may và Thương mại tại TP. Hồ Chí Minh. Thường niên tài trợ các hoạt động tu bổ từ đường họ.'
-),
-(
-  '30000000-0000-0000-0000-000000000010',
-  'Vũ Thị Ngọc',
-  'female', 1963, 10, 19, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, 3, NULL,
-  'Thím Ngọc',
-  'Quản lý doanh nghiệp gia đình tại TP. Hồ Chí Minh.'
-),
+-- 4. Thêm Thông tin Riêng tư (person_details_private)
+INSERT INTO person_details_private (person_id, phone, occupation, residence, notes) VALUES ('00000000-0000-2504-0001-000000000000', NULL, 'Chủ tịch UBMTTQ Thị trấn Cổ Lễ / Trưởng nam Ngành 4', 'Thôn Thượng Đền, Thị trấn Cổ Lễ, Trực Ninh, Nam Định', NULL);
+INSERT INTO person_details_private (person_id, phone, occupation, residence, notes) VALUES ('00000000-0000-2604-0001-000000000000', NULL, 'Thiếu tá Công an tỉnh Đồng Nai', NULL, NULL);
+INSERT INTO person_details_private (person_id, phone, occupation, residence, notes) VALUES ('00000000-0000-2604-0008-000000000000', NULL, 'Tiến sĩ Viện Khoa học Thủy lợi Việt Nam', NULL, NULL);
 
--- Con cụ Duẩn & cụ Thược
-(
-  '30000000-0000-0000-0000-000000000011',
-  'Nguyễn Mậu Thắng',
-  'male', 1964, 1, 16, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 3, 1,
-  'Chú Thắng (Kỹ sư)',
-  'Kỹ sư Xây dựng Cầu đường, hiện công tác tại Tổng công ty Xây dựng Giao thông tại Hà Nội.'
-),
-(
-  '30000000-0000-0000-0000-000000000012',
-  'Trần Thu Hương',
-  'female', 1968, 3, 25, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, 3, NULL,
-  'Thím Hương',
-  'Công tác tại Viện Thiết kế Giao thông Vận tải Hà Nội.'
-),
-(
-  '30000000-0000-0000-0000-000000000013',
-  'Nguyễn Thị Lệ',
-  'female', 1969, 7, 30, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 3, 2,
-  'Cô Lệ',
-  'Cán bộ Y tế tại Trung tâm Y tế huyện Trực Ninh, Nam Định.'
-),
-(
-  '30000000-0000-0000-0000-000000000014',
-  'Đinh Văn Hải',
-  'male', 1966, 12, 10, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, 3, NULL,
-  'Chú Hải',
-  'Cán bộ Viễn thông VNPT Trực Ninh, Nam Định.'
-);
+-- 5. Thêm Sự kiện Tế tự Dòng họ (custom_events)
+INSERT INTO custom_events (id, title, date, description, type, is_lunar, lunar_day, lunar_month) VALUES ('22222222-2222-2222-2222-000000000001', 'Giỗ Thủy Tổ Nguyễn Mậu Thái (Phúc Hội)', '2026-07-18', 'Ngày kỵ nhật Thủy Tổ Họ Nguyễn Mậu tại Cổ Lễ (Mồng 5 tháng 6 Âm lịch). Con cháu toàn họ tề tựu tế lễ tại Từ đường Thượng Đền.', 'death_anniversary', true, 5, 6);
+INSERT INTO custom_events (id, title, date, description, type, is_lunar, lunar_day, lunar_month) VALUES ('22222222-2222-2222-2222-000000000002', 'Giỗ Tổ Tướng Công Nguyễn Mậu Hoàn (Ngành 4)', '2026-02-28', 'Ngày kỵ nhật Tướng Công Nguyễn Mậu Hoàn (Tự Tuấn Thông / Viết Nghĩa, 12 tháng Giêng Âm lịch). Triều đình cấp 100 mẫu ruộng và dân làng tế tự.', 'death_anniversary', true, 12, 1);
+INSERT INTO custom_events (id, title, date, description, type, is_lunar, lunar_day, lunar_month) VALUES ('22222222-2222-2222-2222-000000000003', 'Giỗ Tổ Ngành Nhất Nguyễn Mậu Trường (Phúc Tiên)', '2026-11-09', 'Ngày kỵ nhật Tổ Ngành Nhất (Mồng 1 tháng 10 Âm lịch). Tế lễ tại Từ đường Ngành Nhất.', 'death_anniversary', true, 1, 10);
+INSERT INTO custom_events (id, title, date, description, type, is_lunar, lunar_day, lunar_month) VALUES ('22222222-2222-2222-2222-000000000004', 'Lễ Hội Chùa Cổ Lễ & Đền Thượng Lãng', '2026-10-24', 'Lễ hội truyền thống Chùa Cổ Lễ và Đền Thượng tưởng nhớ Đức Thánh Nguyễn Minh Không (13-16 tháng 9 Âm lịch).', 'gathering', true, 15, 9);
 
--- ============================================================
--- ĐỜI 4: THẾ HỆ TRƯỞNG THÀNH HIỆN NAY
--- ============================================================
-INSERT INTO persons (id, full_name, gender, birth_year, birth_month, birth_day, death_year, death_month, death_day, death_lunar_year, death_lunar_month, death_lunar_day, is_deceased, is_in_law, generation, birth_order, other_names, note)
-VALUES
--- Con bác Hùng & bác Mai
-(
-  '40000000-0000-0000-0000-000000000001',
-  'Nguyễn Mậu Tuấn',
-  'male', 1976, 4, 18, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 4, 1,
-  'Trưởng tộc đương nhiệm',
-  'Trưởng nam đời 4. Trưởng ban liên lạc dòng họ Nguyễn Mậu Ngành 4 tại Thôn Thượng Đền. Giám đốc Công ty Xây lắp & Thương mại tại Hà Nội và Nam Định.'
-),
-(
-  '40000000-0000-0000-0000-000000000002',
-  'Phạm Thị Hồng Hạnh',
-  'female', 1979, 8, 22, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, 4, NULL,
-  'Chị Hạnh',
-  'Thạc sĩ Kinh tế, Kế toán trưởng Tổng công ty tại Hà Nội.'
-),
-(
-  '40000000-0000-0000-0000-000000000003',
-  'Nguyễn Thị Bích Thủy',
-  'female', 1981, 11, 9, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 4, 2,
-  'Chị Thủy',
-  'Giảng viên Khoa Kinh tế Trường Đại học Thương Mại Hà Nội.'
-),
-(
-  '40000000-0000-0000-0000-000000000004',
-  'Lê Hoàng Long',
-  'male', 1980, 5, 14, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, 4, NULL,
-  'Anh Long',
-  'Tiến sĩ Luật học, Trọng tài viên Thương mại tại Hà Nội.'
-),
-(
-  '40000000-0000-0000-0000-000000000005',
-  'Nguyễn Mậu Tùng',
-  'male', 1986, 2, 26, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 4, 3,
-  'Anh Tùng (IT)',
-  'Kỹ sư Phần mềm & Giải pháp Cloud, phụ trách số hóa gia phả trực tuyến GiaPha-OS cho dòng họ.'
-),
-(
-  '40000000-0000-0000-0000-000000000006',
-  'Ngô Phương Linh',
-  'female', 1989, 9, 12, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, 4, NULL,
-  'Chị Linh',
-  'Chuyên gia Quản trị Nhân sự (HR Manager) tại Tập đoàn Công nghệ Hà Nội.'
-),
-
--- Con bác Cường & bác Lan
-(
-  '40000000-0000-0000-0000-000000000007',
-  'Nguyễn Mậu Minh',
-  'male', 1982, 7, 3, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 4, 1,
-  'Bác sĩ Minh',
-  'Bác sĩ Ngoại khoa Bệnh viện Đa khoa Tỉnh Nam Định.'
-),
-(
-  '40000000-0000-0000-0000-000000000008',
-  'Hoàng Yến Nhi',
-  'female', 1985, 3, 17, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, 4, NULL,
-  'Chị Nhi',
-  'Bác sĩ Nhi khoa Bệnh viện Phụ sản Nam Định.'
-),
-(
-  '40000000-0000-0000-0000-000000000009',
-  'Nguyễn Thị Thùy Linh',
-  'female', 1988, 10, 31, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 4, 2,
-  'Chị Thùy Linh',
-  'Dược sĩ, quản lý chuỗi nhà thuốc tại TP. Nam Định.'
-),
-
--- Con thầy Thành & cô Hạnh
-(
-  '40000000-0000-0000-0000-000000000010',
-  'Nguyễn Mậu Quang',
-  'male', 1983, 12, 1, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 4, 1,
-  'Kiến trúc sư Quang',
-  'Thạc sĩ Kiến trúc sư, chủ trì thiết kế công trình dân dụng & tâm linh tại Hà Nội.'
-),
-(
-  '40000000-0000-0000-0000-000000000011',
-  'Đặng Thu Trang',
-  'female', 1986, 6, 8, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, 4, NULL,
-  'Chị Trang',
-  'Nhà thiết kế Nội thất tại Hà Nội.'
-),
-(
-  '40000000-0000-0000-0000-000000000012',
-  'Nguyễn Mậu Tiến',
-  'male', 1987, 8, 19, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 4, 2,
-  'Tiến sĩ Tiến',
-  'Tiến sĩ Nông nghiệp Công nghệ cao, Giảng viên Học viện Nông nghiệp Việt Nam.'
-),
-
--- Con chú Đạt & thím Ngọc (Sài Gòn)
-(
-  '40000000-0000-0000-0000-000000000013',
-  'Nguyễn Mậu Đức',
-  'male', 1990, 4, 25, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 4, 1,
-  'Anh Đức (Sài Gòn)',
-  'Giám đốc Kinh doanh Công ty Xuất nhập khẩu tại Quận 1, TP. Hồ Chí Minh.'
-),
-(
-  '40000000-0000-0000-0000-000000000014',
-  'Trương Kiều Oanh',
-  'female', 1993, 11, 15, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, 4, NULL,
-  'Chị Oanh',
-  'Chuyên viên Quan hệ Khách hàng Ngân hàng Quốc tế tại TP.HCM.'
-),
-
--- Con chú Thắng & thím Hương
-(
-  '40000000-0000-0000-0000-000000000015',
-  'Nguyễn Mậu Hoàng',
-  'male', 1994, 9, 7, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 4, 1,
-  'Anh Hoàng',
-  'Chuyên viên Phân tích Đầu tư Tài chính tại Hà Nội.'
-);
-
--- ============================================================
--- ĐỜI 5: THẾ HỆ TRẺ (HẬU DUỆ MĂNG NON)
--- ============================================================
-INSERT INTO persons (id, full_name, gender, birth_year, birth_month, birth_day, death_year, death_month, death_day, death_lunar_year, death_lunar_month, death_lunar_day, is_deceased, is_in_law, generation, birth_order, other_names, note)
-VALUES
--- Con anh Tuấn & chị Hạnh
-(
-  '50000000-0000-0000-0000-000000000001',
-  'Nguyễn Mậu Minh Khang',
-  'male', 2004, 5, 20, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 5, 1,
-  'Cháu Khang',
-  'Sinh viên Khoa Khoa học Máy tính Đại học Bách Khoa Hà Nội, đạt giải Nhì Học sinh Giỏi Quốc gia Tin học.'
-),
-(
-  '50000000-0000-0000-0000-000000000002',
-  'Nguyễn Mậu Bảo An',
-  'male', 2009, 10, 14, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 5, 2,
-  'Cháu Bảo An',
-  'Học sinh THPT Chuyên Hà Nội - Amsterdam.'
-),
-
--- Con anh Tùng & chị Linh
-(
-  '50000000-0000-0000-0000-000000000003',
-  'Nguyễn Mậu Đăng Khoa',
-  'male', 2016, 6, 1, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 5, 1,
-  'Bé Khoa',
-  'Học sinh Tiểu học tại Cầu Giấy, Hà Nội.'
-),
-(
-  '50000000-0000-0000-0000-000000000004',
-  'Nguyễn Tuệ Mẫn',
-  'female', 2020, 12, 18, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 5, 2,
-  'Bé Mẫn',
-  'Cháu gái út chi trưởng đời 5.'
-),
-
--- Con bác sĩ Minh & chị Nhi
-(
-  '50000000-0000-0000-0000-000000000005',
-  'Nguyễn Mậu Nhật Nam',
-  'male', 2012, 3, 29, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 5, 1,
-  'Cháu Nhật Nam',
-  'Học sinh THCS Lê Hồng Phong, TP. Nam Định.'
-),
-(
-  '50000000-0000-0000-0000-000000000006',
-  'Nguyễn Thảo Nguyên',
-  'female', 2015, 8, 8, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 5, 2,
-  'Cháu Thảo Nguyên',
-  'Học sinh Tiểu học tại TP. Nam Định.'
-),
-
--- Con KTS Quang & chị Trang
-(
-  '50000000-0000-0000-0000-000000000007',
-  'Nguyễn Mậu Gia Bảo',
-  'male', 2014, 1, 15, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 5, 1,
-  'Cháu Gia Bảo',
-  'Học sinh Tiểu học tại Đống Đa, Hà Nội.'
-),
-(
-  '50000000-0000-0000-0000-000000000008',
-  'Nguyễn Ngọc Anh Thư',
-  'female', 2018, 11, 23, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 5, 2,
-  'Cháu Anh Thư',
-  'Học sinh mầm non tại Hà Nội.'
-),
-
--- Con anh Đức & chị Oanh (Sài Gòn)
-(
-  '50000000-0000-0000-0000-000000000009',
-  'Nguyễn Mậu Thiên Phú',
-  'male', 2021, 4, 30, NULL, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, 5, 1,
-  'Bé Thiên Phú',
-  'Cháu nội nhánh Sài Gòn đời 5.'
-);
-
--- ============================================================
--- THÔNG TIN RIÊNG TƯ (person_details_private)
--- ============================================================
-INSERT INTO person_details_private (person_id, phone_number, occupation, current_residence)
-VALUES
-('30000000-0000-0000-0000-000000000002', '0912 345 001', 'Giáo viên nghỉ hưu - Trông coi từ đường', 'Thôn Thượng Đền, TT. Cổ Lễ, H. Trực Ninh, Nam Định'),
-('30000000-0000-0000-0000-000000000003', '0913 456 002', 'Bác sĩ Quân y nghỉ hưu', 'Trần Hưng Đạo, TP. Nam Định'),
-('30000000-0000-0000-0000-000000000007', '0915 678 003', 'Nhà giáo Ưu tú', 'Thị trấn Cổ Lễ, H. Trực Ninh, Nam Định'),
-('30000000-0000-0000-0000-000000000009', '0903 890 004', 'Doanh nhân Dệt may', 'Quận 7, TP. Hồ Chí Minh'),
-('30000000-0000-0000-0000-000000000011', '0988 123 005', 'Kỹ sư Xây dựng Giao thông', 'Thanh Xuân, Hà Nội'),
-('40000000-0000-0000-0000-000000000001', '0918 888 444', 'Giám đốc Doanh nghiệp - Trưởng tộc', 'Cầu Giấy, Hà Nội & Thôn Thượng Đền, Cổ Lễ'),
-('40000000-0000-0000-0000-000000000005', '0977 999 444', 'Kỹ sư Phần mềm (IT)', 'Hà Đông, Hà Nội'),
-('40000000-0000-0000-0000-000000000007', '0916 222 333', 'Bác sĩ Ngoại khoa', 'TP. Nam Định'),
-('40000000-0000-0000-0000-000000000010', '0904 555 666', 'Kiến trúc sư Trưởng', 'Đống Đa, Hà Nội'),
-('40000000-0000-0000-0000-000000000013', '0908 777 888', 'Giám đốc Kinh doanh Xuất nhập khẩu', 'Thảo Điền, TP. Thủ Đức, TP.HCM');
-
--- ============================================================
--- QUAN HỆ HÔN NHÂN & HUYẾT THỐNG (relationships)
--- ============================================================
-
--- Đời 1: Hôn nhân
-INSERT INTO relationships (type, person_a, person_b, note) VALUES
-('marriage', '10000000-0000-0000-0000-000000000001', '10000000-0000-0000-0000-000000000002', 'Vợ chồng Cụ Khởi Tổ Ngành 4');
-
--- Đời 1 -> Đời 2: Cha Mẹ -> Con
-INSERT INTO relationships (type, person_a, person_b) VALUES
-('biological_child', '10000000-0000-0000-0000-000000000001', '20000000-0000-0000-0000-000000000001'),
-('biological_child', '10000000-0000-0000-0000-000000000002', '20000000-0000-0000-0000-000000000001'),
-('biological_child', '10000000-0000-0000-0000-000000000001', '20000000-0000-0000-0000-000000000003'),
-('biological_child', '10000000-0000-0000-0000-000000000002', '20000000-0000-0000-0000-000000000003'),
-('biological_child', '10000000-0000-0000-0000-000000000001', '20000000-0000-0000-0000-000000000005'),
-('biological_child', '10000000-0000-0000-0000-000000000002', '20000000-0000-0000-0000-000000000005'),
-('biological_child', '10000000-0000-0000-0000-000000000001', '20000000-0000-0000-0000-000000000007'),
-('biological_child', '10000000-0000-0000-0000-000000000002', '20000000-0000-0000-0000-000000000007');
-
--- Đời 2: Hôn nhân
-INSERT INTO relationships (type, person_a, person_b, note) VALUES
-('marriage', '20000000-0000-0000-0000-000000000001', '20000000-0000-0000-0000-000000000002', 'Cụ Trọng & Cụ Mùi (Nhánh Trưởng)'),
-('marriage', '20000000-0000-0000-0000-000000000003', '20000000-0000-0000-0000-000000000004', 'Cụ Khoa & Cụ Nhàn (Nhánh Hai)'),
-('marriage', '20000000-0000-0000-0000-000000000005', '20000000-0000-0000-0000-000000000006', 'Cụ Thanh & Cụ Cường (Làng Cổ Lễ)'),
-('marriage', '20000000-0000-0000-0000-000000000007', '20000000-0000-0000-0000-000000000008', 'Cụ Duẩn & Cụ Thược (Nhánh Ba)');
-
--- Đời 2 -> Đời 3: Nhánh Trưởng (Cụ Trọng & Cụ Mùi)
-INSERT INTO relationships (type, person_a, person_b) VALUES
-('biological_child', '20000000-0000-0000-0000-000000000001', '30000000-0000-0000-0000-000000000001'),
-('biological_child', '20000000-0000-0000-0000-000000000002', '30000000-0000-0000-0000-000000000001'),
-('biological_child', '20000000-0000-0000-0000-000000000001', '30000000-0000-0000-0000-000000000003'),
-('biological_child', '20000000-0000-0000-0000-000000000002', '30000000-0000-0000-0000-000000000003'),
-('biological_child', '20000000-0000-0000-0000-000000000001', '30000000-0000-0000-0000-000000000005'),
-('biological_child', '20000000-0000-0000-0000-000000000002', '30000000-0000-0000-0000-000000000005');
-
--- Đời 2 -> Đời 3: Nhánh Hai (Cụ Khoa & Cụ Nhàn)
-INSERT INTO relationships (type, person_a, person_b) VALUES
-('biological_child', '20000000-0000-0000-0000-000000000003', '30000000-0000-0000-0000-000000000007'),
-('biological_child', '20000000-0000-0000-0000-000000000004', '30000000-0000-0000-0000-000000000007'),
-('biological_child', '20000000-0000-0000-0000-000000000003', '30000000-0000-0000-0000-000000000009'),
-('biological_child', '20000000-0000-0000-0000-000000000004', '30000000-0000-0000-0000-000000000009');
-
--- Đời 2 -> Đời 3: Nhánh Ba (Cụ Duẩn & Cụ Thược)
-INSERT INTO relationships (type, person_a, person_b) VALUES
-('biological_child', '20000000-0000-0000-0000-000000000007', '30000000-0000-0000-0000-000000000011'),
-('biological_child', '20000000-0000-0000-0000-000000000008', '30000000-0000-0000-0000-000000000011'),
-('biological_child', '20000000-0000-0000-0000-000000000007', '30000000-0000-0000-0000-000000000013'),
-('biological_child', '20000000-0000-0000-0000-000000000008', '30000000-0000-0000-0000-000000000013');
-
--- Đời 3: Hôn nhân
-INSERT INTO relationships (type, person_a, person_b) VALUES
-('marriage', '30000000-0000-0000-0000-000000000001', '30000000-0000-0000-0000-000000000002'),
-('marriage', '30000000-0000-0000-0000-000000000003', '30000000-0000-0000-0000-000000000004'),
-('marriage', '30000000-0000-0000-0000-000000000005', '30000000-0000-0000-0000-000000000006'),
-('marriage', '30000000-0000-0000-0000-000000000007', '30000000-0000-0000-0000-000000000008'),
-('marriage', '30000000-0000-0000-0000-000000000009', '30000000-0000-0000-0000-000000000010'),
-('marriage', '30000000-0000-0000-0000-000000000011', '30000000-0000-0000-0000-000000000012'),
-('marriage', '30000000-0000-0000-0000-000000000013', '30000000-0000-0000-0000-000000000014');
-
--- Đời 3 -> Đời 4: Con Bác Hùng & Bác Mai
-INSERT INTO relationships (type, person_a, person_b) VALUES
-('biological_child', '30000000-0000-0000-0000-000000000001', '40000000-0000-0000-0000-000000000001'),
-('biological_child', '30000000-0000-0000-0000-000000000002', '40000000-0000-0000-0000-000000000001'),
-('biological_child', '30000000-0000-0000-0000-000000000001', '40000000-0000-0000-0000-000000000003'),
-('biological_child', '30000000-0000-0000-0000-000000000002', '40000000-0000-0000-0000-000000000003'),
-('biological_child', '30000000-0000-0000-0000-000000000001', '40000000-0000-0000-0000-000000000005'),
-('biological_child', '30000000-0000-0000-0000-000000000002', '40000000-0000-0000-0000-000000000005');
-
--- Đời 3 -> Đời 4: Con Bác Cường & Bác Lan
-INSERT INTO relationships (type, person_a, person_b) VALUES
-('biological_child', '30000000-0000-0000-0000-000000000003', '40000000-0000-0000-0000-000000000007'),
-('biological_child', '30000000-0000-0000-0000-000000000004', '40000000-0000-0000-0000-000000000007'),
-('biological_child', '30000000-0000-0000-0000-000000000003', '40000000-0000-0000-0000-000000000009'),
-('biological_child', '30000000-0000-0000-0000-000000000004', '40000000-0000-0000-0000-000000000009');
-
--- Đời 3 -> Đời 4: Con Thầy Thành & Cô Hạnh
-INSERT INTO relationships (type, person_a, person_b) VALUES
-('biological_child', '30000000-0000-0000-0000-000000000007', '40000000-0000-0000-0000-000000000010'),
-('biological_child', '30000000-0000-0000-0000-000000000008', '40000000-0000-0000-0000-000000000010'),
-('biological_child', '30000000-0000-0000-0000-000000000007', '40000000-0000-0000-0000-000000000012'),
-('biological_child', '30000000-0000-0000-0000-000000000008', '40000000-0000-0000-0000-000000000012');
-
--- Đời 3 -> Đời 4: Con Chú Đạt & Thím Ngọc
-INSERT INTO relationships (type, person_a, person_b) VALUES
-('biological_child', '30000000-0000-0000-0000-000000000009', '40000000-0000-0000-0000-000000000013'),
-('biological_child', '30000000-0000-0000-0000-000000000010', '40000000-0000-0000-0000-000000000013');
-
--- Đời 3 -> Đời 4: Con Chú Thắng & Thím Hương
-INSERT INTO relationships (type, person_a, person_b) VALUES
-('biological_child', '30000000-0000-0000-0000-000000000011', '40000000-0000-0000-0000-000000000015'),
-('biological_child', '30000000-0000-0000-0000-000000000012', '40000000-0000-0000-0000-000000000015');
-
--- Đời 4: Hôn nhân
-INSERT INTO relationships (type, person_a, person_b) VALUES
-('marriage', '40000000-0000-0000-0000-000000000001', '40000000-0000-0000-0000-000000000002'),
-('marriage', '40000000-0000-0000-0000-000000000003', '40000000-0000-0000-0000-000000000004'),
-('marriage', '40000000-0000-0000-0000-000000000005', '40000000-0000-0000-0000-000000000006'),
-('marriage', '40000000-0000-0000-0000-000000000007', '40000000-0000-0000-0000-000000000008'),
-('marriage', '40000000-0000-0000-0000-000000000010', '40000000-0000-0000-0000-000000000011'),
-('marriage', '40000000-0000-0000-0000-000000000013', '40000000-0000-0000-0000-000000000014');
-
--- Đời 4 -> Đời 5: Con Anh Tuấn & Chị Hạnh
-INSERT INTO relationships (type, person_a, person_b) VALUES
-('biological_child', '40000000-0000-0000-0000-000000000001', '50000000-0000-0000-0000-000000000001'),
-('biological_child', '40000000-0000-0000-0000-000000000002', '50000000-0000-0000-0000-000000000001'),
-('biological_child', '40000000-0000-0000-0000-000000000001', '50000000-0000-0000-0000-000000000002'),
-('biological_child', '40000000-0000-0000-0000-000000000002', '50000000-0000-0000-0000-000000000002');
-
--- Đời 4 -> Đời 5: Con Anh Tùng & Chị Linh
-INSERT INTO relationships (type, person_a, person_b) VALUES
-('biological_child', '40000000-0000-0000-0000-000000000005', '50000000-0000-0000-0000-000000000003'),
-('biological_child', '40000000-0000-0000-0000-000000000006', '50000000-0000-0000-0000-000000000003'),
-('biological_child', '40000000-0000-0000-0000-000000000005', '50000000-0000-0000-0000-000000000004'),
-('biological_child', '40000000-0000-0000-0000-000000000006', '50000000-0000-0000-0000-000000000004');
-
--- Đời 4 -> Đời 5: Con Bác sĩ Minh & Chị Nhi
-INSERT INTO relationships (type, person_a, person_b) VALUES
-('biological_child', '40000000-0000-0000-0000-000000000007', '50000000-0000-0000-0000-000000000005'),
-('biological_child', '40000000-0000-0000-0000-000000000008', '50000000-0000-0000-0000-000000000005'),
-('biological_child', '40000000-0000-0000-0000-000000000007', '50000000-0000-0000-0000-000000000006'),
-('biological_child', '40000000-0000-0000-0000-000000000008', '50000000-0000-0000-0000-000000000006');
-
--- Đời 4 -> Đời 5: Con KTS Quang & Chị Trang
-INSERT INTO relationships (type, person_a, person_b) VALUES
-('biological_child', '40000000-0000-0000-0000-000000000010', '50000000-0000-0000-0000-000000000007'),
-('biological_child', '40000000-0000-0000-0000-000000000011', '50000000-0000-0000-0000-000000000007'),
-('biological_child', '40000000-0000-0000-0000-000000000010', '50000000-0000-0000-0000-000000000008'),
-('biological_child', '40000000-0000-0000-0000-000000000011', '50000000-0000-0000-0000-000000000008');
-
--- Đời 4 -> Đời 5: Con Anh Đức & Chị Oanh (Sài Gòn)
-INSERT INTO relationships (type, person_a, person_b) VALUES
-('biological_child', '40000000-0000-0000-0000-000000000013', '50000000-0000-0000-0000-000000000009'),
-('biological_child', '40000000-0000-0000-0000-000000000014', '50000000-0000-0000-0000-000000000009');
-
--- ============================================================
--- SỰ KIỆN DÒNG HỌ & KỴ NHẬT (custom_events)
--- ============================================================
-INSERT INTO custom_events (id, name, content, event_date, location)
-VALUES
-(
-  'e0000000-0000-0000-0000-000000000001',
-  'Lễ Giỗ Cụ Khởi Tổ Nguyễn Mậu Phúc (Rằm tháng 8 Âm lịch)',
-  'Lễ kỵ nhật thường niên của Cụ Khởi Tổ Ngành 4. Toàn thể con cháu các chi tập trung tế lễ tại Nhà thờ họ, báo công và sum họp gia tộc.',
-  '2026-09-25',
-  'Từ đường Họ Nguyễn Mậu Ngành 4, Thôn Thượng Đền, TT. Cổ Lễ, H. Trực Ninh, Nam Định'
-),
-(
-  'e0000000-0000-0000-0000-000000000002',
-  'Lễ Tế Xuân & Hội Đền Thượng - Chùa Cổ Lễ',
-  'Tham gia đại lễ truyền thống tưởng nhớ Quốc sư Nguyễn Minh Không và các bậc tiền hiền khai hoang mở đất Cổ Lễ.',
-  '2026-10-24',
-  'Quần thể Di tích Chùa Cổ Lễ & Đền Thượng, TT. Cổ Lễ, H. Trực Ninh'
-),
-(
-  'e0000000-0000-0000-0000-000000000003',
-  'Lễ Tảo Mộ & Thanh Minh Dòng Tộc',
-  'Con cháu nội ngoại tề tựu dâng hương, tu bổ, dọn dẹp các phần mộ tổ tiên tại Nghĩa trang Thượng Đền và Đồng Thượng.',
-  '2026-04-05',
-  'Khu lăng mộ dòng họ Nguyễn Mậu, Thôn Thượng Đền, Cổ Lễ'
-),
-(
-  'e0000000-0000-0000-0000-000000000004',
-  'Lễ Khuyến Học & Tuyên Dương Học Sinh - Sinh Viên Xuất Sắc',
-  'Trao học bổng khuyến học dòng họ Nguyễn Mậu Ngành 4 cho các cháu đạt thành tích cao trong học tập, thi đỗ đại học và đạt giải thưởng các cấp.',
-  '2026-02-15',
-  'Nhà thờ họ Nguyễn Mậu Ngành 4, Thôn Thượng Đền, TT. Cổ Lễ'
-);
-
--- ============================================================
--- HOÀN TẤT NẠP DỮ LIỆU GIA PHẢ HỌ NGUYỄN MẬU (NGÀNH 4)
--- Tổng số thành viên: 38 người (5 thế hệ)
--- Gồm: Đời 1 (2), Đời 2 (8), Đời 3 (14), Đời 4 (15), Đời 5 (9)
--- ============================================================
+COMMIT;
