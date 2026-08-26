@@ -23,6 +23,7 @@ export default function FamilyNodeCard({
   onClickName,
   isRingVisible = false,
   isPlusVisible = false,
+  level = 0,
 }: FamilyNodeCardProps) {
   const { showAvatar, setMemberModalId } = useMemberListView();
 
@@ -106,6 +107,16 @@ export default function FamilyNodeCard({
                   {word}
                 </span>
               ))}
+        </div>
+
+        {/* Generation Badge */}
+        <div className="flex items-center justify-center mt-0.5">
+          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-semibold bg-amber-50 text-amber-900 border border-amber-200/80 shadow-xs tracking-tight whitespace-nowrap">
+            {person.is_in_law
+              ? (person.gender === "female" ? "Dâu" : "Rể") +
+                (person.generation ? ` - Đời ${person.generation}` : "")
+              : `Đời thứ ${person.generation ?? level + 1}`}
+          </span>
         </div>
       </div>
     </div>

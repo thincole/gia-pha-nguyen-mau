@@ -182,27 +182,31 @@ export const MindmapNode = memo(
                             ` → ${data.person.death_lunar_year || data.person.death_year || "Chưa rõ"}`}
                         </span>
                       </span>
-                      {(data.person.is_deceased || data.person.is_in_law) && (
-                        <div className="flex flex-wrap items-center gap-1 mt-1.5 shrink-0">
-                          {data.person.is_in_law && (
-                            <span
-                              className={`inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-widest shadow-xs border ${
-                                data.person.gender === "male"
-                                  ? "bg-sky-50 text-sky-700 border-sky-200/60"
-                                  : data.person.gender === "female"
-                                    ? "bg-rose-50 text-rose-700 border-rose-200/60"
-                                    : "bg-stone-50 text-stone-700 border-stone-200/60"
-                              }`}
-                            >
-                              {data.person.gender === "male"
-                                ? "Rể"
+                      <div className="flex flex-wrap items-center gap-1 mt-1.5 shrink-0">
+                        <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold bg-amber-50 text-amber-800 border border-amber-200/60 shadow-xs">
+                          {data.person.is_in_law
+                            ? (data.person.gender === "female" ? "Dâu" : "Rể") +
+                              (data.person.generation ? ` - Đời ${data.person.generation}` : "")
+                            : `Đời thứ ${data.person.generation ?? level + 1}`}
+                        </span>
+                        {data.person.is_in_law && (
+                          <span
+                            className={`inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold uppercase tracking-widest shadow-xs border ${
+                              data.person.gender === "male"
+                                ? "bg-sky-50 text-sky-700 border-sky-200/60"
                                 : data.person.gender === "female"
-                                  ? "Dâu"
-                                  : "Khách"}
-                            </span>
-                          )}
-                        </div>
-                      )}
+                                  ? "bg-rose-50 text-rose-700 border-rose-200/60"
+                                  : "bg-stone-50 text-stone-700 border-stone-200/60"
+                            }`}
+                          >
+                            {data.person.gender === "male"
+                              ? "Rể"
+                              : data.person.gender === "female"
+                                ? "Dâu"
+                                : "Khách"}
+                          </span>
+                        )}
+                      </div>
                     </div>
                   </div>
 
