@@ -1646,29 +1646,32 @@ const id_d25_cach = addPerson({
 });
 addMarriage(id_d25_thich, id_d25_cach);
 
-const id_d25_tuong = addPerson({
-  id: makeUUID(25, 4, 3),
-  full_name: 'Nguyễn Mậu Tường',
+// 2. Con cụ Phó Huỳnh (Đủ 9 người con: 6 trai, 3 gái)
+const id_d25_tuan_huynh = addPerson({
+  id: makeUUID(25, 4, 40),
+  full_name: 'Nguyễn Mậu Tuân',
   gender: 'male',
   generation: 25,
-  birth_order: 7,
-  birth_year: 1935,
-  is_deceased: false,
-  note: 'Trưởng ban biên soạn Ngọc Phả Nguyễn Mậu Tộc năm 2001. Sinh năm Ất Hợi (1935), con thứ cụ Phó Huỳnh.',
+  birth_order: 1,
+  birth_year: 1925,
+  death_year: 1928,
+  is_deceased: true,
+  note: 'Con trai cả cụ Phó Huỳnh. Sinh năm Ất Sửu (1925), mất lúc 3 tuổi.',
 });
-addParentsChild(id_d24_huynh, id_d24_hat, id_d25_tuong);
+addParentsChild(id_d24_huynh, id_d24_hat, id_d25_tuan_huynh);
 
-const id_d25_tuong_ba = addPerson({
-  id: makeUUID(25, 4, 4),
-  full_name: 'Nguyễn Thị Loan',
+const id_d25_nhi = addPerson({
+  id: makeUUID(25, 4, 41),
+  full_name: 'Nguyễn Thị Nhị',
   gender: 'female',
   generation: 25,
-  birth_year: 1940,
-  is_in_law: true,
-  is_deceased: false,
-  note: 'Vợ cụ Nguyễn Mậu Tường, sinh năm Canh Thìn (1940).',
+  birth_order: 2,
+  birth_year: 1927,
+  death_year: 1927,
+  is_deceased: true,
+  note: 'Con gái thứ 2 cụ Phó Huỳnh. Sinh năm Đinh Mão (1927), mất lúc 7 tháng tuổi.',
 });
-addMarriage(id_d25_tuong, id_d25_tuong_ba);
+addParentsChild(id_d24_huynh, id_d24_hat, id_d25_nhi);
 
 const id_d25_dien = addPerson({
   id: makeUUID(25, 4, 5),
@@ -1684,7 +1687,7 @@ const id_d25_dien = addPerson({
   death_lunar_month: 3,
   death_lunar_year: 1998,
   is_deceased: true,
-  note: 'Huyện ủy viên Trực Ninh. Sinh 1929 mất 17/3 Mậu Dần (1998) thọ 70 tuổi.',
+  note: 'Huyện ủy viên Trực Ninh. Con trai thứ 3 cụ Phó Huỳnh. Sinh 1929 mất 17/3 Mậu Dần (1998) thọ 70 tuổi.',
 });
 addParentsChild(id_d24_huynh, id_d24_hat, id_d25_dien);
 
@@ -1699,6 +1702,94 @@ const id_d25_dien_ba = addPerson({
   note: 'Vợ cụ Nguyễn Mậu Điển, quê xứ Đông Thượng.',
 });
 addMarriage(id_d25_dien, id_d25_dien_ba);
+
+const id_d25_nho_huynh = addPerson({
+  id: makeUUID(25, 4, 42),
+  full_name: 'Nguyễn Thị Nho',
+  gender: 'female',
+  generation: 25,
+  birth_order: 4,
+  birth_year: 1931,
+  is_deceased: false,
+  note: 'Con gái thứ 4 cụ Phó Huỳnh. Sinh năm Tân Mùi (1931). Chồng là Vũ Đức Thắng (1930) Nam Định.',
+});
+addParentsChild(id_d24_huynh, id_d24_hat, id_d25_nho_huynh);
+
+const id_d25_mau_huynh = addPerson({
+  id: makeUUID(25, 4, 44),
+  full_name: 'Nguyễn Mậu',
+  gender: 'male',
+  generation: 25,
+  birth_order: 5,
+  birth_year: 1932,
+  death_year: 1932,
+  is_deceased: true,
+  note: 'Con trai thứ 5 cụ Phó Huỳnh. Sinh năm Nhâm Thân (1932), mất lúc 6 ngày tuổi.',
+});
+addParentsChild(id_d24_huynh, id_d24_hat, id_d25_mau_huynh);
+
+const id_d25_nhu_huynh = addPerson({
+  id: makeUUID(25, 4, 43),
+  full_name: 'Nguyễn Thị Nhu',
+  gender: 'female',
+  generation: 25,
+  birth_order: 6,
+  birth_year: 1934,
+  death_year: 1936,
+  is_deceased: true,
+  note: 'Con gái thứ 6 cụ Phó Huỳnh. Sinh năm Giáp Tuất (1934), mất lúc 2 tuổi.',
+});
+addParentsChild(id_d24_huynh, id_d24_hat, id_d25_nhu_huynh);
+
+const id_d25_tuong = addPerson({
+  id: makeUUID(25, 4, 3),
+  full_name: 'Nguyễn Mậu Tường',
+  gender: 'male',
+  generation: 25,
+  birth_order: 7,
+  birth_year: 1935,
+  is_deceased: false,
+  note: 'Trưởng ban biên soạn Ngọc Phả Nguyễn Mậu Tộc năm 2001. Sinh năm Ất Hợi (1935), con trai thứ 7 cụ Phó Huỳnh.',
+});
+addParentsChild(id_d24_huynh, id_d24_hat, id_d25_tuong);
+
+const id_d25_tuong_ba = addPerson({
+  id: makeUUID(25, 4, 4),
+  full_name: 'Nguyễn Thị Loan',
+  gender: 'female',
+  generation: 25,
+  birth_year: 1940,
+  is_in_law: true,
+  is_deceased: false,
+  note: 'Vợ cụ Nguyễn Mậu Tường, sinh năm Canh Thìn (1940).',
+});
+addMarriage(id_d25_tuong, id_d25_tuong_ba);
+
+const id_d25_dam_huynh = addPerson({
+  id: makeUUID(25, 4, 45),
+  full_name: 'Nguyễn Mậu Đam',
+  gender: 'male',
+  generation: 25,
+  birth_order: 8,
+  birth_year: 1941,
+  death_year: 1942,
+  is_deceased: true,
+  note: 'Con trai thứ 8 cụ Phó Huỳnh. Sinh năm Tân Tỵ (1941), mất lúc 10 tháng tuổi.',
+});
+addParentsChild(id_d24_huynh, id_d24_hat, id_d25_dam_huynh);
+
+const id_d25_ut_huynh = addPerson({
+  id: makeUUID(25, 4, 46),
+  full_name: 'Nguyễn Mậu Út',
+  gender: 'male',
+  generation: 25,
+  birth_order: 9,
+  birth_year: 1944,
+  death_year: 1944,
+  is_deceased: true,
+  note: 'Con trai út thứ 9 cụ Phó Huỳnh. Sinh năm Giáp Thân (1944), mất lúc 6 ngày tuổi.',
+});
+addParentsChild(id_d24_huynh, id_d24_hat, id_d25_ut_huynh);
 
 // Đời 26 (Ngành 4 - Con cụ Hách)
 const id_d26_thinh = addPerson({

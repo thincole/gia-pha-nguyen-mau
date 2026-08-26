@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "timestamp": "2026-08-26T09:22:54.115Z",
+  "timestamp": "2026-08-26T09:36:31.663Z",
   "persons": [
     {
       "id": "00000000-0000-0100-0001-000000000000",
@@ -2439,6 +2439,153 @@
       "avatar_url": null
     },
     {
+      "id": "00000000-0000-2504-0040-000000000000",
+      "full_name": "Nguyễn Mậu Tuân",
+      "gender": "male",
+      "generation": 25,
+      "birth_order": 1,
+      "is_in_law": false,
+      "is_deceased": true,
+      "birth_year": 1925,
+      "birth_month": null,
+      "birth_day": null,
+      "death_year": 1928,
+      "death_month": null,
+      "death_day": null,
+      "death_lunar_day": null,
+      "death_lunar_month": null,
+      "death_lunar_year": null,
+      "death_lunar_is_leap": false,
+      "note": "Con trai cả cụ Phó Huỳnh. Sinh năm Ất Sửu (1925), mất lúc 3 tuổi.",
+      "avatar_url": null
+    },
+    {
+      "id": "00000000-0000-2504-0041-000000000000",
+      "full_name": "Nguyễn Thị Nhị",
+      "gender": "female",
+      "generation": 25,
+      "birth_order": 2,
+      "is_in_law": false,
+      "is_deceased": true,
+      "birth_year": 1927,
+      "birth_month": null,
+      "birth_day": null,
+      "death_year": 1927,
+      "death_month": null,
+      "death_day": null,
+      "death_lunar_day": null,
+      "death_lunar_month": null,
+      "death_lunar_year": null,
+      "death_lunar_is_leap": false,
+      "note": "Con gái thứ 2 cụ Phó Huỳnh. Sinh năm Đinh Mão (1927), mất lúc 7 tháng tuổi.",
+      "avatar_url": null
+    },
+    {
+      "id": "00000000-0000-2504-0005-000000000000",
+      "full_name": "Nguyễn Mậu Điển (Tự Mậu Linh)",
+      "gender": "male",
+      "generation": 25,
+      "birth_order": 3,
+      "is_in_law": false,
+      "is_deceased": true,
+      "birth_year": 1929,
+      "birth_month": null,
+      "birth_day": null,
+      "death_year": 1998,
+      "death_month": 4,
+      "death_day": 13,
+      "death_lunar_day": 17,
+      "death_lunar_month": 3,
+      "death_lunar_year": 1998,
+      "death_lunar_is_leap": false,
+      "note": "Huyện ủy viên Trực Ninh. Con trai thứ 3 cụ Phó Huỳnh. Sinh 1929 mất 17/3 Mậu Dần (1998) thọ 70 tuổi.",
+      "avatar_url": null
+    },
+    {
+      "id": "00000000-0000-2504-0055-000000000000",
+      "full_name": "Trần Thị Nhu",
+      "gender": "female",
+      "generation": 25,
+      "birth_order": null,
+      "is_in_law": true,
+      "is_deceased": false,
+      "birth_year": 1930,
+      "birth_month": null,
+      "birth_day": null,
+      "death_year": null,
+      "death_month": null,
+      "death_day": null,
+      "death_lunar_day": null,
+      "death_lunar_month": null,
+      "death_lunar_year": null,
+      "death_lunar_is_leap": false,
+      "note": "Vợ cụ Nguyễn Mậu Điển, quê xứ Đông Thượng.",
+      "avatar_url": null
+    },
+    {
+      "id": "00000000-0000-2504-0042-000000000000",
+      "full_name": "Nguyễn Thị Nho",
+      "gender": "female",
+      "generation": 25,
+      "birth_order": 4,
+      "is_in_law": false,
+      "is_deceased": false,
+      "birth_year": 1931,
+      "birth_month": null,
+      "birth_day": null,
+      "death_year": null,
+      "death_month": null,
+      "death_day": null,
+      "death_lunar_day": null,
+      "death_lunar_month": null,
+      "death_lunar_year": null,
+      "death_lunar_is_leap": false,
+      "note": "Con gái thứ 4 cụ Phó Huỳnh. Sinh năm Tân Mùi (1931). Chồng là Vũ Đức Thắng (1930) Nam Định.",
+      "avatar_url": null
+    },
+    {
+      "id": "00000000-0000-2504-0044-000000000000",
+      "full_name": "Nguyễn Mậu",
+      "gender": "male",
+      "generation": 25,
+      "birth_order": 5,
+      "is_in_law": false,
+      "is_deceased": true,
+      "birth_year": 1932,
+      "birth_month": null,
+      "birth_day": null,
+      "death_year": 1932,
+      "death_month": null,
+      "death_day": null,
+      "death_lunar_day": null,
+      "death_lunar_month": null,
+      "death_lunar_year": null,
+      "death_lunar_is_leap": false,
+      "note": "Con trai thứ 5 cụ Phó Huỳnh. Sinh năm Nhâm Thân (1932), mất lúc 6 ngày tuổi.",
+      "avatar_url": null
+    },
+    {
+      "id": "00000000-0000-2504-0043-000000000000",
+      "full_name": "Nguyễn Thị Nhu",
+      "gender": "female",
+      "generation": 25,
+      "birth_order": 6,
+      "is_in_law": false,
+      "is_deceased": true,
+      "birth_year": 1934,
+      "birth_month": null,
+      "birth_day": null,
+      "death_year": 1936,
+      "death_month": null,
+      "death_day": null,
+      "death_lunar_day": null,
+      "death_lunar_month": null,
+      "death_lunar_year": null,
+      "death_lunar_is_leap": false,
+      "note": "Con gái thứ 6 cụ Phó Huỳnh. Sinh năm Giáp Tuất (1934), mất lúc 2 tuổi.",
+      "avatar_url": null
+    },
+    {
       "id": "00000000-0000-2504-0003-000000000000",
       "full_name": "Nguyễn Mậu Tường",
       "gender": "male",
@@ -2456,7 +2603,7 @@
       "death_lunar_month": null,
       "death_lunar_year": null,
       "death_lunar_is_leap": false,
-      "note": "Trưởng ban biên soạn Ngọc Phả Nguyễn Mậu Tộc năm 2001. Sinh năm Ất Hợi (1935), con thứ cụ Phó Huỳnh.",
+      "note": "Trưởng ban biên soạn Ngọc Phả Nguyễn Mậu Tộc năm 2001. Sinh năm Ất Hợi (1935), con trai thứ 7 cụ Phó Huỳnh.",
       "avatar_url": null
     },
     {
@@ -2481,45 +2628,45 @@
       "avatar_url": null
     },
     {
-      "id": "00000000-0000-2504-0005-000000000000",
-      "full_name": "Nguyễn Mậu Điển (Tự Mậu Linh)",
+      "id": "00000000-0000-2504-0045-000000000000",
+      "full_name": "Nguyễn Mậu Đam",
       "gender": "male",
       "generation": 25,
-      "birth_order": 3,
+      "birth_order": 8,
       "is_in_law": false,
       "is_deceased": true,
-      "birth_year": 1929,
+      "birth_year": 1941,
       "birth_month": null,
       "birth_day": null,
-      "death_year": 1998,
-      "death_month": 4,
-      "death_day": 13,
-      "death_lunar_day": 17,
-      "death_lunar_month": 3,
-      "death_lunar_year": 1998,
-      "death_lunar_is_leap": false,
-      "note": "Huyện ủy viên Trực Ninh. Sinh 1929 mất 17/3 Mậu Dần (1998) thọ 70 tuổi.",
-      "avatar_url": null
-    },
-    {
-      "id": "00000000-0000-2504-0055-000000000000",
-      "full_name": "Trần Thị Nhu",
-      "gender": "female",
-      "generation": 25,
-      "birth_order": null,
-      "is_in_law": true,
-      "is_deceased": false,
-      "birth_year": 1930,
-      "birth_month": null,
-      "birth_day": null,
-      "death_year": null,
+      "death_year": 1942,
       "death_month": null,
       "death_day": null,
       "death_lunar_day": null,
       "death_lunar_month": null,
       "death_lunar_year": null,
       "death_lunar_is_leap": false,
-      "note": "Vợ cụ Nguyễn Mậu Điển, quê xứ Đông Thượng.",
+      "note": "Con trai thứ 8 cụ Phó Huỳnh. Sinh năm Tân Tỵ (1941), mất lúc 10 tháng tuổi.",
+      "avatar_url": null
+    },
+    {
+      "id": "00000000-0000-2504-0046-000000000000",
+      "full_name": "Nguyễn Mậu Út",
+      "gender": "male",
+      "generation": 25,
+      "birth_order": 9,
+      "is_in_law": false,
+      "is_deceased": true,
+      "birth_year": 1944,
+      "birth_month": null,
+      "birth_day": null,
+      "death_year": 1944,
+      "death_month": null,
+      "death_day": null,
+      "death_lunar_day": null,
+      "death_lunar_month": null,
+      "death_lunar_year": null,
+      "death_lunar_is_leap": false,
+      "note": "Con trai út thứ 9 cụ Phó Huỳnh. Sinh năm Giáp Thân (1944), mất lúc 6 ngày tuổi.",
       "avatar_url": null
     },
     {
@@ -3814,173 +3961,257 @@
     {
       "id": "11111111-1111-1111-1111-000000000170",
       "person_a": "00000000-0000-2404-0003-000000000000",
-      "person_b": "00000000-0000-2504-0003-000000000000",
+      "person_b": "00000000-0000-2504-0040-000000000000",
       "type": "biological_child"
     },
     {
       "id": "11111111-1111-1111-1111-000000000171",
       "person_a": "00000000-0000-2404-0004-000000000000",
-      "person_b": "00000000-0000-2504-0003-000000000000",
+      "person_b": "00000000-0000-2504-0040-000000000000",
       "type": "biological_child"
     },
     {
       "id": "11111111-1111-1111-1111-000000000172",
-      "person_a": "00000000-0000-2504-0003-000000000000",
-      "person_b": "00000000-0000-2504-0004-000000000000",
-      "type": "marriage"
+      "person_a": "00000000-0000-2404-0003-000000000000",
+      "person_b": "00000000-0000-2504-0041-000000000000",
+      "type": "biological_child"
     },
     {
       "id": "11111111-1111-1111-1111-000000000173",
+      "person_a": "00000000-0000-2404-0004-000000000000",
+      "person_b": "00000000-0000-2504-0041-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000174",
       "person_a": "00000000-0000-2404-0003-000000000000",
       "person_b": "00000000-0000-2504-0005-000000000000",
       "type": "biological_child"
     },
     {
-      "id": "11111111-1111-1111-1111-000000000174",
+      "id": "11111111-1111-1111-1111-000000000175",
       "person_a": "00000000-0000-2404-0004-000000000000",
       "person_b": "00000000-0000-2504-0005-000000000000",
       "type": "biological_child"
     },
     {
-      "id": "11111111-1111-1111-1111-000000000175",
+      "id": "11111111-1111-1111-1111-000000000176",
       "person_a": "00000000-0000-2504-0005-000000000000",
       "person_b": "00000000-0000-2504-0055-000000000000",
       "type": "marriage"
     },
     {
-      "id": "11111111-1111-1111-1111-000000000176",
+      "id": "11111111-1111-1111-1111-000000000177",
+      "person_a": "00000000-0000-2404-0003-000000000000",
+      "person_b": "00000000-0000-2504-0042-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000178",
+      "person_a": "00000000-0000-2404-0004-000000000000",
+      "person_b": "00000000-0000-2504-0042-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000179",
+      "person_a": "00000000-0000-2404-0003-000000000000",
+      "person_b": "00000000-0000-2504-0044-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000180",
+      "person_a": "00000000-0000-2404-0004-000000000000",
+      "person_b": "00000000-0000-2504-0044-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000181",
+      "person_a": "00000000-0000-2404-0003-000000000000",
+      "person_b": "00000000-0000-2504-0043-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000182",
+      "person_a": "00000000-0000-2404-0004-000000000000",
+      "person_b": "00000000-0000-2504-0043-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000183",
+      "person_a": "00000000-0000-2404-0003-000000000000",
+      "person_b": "00000000-0000-2504-0003-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000184",
+      "person_a": "00000000-0000-2404-0004-000000000000",
+      "person_b": "00000000-0000-2504-0003-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000185",
+      "person_a": "00000000-0000-2504-0003-000000000000",
+      "person_b": "00000000-0000-2504-0004-000000000000",
+      "type": "marriage"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000186",
+      "person_a": "00000000-0000-2404-0003-000000000000",
+      "person_b": "00000000-0000-2504-0045-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000187",
+      "person_a": "00000000-0000-2404-0004-000000000000",
+      "person_b": "00000000-0000-2504-0045-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000188",
+      "person_a": "00000000-0000-2404-0003-000000000000",
+      "person_b": "00000000-0000-2504-0046-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000189",
+      "person_a": "00000000-0000-2404-0004-000000000000",
+      "person_b": "00000000-0000-2504-0046-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000190",
       "person_a": "00000000-0000-2504-0001-000000000000",
       "person_b": "00000000-0000-2604-0001-000000000000",
       "type": "biological_child"
     },
     {
-      "id": "11111111-1111-1111-1111-000000000177",
+      "id": "11111111-1111-1111-1111-000000000191",
       "person_a": "00000000-0000-2504-0002-000000000000",
       "person_b": "00000000-0000-2604-0001-000000000000",
       "type": "biological_child"
     },
     {
-      "id": "11111111-1111-1111-1111-000000000178",
+      "id": "11111111-1111-1111-1111-000000000192",
       "person_a": "00000000-0000-2604-0001-000000000000",
       "person_b": "00000000-0000-2604-0002-000000000000",
       "type": "marriage"
     },
     {
-      "id": "11111111-1111-1111-1111-000000000179",
-      "person_a": "00000000-0000-2504-0001-000000000000",
-      "person_b": "00000000-0000-2604-0003-000000000000",
-      "type": "biological_child"
-    },
-    {
-      "id": "11111111-1111-1111-1111-000000000180",
-      "person_a": "00000000-0000-2504-0002-000000000000",
-      "person_b": "00000000-0000-2604-0003-000000000000",
-      "type": "biological_child"
-    },
-    {
-      "id": "11111111-1111-1111-1111-000000000181",
-      "person_a": "00000000-0000-2604-0003-000000000000",
-      "person_b": "00000000-0000-2604-0004-000000000000",
-      "type": "marriage"
-    },
-    {
-      "id": "11111111-1111-1111-1111-000000000182",
-      "person_a": "00000000-0000-2504-0001-000000000000",
-      "person_b": "00000000-0000-2604-0005-000000000000",
-      "type": "biological_child"
-    },
-    {
-      "id": "11111111-1111-1111-1111-000000000183",
-      "person_a": "00000000-0000-2504-0002-000000000000",
-      "person_b": "00000000-0000-2604-0005-000000000000",
-      "type": "biological_child"
-    },
-    {
-      "id": "11111111-1111-1111-1111-000000000184",
-      "person_a": "00000000-0000-2504-0001-000000000000",
-      "person_b": "00000000-0000-2604-0006-000000000000",
-      "type": "biological_child"
-    },
-    {
-      "id": "11111111-1111-1111-1111-000000000185",
-      "person_a": "00000000-0000-2504-0002-000000000000",
-      "person_b": "00000000-0000-2604-0006-000000000000",
-      "type": "biological_child"
-    },
-    {
-      "id": "11111111-1111-1111-1111-000000000186",
-      "person_a": "00000000-0000-2604-0006-000000000000",
-      "person_b": "00000000-0000-2604-0007-000000000000",
-      "type": "marriage"
-    },
-    {
-      "id": "11111111-1111-1111-1111-000000000187",
-      "person_a": "00000000-0000-2504-0001-000000000000",
-      "person_b": "00000000-0000-2604-0008-000000000000",
-      "type": "biological_child"
-    },
-    {
-      "id": "11111111-1111-1111-1111-000000000188",
-      "person_a": "00000000-0000-2504-0002-000000000000",
-      "person_b": "00000000-0000-2604-0008-000000000000",
-      "type": "biological_child"
-    },
-    {
-      "id": "11111111-1111-1111-1111-000000000189",
-      "person_a": "00000000-0000-2504-0001-000000000000",
-      "person_b": "00000000-0000-2604-0009-000000000000",
-      "type": "biological_child"
-    },
-    {
-      "id": "11111111-1111-1111-1111-000000000190",
-      "person_a": "00000000-0000-2504-0002-000000000000",
-      "person_b": "00000000-0000-2604-0009-000000000000",
-      "type": "biological_child"
-    },
-    {
-      "id": "11111111-1111-1111-1111-000000000191",
-      "person_a": "00000000-0000-2604-0001-000000000000",
-      "person_b": "00000000-0000-2704-0001-000000000000",
-      "type": "biological_child"
-    },
-    {
-      "id": "11111111-1111-1111-1111-000000000192",
-      "person_a": "00000000-0000-2604-0002-000000000000",
-      "person_b": "00000000-0000-2704-0001-000000000000",
-      "type": "biological_child"
-    },
-    {
       "id": "11111111-1111-1111-1111-000000000193",
-      "person_a": "00000000-0000-2604-0003-000000000000",
-      "person_b": "00000000-0000-2704-0002-000000000000",
+      "person_a": "00000000-0000-2504-0001-000000000000",
+      "person_b": "00000000-0000-2604-0003-000000000000",
       "type": "biological_child"
     },
     {
       "id": "11111111-1111-1111-1111-000000000194",
-      "person_a": "00000000-0000-2604-0004-000000000000",
-      "person_b": "00000000-0000-2704-0002-000000000000",
+      "person_a": "00000000-0000-2504-0002-000000000000",
+      "person_b": "00000000-0000-2604-0003-000000000000",
       "type": "biological_child"
     },
     {
       "id": "11111111-1111-1111-1111-000000000195",
       "person_a": "00000000-0000-2604-0003-000000000000",
+      "person_b": "00000000-0000-2604-0004-000000000000",
+      "type": "marriage"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000196",
+      "person_a": "00000000-0000-2504-0001-000000000000",
+      "person_b": "00000000-0000-2604-0005-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000197",
+      "person_a": "00000000-0000-2504-0002-000000000000",
+      "person_b": "00000000-0000-2604-0005-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000198",
+      "person_a": "00000000-0000-2504-0001-000000000000",
+      "person_b": "00000000-0000-2604-0006-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000199",
+      "person_a": "00000000-0000-2504-0002-000000000000",
+      "person_b": "00000000-0000-2604-0006-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000200",
+      "person_a": "00000000-0000-2604-0006-000000000000",
+      "person_b": "00000000-0000-2604-0007-000000000000",
+      "type": "marriage"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000201",
+      "person_a": "00000000-0000-2504-0001-000000000000",
+      "person_b": "00000000-0000-2604-0008-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000202",
+      "person_a": "00000000-0000-2504-0002-000000000000",
+      "person_b": "00000000-0000-2604-0008-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000203",
+      "person_a": "00000000-0000-2504-0001-000000000000",
+      "person_b": "00000000-0000-2604-0009-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000204",
+      "person_a": "00000000-0000-2504-0002-000000000000",
+      "person_b": "00000000-0000-2604-0009-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000205",
+      "person_a": "00000000-0000-2604-0001-000000000000",
+      "person_b": "00000000-0000-2704-0001-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000206",
+      "person_a": "00000000-0000-2604-0002-000000000000",
+      "person_b": "00000000-0000-2704-0001-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000207",
+      "person_a": "00000000-0000-2604-0003-000000000000",
+      "person_b": "00000000-0000-2704-0002-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000208",
+      "person_a": "00000000-0000-2604-0004-000000000000",
+      "person_b": "00000000-0000-2704-0002-000000000000",
+      "type": "biological_child"
+    },
+    {
+      "id": "11111111-1111-1111-1111-000000000209",
+      "person_a": "00000000-0000-2604-0003-000000000000",
       "person_b": "00000000-0000-2704-0003-000000000000",
       "type": "biological_child"
     },
     {
-      "id": "11111111-1111-1111-1111-000000000196",
+      "id": "11111111-1111-1111-1111-000000000210",
       "person_a": "00000000-0000-2604-0004-000000000000",
       "person_b": "00000000-0000-2704-0003-000000000000",
       "type": "biological_child"
     },
     {
-      "id": "11111111-1111-1111-1111-000000000197",
+      "id": "11111111-1111-1111-1111-000000000211",
       "person_a": "00000000-0000-2604-0006-000000000000",
       "person_b": "00000000-0000-2704-0004-000000000000",
       "type": "biological_child"
     },
     {
-      "id": "11111111-1111-1111-1111-000000000198",
+      "id": "11111111-1111-1111-1111-000000000212",
       "person_a": "00000000-0000-2604-0007-000000000000",
       "person_b": "00000000-0000-2704-0004-000000000000",
       "type": "biological_child"

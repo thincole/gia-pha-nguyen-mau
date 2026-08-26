@@ -864,20 +864,23 @@
 1 FAMS @F31@
 1 NOTE Thứ thất cụ Tuần Riệp (Mậu Thích). Bà Mẹ Việt Nam Anh Hùng, thân mẫu Liệt sĩ Nguyễn Mậu Đức.
 0 @I117@ INDI
-1 NAME Nguyễn Mậu /Tường/
+1 NAME Nguyễn Mậu /Tuân/
 1 SEX M
 1 BIRT
-2 DATE 1935
+2 DATE 1925
+1 DEAT Y
+2 DATE 1928
 1 FAMC @F27@
-1 FAMS @F32@
-1 NOTE Trưởng ban biên soạn Ngọc Phả Nguyễn Mậu Tộc năm 2001. Sinh năm Ất Hợi (1935), con thứ cụ Phó Huỳnh.
+1 NOTE Con trai cả cụ Phó Huỳnh. Sinh năm Ất Sửu (1925), mất lúc 3 tuổi.
 0 @I118@ INDI
-1 NAME Nguyễn Thị /Loan/
+1 NAME Nguyễn Thị /Nhị/
 1 SEX F
 1 BIRT
-2 DATE 1940
-1 FAMS @F32@
-1 NOTE Vợ cụ Nguyễn Mậu Tường, sinh năm Canh Thìn (1940).
+2 DATE 1927
+1 DEAT Y
+2 DATE 1927
+1 FAMC @F27@
+1 NOTE Con gái thứ 2 cụ Phó Huỳnh. Sinh năm Đinh Mão (1927), mất lúc 7 tháng tuổi.
 0 @I119@ INDI
 1 NAME Nguyễn Mậu Điển (Tự Mậu /Linh)/
 1 SEX M
@@ -886,16 +889,74 @@
 1 DEAT Y
 2 DATE 13 APR 1998
 1 FAMC @F27@
-1 FAMS @F33@
-1 NOTE Huyện ủy viên Trực Ninh. Sinh 1929 mất 17/3 Mậu Dần (1998) thọ 70 tuổi.
+1 FAMS @F32@
+1 NOTE Huyện ủy viên Trực Ninh. Con trai thứ 3 cụ Phó Huỳnh. Sinh 1929 mất 17/3 Mậu Dần (1998) thọ 70 tuổi.
 0 @I120@ INDI
 1 NAME Trần Thị /Nhu/
 1 SEX F
 1 BIRT
 2 DATE 1930
-1 FAMS @F33@
+1 FAMS @F32@
 1 NOTE Vợ cụ Nguyễn Mậu Điển, quê xứ Đông Thượng.
 0 @I121@ INDI
+1 NAME Nguyễn Thị /Nho/
+1 SEX F
+1 BIRT
+2 DATE 1931
+1 FAMC @F27@
+1 NOTE Con gái thứ 4 cụ Phó Huỳnh. Sinh năm Tân Mùi (1931). Chồng là Vũ Đức Thắng (1930) Nam Định.
+0 @I122@ INDI
+1 NAME Nguyễn /Mậu/
+1 SEX M
+1 BIRT
+2 DATE 1932
+1 DEAT Y
+2 DATE 1932
+1 FAMC @F27@
+1 NOTE Con trai thứ 5 cụ Phó Huỳnh. Sinh năm Nhâm Thân (1932), mất lúc 6 ngày tuổi.
+0 @I123@ INDI
+1 NAME Nguyễn Thị /Nhu/
+1 SEX F
+1 BIRT
+2 DATE 1934
+1 DEAT Y
+2 DATE 1936
+1 FAMC @F27@
+1 NOTE Con gái thứ 6 cụ Phó Huỳnh. Sinh năm Giáp Tuất (1934), mất lúc 2 tuổi.
+0 @I124@ INDI
+1 NAME Nguyễn Mậu /Tường/
+1 SEX M
+1 BIRT
+2 DATE 1935
+1 FAMC @F27@
+1 FAMS @F33@
+1 NOTE Trưởng ban biên soạn Ngọc Phả Nguyễn Mậu Tộc năm 2001. Sinh năm Ất Hợi (1935), con trai thứ 7 cụ Phó Huỳnh.
+0 @I125@ INDI
+1 NAME Nguyễn Thị /Loan/
+1 SEX F
+1 BIRT
+2 DATE 1940
+1 FAMS @F33@
+1 NOTE Vợ cụ Nguyễn Mậu Tường, sinh năm Canh Thìn (1940).
+0 @I126@ INDI
+1 NAME Nguyễn Mậu /Đam/
+1 SEX M
+1 BIRT
+2 DATE 1941
+1 DEAT Y
+2 DATE 1942
+1 FAMC @F27@
+1 NOTE Con trai thứ 8 cụ Phó Huỳnh. Sinh năm Tân Tỵ (1941), mất lúc 10 tháng tuổi.
+0 @I127@ INDI
+1 NAME Nguyễn Mậu /Út/
+1 SEX M
+1 BIRT
+2 DATE 1944
+1 DEAT Y
+2 DATE 1944
+1 FAMC @F27@
+1 NOTE Con trai út thứ 9 cụ Phó Huỳnh. Sinh năm Giáp Thân (1944), mất lúc 6 ngày tuổi.
+0 @I128@ INDI
 1 NAME Nguyễn Mậu /Thịnh/
 1 SEX M
 1 BIRT
@@ -903,14 +964,14 @@
 1 FAMC @F29@
 1 FAMS @F34@
 1 NOTE Con trưởng cụ Mậu Hách. Thiếu tá Công an tỉnh Đồng Nai.
-0 @I122@ INDI
+0 @I129@ INDI
 1 NAME Đoàn Thị Kim /Loan/
 1 SEX F
 1 BIRT
 2 DATE 1959
 1 FAMS @F34@
 1 NOTE Vợ ông Nguyễn Mậu Thịnh.
-0 @I123@ INDI
+0 @I130@ INDI
 1 NAME Nguyễn Mậu /Quân/
 1 SEX M
 1 BIRT
@@ -918,21 +979,21 @@
 1 FAMC @F29@
 1 FAMS @F35@
 1 NOTE Con trai thứ 2 cụ Mậu Hách. Chủ nhiệm HTX May mặc Nghĩa Lợi.
-0 @I124@ INDI
+0 @I131@ INDI
 1 NAME Nguyễn Thị /Hạnh/
 1 SEX F
 1 BIRT
 2 DATE 1962
 1 FAMS @F35@
 1 NOTE Vợ ông Nguyễn Mậu Quân.
-0 @I125@ INDI
+0 @I132@ INDI
 1 NAME Nguyễn Thị /Liên/
 1 SEX F
 1 BIRT
 2 DATE 1964
 1 FAMC @F29@
 1 NOTE Con gái cụ Mậu Hách. Chồng là Đặng Minh Khang ở Liên Tỉnh, Nam Trực.
-0 @I126@ INDI
+0 @I133@ INDI
 1 NAME Nguyễn Mậu /Minh/
 1 SEX M
 1 BIRT
@@ -940,49 +1001,49 @@
 1 FAMC @F29@
 1 FAMS @F36@
 1 NOTE Con trai thứ 3 cụ Mậu Hách.
-0 @I127@ INDI
+0 @I134@ INDI
 1 NAME Đinh Thị /Ngoãn/
 1 SEX F
 1 BIRT
 2 DATE 1974
 1 FAMS @F36@
 1 NOTE Vợ ông Nguyễn Mậu Minh.
-0 @I128@ INDI
+0 @I135@ INDI
 1 NAME Nguyễn Mậu Thanh /Bằng/
 1 SEX M
 1 BIRT
 2 DATE 1974
 1 FAMC @F29@
 1 NOTE Con trai thứ 4 cụ Mậu Hách. Tiến sĩ Thủy lợi tại Nga, Viện Khoa học Thủy lợi Việt Nam.
-0 @I129@ INDI
+0 @I136@ INDI
 1 NAME Nguyễn Mậu /Tuấn/
 1 SEX M
 1 BIRT
 2 DATE 1976
 1 FAMC @F29@
 1 NOTE Con trai thứ 5 cụ Mậu Hách. Cử nhân Quản lý xã hội.
-0 @I130@ INDI
+0 @I137@ INDI
 1 NAME Nguyễn Thị Thùy /Dương/
 1 SEX F
 1 BIRT
 2 DATE 1981
 1 FAMC @F34@
 1 NOTE Con gái ông Nguyễn Mậu Thịnh, cháu nội cụ Mậu Hách.
-0 @I131@ INDI
+0 @I138@ INDI
 1 NAME Nguyễn Thị Thúy /Vân/
 1 SEX F
 1 BIRT
 2 DATE 1984
 1 FAMC @F35@
 1 NOTE Con gái ông Nguyễn Mậu Quân, cháu nội cụ Mậu Hách.
-0 @I132@ INDI
+0 @I139@ INDI
 1 NAME Nguyễn Mậu Trung /Anh/
 1 SEX M
 1 BIRT
 2 DATE 1987
 1 FAMC @F35@
 1 NOTE Con trai ông Nguyễn Mậu Quân, cháu nội cụ Mậu Hách.
-0 @I133@ INDI
+0 @I140@ INDI
 1 NAME Nguyễn Thị Thu /Hiền/
 1 SEX F
 1 BIRT
@@ -1127,19 +1188,26 @@
 1 HUSB @I108@
 1 WIFE @I109@
 1 CHIL @I117@
+1 CHIL @I118@
 1 CHIL @I119@
+1 CHIL @I121@
+1 CHIL @I122@
+1 CHIL @I123@
+1 CHIL @I124@
+1 CHIL @I126@
+1 CHIL @I127@
 0 @F28@ FAM
 1 HUSB @I110@
 1 WIFE @I111@
 0 @F29@ FAM
 1 HUSB @I112@
 1 WIFE @I113@
-1 CHIL @I121@
-1 CHIL @I123@
-1 CHIL @I125@
-1 CHIL @I126@
 1 CHIL @I128@
-1 CHIL @I129@
+1 CHIL @I130@
+1 CHIL @I132@
+1 CHIL @I133@
+1 CHIL @I135@
+1 CHIL @I136@
 0 @F30@ FAM
 1 HUSB @I114@
 1 WIFE @I115@
@@ -1147,24 +1215,24 @@
 1 HUSB @I114@
 1 WIFE @I116@
 0 @F32@ FAM
-1 HUSB @I117@
-1 WIFE @I118@
-0 @F33@ FAM
 1 HUSB @I119@
 1 WIFE @I120@
+0 @F33@ FAM
+1 HUSB @I124@
+1 WIFE @I125@
 0 @F34@ FAM
-1 HUSB @I121@
-1 WIFE @I122@
-1 CHIL @I130@
+1 HUSB @I128@
+1 WIFE @I129@
+1 CHIL @I137@
 0 @F35@ FAM
-1 HUSB @I123@
-1 WIFE @I124@
-1 CHIL @I131@
-1 CHIL @I132@
+1 HUSB @I130@
+1 WIFE @I131@
+1 CHIL @I138@
+1 CHIL @I139@
 0 @F36@ FAM
-1 HUSB @I126@
-1 WIFE @I127@
-1 CHIL @I133@
+1 HUSB @I133@
+1 WIFE @I134@
+1 CHIL @I140@
 0 @F37@ FAM
 1 HUSB @I1@
 1 CHIL @I2@
