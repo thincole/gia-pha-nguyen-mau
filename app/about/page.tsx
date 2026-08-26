@@ -30,7 +30,7 @@ export default function AboutPage() {
 
             <div className="max-w-none">
               <p className="text-stone-600 leading-relaxed text-[15px] mb-4">
-                Hệ thống <strong>Gia Phả Dòng Họ Nguyễn Mậu (Ngành 4)</strong> tại <strong>Thôn Thượng Đền, Thị trấn Cổ Lễ, Huyện Trực Ninh, Tỉnh Nam Định</strong> được xây dựng trên nền tảng mã nguồn mở hiện đại nhằm số hóa toàn bộ cây phả hệ, lưu giữ gia phả, kỵ nhật (ngày giỗ Âm lịch), tiểu sử và công trạng của các bậc tiền nhân cho muôn đời con cháu mai sau.
+                Hệ thống <strong>Gia Phả Dòng Họ Nguyễn Mậu</strong> tại <strong>Thôn Thượng Đền, Thị trấn Cổ Lễ, Huyện Trực Ninh, Tỉnh Nam Định</strong> được xây dựng trên nền tảng mã nguồn mở hiện đại nhằm số hóa toàn bộ cây phả hệ, lưu giữ gia phả, kỵ nhật (ngày giỗ Âm lịch), tiểu sử và công trạng của các bậc tiền nhân cho muôn đời con cháu mai sau.
               </p>
               <p className="text-stone-600 leading-relaxed text-[15px] mb-8">
                 Hệ thống cung cấp khả năng tra cứu danh xưng chuẩn xác theo văn hóa truyền thống Việt Nam, xem sơ đồ cây phả hệ, sơ đồ tư duy, quản lý sự kiện giỗ họ và bảo mật thông tin liên lạc của các thành viên.
