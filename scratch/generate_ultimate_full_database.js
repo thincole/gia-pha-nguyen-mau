@@ -449,7 +449,7 @@ addChild(id_d23_than1, id_d24_nham1);
 
 const id_d24_hao1 = addPerson({
   id: makeUUID(24, 1, 2),
-  full_name: 'Nguyễn Mậu Hão',
+  full_name: 'Nguyễn Mậu Hảo',
   gender: 'male',
   generation: 24,
   birth_order: 1,
@@ -458,7 +458,93 @@ const id_d24_hao1 = addPerson({
 });
 addChild(id_d23_ho1, id_d24_hao1);
 
-// Đời 25 (Ngành 1)
+// Đời 25 (Ngành 1 - Nhánh Cụ Mậu Nhâm)
+// 1. Cụ Mậu Phồn
+const id_d25_phon1 = addPerson({
+  id: makeUUID(25, 1, 10),
+  full_name: 'Nguyễn Mậu Phồn',
+  gender: 'male',
+  generation: 25,
+  birth_order: 1,
+  death_lunar_day: 20,
+  death_lunar_month: 4,
+  is_deceased: true,
+  note: 'Con trai cả cụ Mậu Nhâm (Ngành 1). Mất ngày 20/4 Âm lịch. Vợ Nguyễn Thị Phồn giỗ 18/3 Âm lịch.',
+});
+addChild(id_d24_nham1, id_d25_phon1);
+
+const id_d25_phon1_ba = addPerson({
+  id: makeUUID(25, 1, 11),
+  full_name: 'Nguyễn Thị Phồn',
+  gender: 'female',
+  generation: 25,
+  is_in_law: true,
+  death_lunar_day: 18,
+  death_lunar_month: 3,
+  is_deceased: true,
+  note: 'Vợ cụ Nguyễn Mậu Phồn, giỗ 18/3 Âm lịch.',
+});
+addMarriage(id_d25_phon1, id_d25_phon1_ba);
+
+// Con gái cụ Mậu Phồn (Đời 26)
+const id_d26_quyen1 = addPerson({
+  id: makeUUID(26, 1, 101),
+  full_name: 'Nguyễn Thị Quyển',
+  gender: 'female',
+  generation: 26,
+  birth_order: 1,
+  is_deceased: true,
+  note: 'Con gái thứ 1 cụ Mậu Phồn (Ngành 1). Chết không chồng con.',
+});
+addParentsChild(id_d25_phon1, id_d25_phon1_ba, id_d26_quyen1);
+
+const id_d26_quyen2 = addPerson({
+  id: makeUUID(26, 1, 102),
+  full_name: 'Nguyễn Thị Quyên',
+  gender: 'female',
+  generation: 26,
+  birth_order: 2,
+  is_deceased: false,
+  note: 'Con gái thứ 2 cụ Mậu Phồn (Ngành 1). Lấy chồng là Nguyễn Gia Mầm (con cụ Rược cùng làng).',
+});
+addParentsChild(id_d25_phon1, id_d25_phon1_ba, id_d26_quyen2);
+
+// 2. Cụ Mậu Dưỡng
+const id_d25_duong1 = addPerson({
+  id: makeUUID(25, 1, 20),
+  full_name: 'Nguyễn Mậu Dưỡng',
+  gender: 'male',
+  generation: 25,
+  birth_order: 2,
+  is_deceased: true,
+  note: 'Con trai thứ 2 cụ Mậu Nhâm (Ngành 1). Sinh cụ Mậu Nhỡ.',
+});
+addChild(id_d24_nham1, id_d25_duong1);
+
+const id_d25_duong1_ba = addPerson({
+  id: makeUUID(25, 1, 21),
+  full_name: 'Cụ Bà (Vợ cụ Nguyễn Mậu Dưỡng)',
+  gender: 'female',
+  generation: 25,
+  is_in_law: true,
+  is_deceased: true,
+  note: 'Vợ cụ Nguyễn Mậu Dưỡng (Ngành 1).',
+});
+addMarriage(id_d25_duong1, id_d25_duong1_ba);
+
+// Con trai cụ Mậu Dưỡng (Đời 26)
+const id_d26_nho_duong = addPerson({
+  id: makeUUID(26, 1, 201),
+  full_name: 'Nguyễn Mậu Nhỡ',
+  gender: 'male',
+  generation: 26,
+  birth_order: 1,
+  is_deceased: true,
+  note: 'Con trai cụ Mậu Dưỡng (Ngành 1). Chết còn ít tuổi không vợ con, hết người kế tự.',
+});
+addParentsChild(id_d25_duong1, id_d25_duong1_ba, id_d26_nho_duong);
+
+// Đời 25 (Ngành 1 - Nhánh Cụ Mậu Hão)
 const id_d25_nhan1 = addPerson({
   id: makeUUID(25, 1, 1),
   full_name: 'Nguyễn Mậu Nhận (Mậu Thoại)',
