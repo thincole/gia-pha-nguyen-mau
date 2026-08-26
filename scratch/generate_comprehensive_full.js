@@ -10,7 +10,6 @@ function makeUUID(generation, branch, index, subIndex = 0) {
   return `00000000-0000-${gStr}${bStr}-${iStr}-${sStr}00000000`;
 }
 
-// We will construct persons, relationships, private details, and custom events
 const persons = [];
 const relationships = [];
 const personDetailsPrivate = [];
@@ -38,7 +37,6 @@ function addPerson({
   phone = null,
   occupation = null,
   residence = null,
-  private_notes = null,
 }) {
   const p = {
     id,
@@ -93,12 +91,11 @@ function addParentsChild(husbandId, wifeId, childId, isAdopted = false) {
   if (wifeId) addChild(wifeId, childId, isAdopted);
 }
 
-// -----------------------------------------------------------------------------
-// PHẦN 1: THƯỢNG PHẢ (ĐỜI 1 ĐẾN ĐỜI 18)
-// -----------------------------------------------------------------------------
-console.log('Generating Thuong Pha (Doi 1 -> 18)...');
+console.log('Building full 28 generations of Nguyen Mau Toc...');
 
-// Đời 1: Nguyễn Bặc
+// -----------------------------------------------------------------------------
+// THƯỢNG PHẢ (ĐỜI 1 - 18)
+// -----------------------------------------------------------------------------
 const id_d1_bac = addPerson({
   id: makeUUID(1, 0, 1),
   full_name: 'Nguyễn Bặc',
@@ -108,10 +105,9 @@ const id_d1_bac = addPerson({
   birth_year: 904,
   death_year: 979,
   is_deceased: true,
-  note: 'Khởi Tổ Nguyên Đương họ Nguyễn. Sinh năm Giáp Tý (904), mất năm Kỷ Mão (979), thọ 76 tuổi. Quê Đại Hữu, Đại Hoàng, Gia Viễn, Ninh Bình. Bạn cờ lau tam đồng với Đinh Bộ Lĩnh. Đại tướng số 1 dẹp loạn 12 sứ quân, Thừa tướng phụ Quốc Định Quốc Công. Triều Lý Thái Tổ truy phong Trung Liệt Đại Vương Thượng Đẳng Phúc Thần.',
+  note: 'Khởi Tổ Nguyên Đương họ Nguyễn. Sinh Giáp Tý (904) mất Kỷ Mão (979) thọ 76 tuổi. Đại tướng số 1 dẹp loạn 12 sứ quân, Định Quốc Công triều Đinh Tiên Hoàng.',
 });
 
-// Đời 2: Nguyễn Đệ
 const id_d2_de = addPerson({
   id: makeUUID(2, 0, 1),
   full_name: 'Nguyễn Đệ',
@@ -120,22 +116,10 @@ const id_d2_de = addPerson({
   birth_order: 1,
   death_year: 1028,
   is_deceased: true,
-  note: 'Con trưởng Tổ Bặc. Mất năm Mậu Thìn (1028). Triều Tiền Lê phong Điện Tiền đô chỉ huy Sứ. Triều Lý Thái Tổ phong Đô hiệu Điểm Tước hầu (1010-1028).',
+  note: 'Con trưởng Tổ Bặc. Điện Tiền đô chỉ huy Sứ triều Tiền Lê. Đô hiệu Điểm Tước hầu triều Lý Thái Tổ.',
 });
 addChild(id_d1_bac, id_d2_de);
 
-const id_d2_dat = addPerson({
-  id: makeUUID(2, 0, 2),
-  full_name: 'Nguyễn Phúc Đạt',
-  gender: 'male',
-  generation: 2,
-  birth_order: 2,
-  is_deceased: true,
-  note: 'Con thứ 2 của Khởi Tổ Nguyễn Bặc.',
-});
-addChild(id_d1_bac, id_d2_dat);
-
-// Đời 3: Nguyễn Viễn (con Nguyễn Đệ)
 const id_d3_vien = addPerson({
   id: makeUUID(3, 0, 1),
   full_name: 'Nguyễn Viễn',
@@ -143,33 +127,10 @@ const id_d3_vien = addPerson({
   generation: 3,
   birth_order: 2,
   is_deceased: true,
-  note: 'Con trai thứ 2 của Tổ Nguyễn Đệ. Quan triều Lý Thánh Tông (1054-1071). Triều Lý Nhân Tông (1072-1127) được phong Tả tướng Quốc - Tham tri sự.',
+  note: 'Con trai thứ 2 Tổ Nguyễn Đệ. Tả tướng Quốc - Tham tri sự triều Lý Nhân Tông (1072-1127).',
 });
 addChild(id_d2_de, id_d3_vien);
 
-const id_d3_loi = addPerson({
-  id: makeUUID(3, 0, 2),
-  full_name: 'Nguyễn Quang Lợi',
-  gender: 'male',
-  generation: 3,
-  birth_order: 1,
-  is_deceased: true,
-  note: 'Con thứ nhất của Tổ Nguyễn Đệ.',
-});
-addChild(id_d2_de, id_d3_loi);
-
-const id_d3_lich = addPerson({
-  id: makeUUID(3, 0, 3),
-  full_name: 'Nguyễn Phúc Lịch',
-  gender: 'male',
-  generation: 3,
-  birth_order: 3,
-  is_deceased: true,
-  note: 'Con thứ 3 của Tổ Nguyễn Đệ.',
-});
-addChild(id_d2_de, id_d3_lich);
-
-// Đời 4: Nguyễn Phụng
 const id_d4_phung = addPerson({
   id: makeUUID(4, 0, 1),
   full_name: 'Nguyễn Phụng',
@@ -177,11 +138,10 @@ const id_d4_phung = addPerson({
   generation: 4,
   birth_order: 1,
   is_deceased: true,
-  note: 'Con trai Tổ Viễn. Xuất thân Võ cử nhân, năm Ất Sửu (1145) triều Lý Anh Tông phong Tả đô đốc.',
+  note: 'Con trai Tổ Viễn. Võ cử nhân, Tả đô đốc triều Lý Anh Tông (1145).',
 });
 addChild(id_d3_vien, id_d4_phung);
 
-// Đời 5: Nguyễn Nộn
 const id_d5_non = addPerson({
   id: makeUUID(5, 0, 1),
   full_name: 'Nguyễn Nộn',
@@ -190,11 +150,10 @@ const id_d5_non = addPerson({
   birth_order: 1,
   death_year: 1229,
   is_deceased: true,
-  note: 'Con trai Tổ Phụng. Văn võ kiêm toàn, tự xưng Đại Thắng Vương thời Lý Cao Tông. Năm Ất Dậu (1225) triều Trần phong Hoài Đạo Hiếu Vũ Vương, gả Công chúa Ngoan Thiềm. Mất năm Kỷ Sửu (1229). Đền thờ chính tại Phù Dực, Tiên Du, Bắc Ninh (gồm 72 đền thờ dọc sông Đuống đến Lục Đầu Giang).',
+  note: 'Đại Thắng Vương, Hoài Đạo Hiếu Vũ Vương thời Lý - Trần. Đền thờ chính tại Phù Dực, Tiên Du, Bắc Ninh.',
 });
 addChild(id_d4_phung, id_d5_non);
 
-// Đời 6: Nguyễn Thế Tứ
 const id_d6_tu = addPerson({
   id: makeUUID(6, 0, 1),
   full_name: 'Nguyễn Thế Tứ',
@@ -202,11 +161,10 @@ const id_d6_tu = addPerson({
   generation: 6,
   birth_order: 1,
   is_deceased: true,
-  note: 'Con trưởng Tổ Nguyễn Nộn. Làm tướng, được phong tước Đô Hiệu Điểm qua 3 triều vua Trần: Trần Thái Tông (1225-1257), Trần Thánh Tông (1258-1277), Trần Nhân Tông (1278-1292).',
+  note: 'Đô Hiệu Điểm qua 3 triều vua Trần (Thái Tông, Thánh Tông, Nhân Tông).',
 });
 addChild(id_d5_non, id_d6_tu);
 
-// Đời 7: Nguyễn Nạp Hoà
 const id_d7_naphoa = addPerson({
   id: makeUUID(7, 0, 1),
   full_name: 'Nguyễn Nạp Hoà',
@@ -215,11 +173,10 @@ const id_d7_naphoa = addPerson({
   birth_order: 1,
   death_year: 1377,
   is_deceased: true,
-  note: 'Con cả Tổ Thế Tứ. Xuất thân Võ cử nhân triều Trần Minh Tông (1314-1328). Làm quan qua các triều Trần Minh Tông, Hiến Tông, Dụ Tông, Nghệ Tông, Duệ Tông. Được phong Bình Nam Đại tướng quân giúp vua đánh Chiêm Thành năm 1377.',
+  note: 'Bình Nam Đại tướng quân triều Trần Duệ Tông (1377).',
 });
 addChild(id_d6_tu, id_d7_naphoa);
 
-// Đời 8: Nguyễn Công Luật
 const id_d8_congluat = addPerson({
   id: makeUUID(8, 0, 1),
   full_name: 'Nguyễn Công Luật',
@@ -227,11 +184,10 @@ const id_d8_congluat = addPerson({
   generation: 8,
   birth_order: 1,
   is_deceased: true,
-  note: 'Con trưởng Tổ Nạp Hoà. Làm quan triều Trần Duệ Tông đến Phế Đế, chức Hữu Hiệu Điểm (1378). Cai quản quân phủ Thiên Trường. Tự là Tiểu Luật.',
+  note: 'Hữu Hiệu Điểm triều Trần (1378). Cai quản quân phủ Thiên Trường.',
 });
 addChild(id_d7_naphoa, id_d8_congluat);
 
-// Đời 9: Nguyễn Minh Du
 const id_d9_minhdu = addPerson({
   id: makeUUID(9, 0, 1),
   full_name: 'Nguyễn Minh Du',
@@ -239,11 +195,10 @@ const id_d9_minhdu = addPerson({
   generation: 9,
   birth_order: 3,
   is_deceased: true,
-  note: 'Con thứ 3 của Tổ Công Luật. Làm tướng quân chỉ huy quân Thiết Hổ triều Phế Đế Kiên Tân (1398-1399), trấn thủ Sơn Nam (Thái Bình, Nam Định) và Hải Dương. Được phong Thái phó.',
+  note: 'Chỉ huy quân Thiết Hổ, Thái phó thời Trần.',
 });
 addChild(id_d8_congluat, id_d9_minhdu);
 
-// Đời 10: Tổ Đời 10 (Thế hệ nối tiếp)
 const id_d10 = addPerson({
   id: makeUUID(10, 0, 1),
   full_name: 'Nguyễn Phi Khanh',
@@ -253,14 +208,13 @@ const id_d10 = addPerson({
   birth_year: 1355,
   death_year: 1428,
   is_deceased: true,
-  note: 'Thái học sinh thời Trần - Hồ, thân phụ Anh hùng dân tộc Nguyễn Trãi.',
+  note: 'Thái học sinh thời Trần - Hồ, thân phụ Nguyễn Trãi.',
 });
 addChild(id_d9_minhdu, id_d10);
 
-// Đời 11: Nguyễn Trãi
 const id_d11_trai = addPerson({
   id: makeUUID(11, 0, 1),
-  full_name: 'Nguyễn Trãi',
+  full_name: 'Nguyễn Trãi (Ức Trai)',
   gender: 'male',
   generation: 11,
   birth_order: 1,
@@ -270,7 +224,7 @@ const id_d11_trai = addPerson({
   death_lunar_month: 8,
   death_lunar_year: 1442,
   is_deceased: true,
-  note: 'Tự Ức Trai, Danh nhân văn hóa thế giới UNESCO vinh danh (1380-1980). Khai quốc công thần triều Hậu Lê, Nhập nội Hành khiển, Tuyên phụng Đại phu, Huệ Quốc Công, Tế văn thần. Tác giả Bình Ngô Đại Cáo.',
+  note: 'Danh nhân văn hóa thế giới UNESCO. Khai quốc công thần triều Hậu Lê, Nhập nội Hành khiển, Tuyên phụng Đại phu, Huệ Quốc Công.',
 });
 addChild(id_d10, id_d11_trai);
 
@@ -281,11 +235,10 @@ const id_d11_man = addPerson({
   generation: 11,
   is_in_law: true,
   is_deceased: true,
-  note: 'Vợ kế của cụ Nguyễn Trãi, thân mẫu của cụ Nguyễn Anh Võ (Anh Vũ). Từng lánh nạn tại Gia Miêu, Sơn Động, Thanh Hoá.',
+  note: 'Vợ kế cụ Nguyễn Trãi, thân mẫu cụ Nguyễn Anh Võ.',
 });
 addMarriage(id_d11_trai, id_d11_man);
 
-// Đời 12: Nguyễn Anh Võ (Nguyễn Anh Vũ)
 const id_d12_anhvo = addPerson({
   id: makeUUID(12, 0, 1),
   full_name: 'Nguyễn Anh Võ (Nguyễn Anh Vũ)',
@@ -294,79 +247,73 @@ const id_d12_anhvo = addPerson({
   birth_order: 6,
   birth_year: 1442,
   is_deceased: true,
-  note: 'Tự Tùng Hạc, hiệu Phúc Sơ. Con trai thứ 6 của cụ Nguyễn Trãi và bà Phạm Thị Mẫn. Năm Quang Thuận thứ 5 (1464) vua Lê Thánh Tông minh oan, nhận ấn phong Tri châu và 100 mẫu ruộng lộc điền.',
+  note: 'Tự Tùng Hạc, hiệu Phúc Sơ. Con thứ 6 cụ Nguyễn Trãi. Vua Lê Thánh Tông minh oan năm 1464, phong chức Tri châu.',
 });
 addParentsChild(id_d11_trai, id_d11_man, id_d12_anhvo);
 
-// Đời 13: Nguyễn Giám
 const id_d13_giam = addPerson({
   id: makeUUID(13, 0, 1),
-  full_name: 'Nguyễn Giám',
+  full_name: 'Nguyễn Giám (Tự Giác Hiền)',
   gender: 'male',
   generation: 13,
   birth_order: 2,
   is_deceased: true,
-  note: 'Tự Giác Hiền. Con thứ 2 của Tổ Anh Võ. Đỗ quan Khảo trường Quốc Tử Giám triều Lê Hiến Tông năm Giáp Tý (1504).',
+  note: 'Đỗ quan Khảo trường Quốc Tử Giám triều Lê Hiến Tông năm Giáp Tý (1504).',
 });
 addChild(id_d12_anhvo, id_d13_giam);
 
-// Đời 14: Nguyễn Mậu Trực
 const id_d14_truc = addPerson({
   id: makeUUID(14, 0, 1),
-  full_name: 'Nguyễn Mậu Trực',
+  full_name: 'Nguyễn Mậu Trực (Tự Phúc Văn)',
   gender: 'male',
   generation: 14,
   birth_order: 1,
   is_deceased: true,
-  note: 'Tự Phúc Văn. Con trai Tổ Giác Hiền. Đỗ Tiến sĩ quan trường khảo triều Mạc - Quang Hoà thứ 6 năm Bính Ngọ (1546).',
+  note: 'Đỗ Tiến sĩ quan trường khảo triều Mạc - Quang Hoà thứ 6 Bính Ngọ (1546).',
 });
 addChild(id_d13_giam, id_d14_truc);
 
-// Đời 15: Nguyễn Trung
 const id_d15_trung = addPerson({
   id: makeUUID(15, 0, 1),
-  full_name: 'Nguyễn Trung',
+  full_name: 'Nguyễn Trung (Tự Phúc Hiếu)',
   gender: 'male',
   generation: 15,
   birth_order: 4,
   is_deceased: true,
-  note: 'Tự Phúc Hiếu. Con trai thứ 4 của Tổ Nguyễn Mậu Trực. Đỗ Tiến sĩ năm Quý Tỵ (1593) triều Lê.',
+  note: 'Đỗ Tiến sĩ năm Quý Tỵ (1593) triều Lê.',
 });
 addChild(id_d14_truc, id_d15_trung);
 
-// Đời 16: Nguyễn Mậu Kiên
 const id_d16_kien = addPerson({
   id: makeUUID(16, 0, 1),
-  full_name: 'Nguyễn Mậu Kiên',
+  full_name: 'Nguyễn Mậu Kiên (Tự Phúc Hoà)',
   gender: 'male',
   generation: 16,
   birth_order: 1,
   is_deceased: true,
-  note: 'Tự Phúc Hoà. Con trai Tổ Phúc Hiếu. Đỗ Tiến sĩ năm Bính Thìn (1619) triều Lê Thần Tông. Dạy học trong thành nội.',
+  note: 'Đỗ Tiến sĩ năm Bính Thìn (1619) triều Lê Thần Tông.',
 });
 addChild(id_d15_trung, id_d16_kien);
 
-// Đời 17: Nguyễn Đăng
 const id_d17_dang = addPerson({
   id: makeUUID(17, 0, 1),
-  full_name: 'Nguyễn Đăng',
+  full_name: 'Nguyễn Đăng (Tự Phúc Khải)',
   gender: 'male',
   generation: 17,
   birth_order: 1,
   is_deceased: true,
-  note: 'Tự Phúc Khải. Con trai Tổ Mậu Kiên. Đỗ Tiến sĩ năm Bính Tý (1639) triều Lê Kính Tông.',
+  note: 'Đỗ Tiến sĩ năm Bính Tý (1639) triều Lê Kính Tông.',
 });
 addChild(id_d16_kien, id_d17_dang);
 
-// Đời 18: Nguyễn Mậu Tài
 const id_d18_tai = addPerson({
   id: makeUUID(18, 0, 1),
-  full_name: 'Nguyễn Mậu Tài',
+  full_name: 'Nguyễn Mậu Tài (Thượng Thư Bộ Binh)',
   gender: 'male',
   generation: 18,
   birth_order: 5,
   is_deceased: true,
-  note: 'Tự Mậu Tú, hiệu Phúc Thành / Viết Trai tiên sinh. Con thứ 5 của Tổ Nguyễn Đăng. Phó Đô ngự sử, Chánh sứ sang nhà Thanh (1673), Thượng thư Bộ Hình (1675), Thượng thư Bộ Binh (1676). Năm 1680 đem quân về dẹp loạn biển Thiên Trường rồi kết duyên với bà Lê Thị Tiểu Thư.',
+  note: 'Tự Mậu Tú, hiệu Phúc Thành / Viết Trai tiên sinh. Chánh sứ sang nhà Thanh (1673), Thượng thư Bộ Hình, Thượng thư Bộ Binh (1676).',
 });
 addChild(id_d17_dang, id_d18_tai);
 
@@ -377,16 +324,14 @@ const id_d18_le = addPerson({
   generation: 18,
   is_in_law: true,
   is_deceased: true,
-  note: 'Thứ thiếp tam thứ của Thượng thư Nguyễn Mậu Tài. Thân mẫu của cụ Nguyễn Mậu Thái (Phúc Hội) - Thủy Tổ dòng họ Nguyễn Mậu tại Cổ Lễ.',
+  note: 'Thứ thất cụ Thượng thư Nguyễn Mậu Tài, thân mẫu Thủy Tổ Nguyễn Mậu Thái (Phúc Hội).',
 });
 addMarriage(id_d18_tai, id_d18_le);
 
 // -----------------------------------------------------------------------------
-// PHẦN 2: TRUNG PHẢ (CỘI NGUỒN TẠI CỔ LỄ - ĐỜI 19 ĐẾN ĐỜI 28)
+// TRUNG PHẢ (CỘI NGUỒN CỔ LỄ - ĐỜI 19 ĐẾN ĐỜI 28)
 // -----------------------------------------------------------------------------
-console.log('Generating Trung Pha (Doi 19 -> 28)...');
-
-// ĐỜI 19 (ĐỜI 1 MẬU TỘC TẠI CỔ LỄ - THỦY TỔ)
+// ĐỜI 19 (ĐỜI 1 MẬU TỘC CỔ LỄ - THỦY TỔ)
 const id_d19_thai = addPerson({
   id: makeUUID(19, 0, 1),
   full_name: 'Nguyễn Mậu Thái (Tự Phúc Hội)',
@@ -396,7 +341,7 @@ const id_d19_thai = addPerson({
   death_lunar_day: 5,
   death_lunar_month: 6,
   is_deceased: true,
-  note: 'THỦY TỔ NGUYỄN MẬU TỘC tại Mặt Lãng Thượng (Thôn Thượng Đền, Cổ Lễ, Trực Ninh, Nam Định) năm Nhâm Tuất (1682). Con thứ 6 của Thượng thư Nguyễn Mậu Tài. Triều Lê phong tước Hậu Thần. Kỵ nhật ngày mồng 5 tháng 6 Âm lịch.',
+  note: 'THỦY TỔ NGUYỄN MẬU TỘC tại Mặt Lãng Thượng (Thôn Thượng Đền, Cổ Lễ, Trực Ninh, Nam Định) năm 1682. Triều đình phong Hậu Thần. Kỵ nhật mồng 5 tháng 6 Âm lịch.',
 });
 addParentsChild(id_d18_tai, id_d18_le, id_d19_thai);
 
@@ -409,12 +354,12 @@ const id_d19_ai = addPerson({
   death_lunar_day: 16,
   death_lunar_month: 2,
   is_deceased: true,
-  note: 'Chính thất của Thủy Tổ Nguyễn Mậu Thái (Phúc Hội). Kỵ nhật ngày 16 tháng 2 Âm lịch.',
+  note: 'Chính thất Thủy Tổ Phúc Hội. Kỵ nhật ngày 16 tháng 2 Âm lịch.',
 });
 addMarriage(id_d19_thai, id_d19_ai);
 
-// ĐỜI 20 (ĐỜI 2 MẬU TỘC - 4 NGÀNH CHÍNH)
-// 1. Ngành Nhất: Nguyễn Mậu Trường (Phúc Tiên)
+// ĐỜI 20 (ĐỜI 2 MẬU TỘC - 4 NGÀNH)
+// Ngành 1
 const id_d20_truong = addPerson({
   id: makeUUID(20, 1, 1),
   full_name: 'Nguyễn Mậu Trường (Tự Phúc Tiên)',
@@ -424,7 +369,7 @@ const id_d20_truong = addPerson({
   death_lunar_day: 1,
   death_lunar_month: 10,
   is_deceased: true,
-  note: 'Tổ Khởi Lập NGÀNH NHẤT. Triều Lê - Hiến Vương Công Chúa phong chức Hậu Thần. Kỵ nhật ngày mồng 1 tháng 10 Âm lịch.',
+  note: 'Tổ Khởi Lập NGÀNH NHẤT. Hậu thần, kỵ nhật mồng 1 tháng 10 Âm lịch.',
 });
 addParentsChild(id_d19_thai, id_d19_ai, id_d20_truong);
 
@@ -437,11 +382,11 @@ const id_d20_truong_ba = addPerson({
   death_lunar_day: 1,
   death_lunar_month: 10,
   is_deceased: true,
-  note: 'Tổ bà Ngành Nhất, kỵ nhật ngày mồng 1 tháng 10 Âm lịch.',
+  note: 'Tổ bà Ngành Nhất, kỵ nhật mồng 1 tháng 10 Âm lịch.',
 });
 addMarriage(id_d20_truong, id_d20_truong_ba);
 
-// 2. Ngành Nhị: Nguyễn Mậu Rong (Phúc Khoán)
+// Ngành 2
 const id_d20_rong = addPerson({
   id: makeUUID(20, 2, 1),
   full_name: 'Nguyễn Mậu Rong (Tự Phúc Khoán)',
@@ -451,7 +396,7 @@ const id_d20_rong = addPerson({
   death_lunar_day: 14,
   death_lunar_month: 3,
   is_deceased: true,
-  note: 'Tổ Khởi Lập NGÀNH NHỊ. Triều Lê phong chức Hậu Thần. Kỵ nhật ngày 14 tháng 3 Âm lịch.',
+  note: 'Tổ Khởi Lập NGÀNH NHỊ. Hậu thần, kỵ nhật 14 tháng 3 Âm lịch.',
 });
 addParentsChild(id_d19_thai, id_d19_ai, id_d20_rong);
 
@@ -464,11 +409,11 @@ const id_d20_rong_ba = addPerson({
   death_lunar_day: 30,
   death_lunar_month: 12,
   is_deceased: true,
-  note: 'Tổ bà Ngành Nhị, kỵ nhật ngày 30 tháng Chạp Âm lịch.',
+  note: 'Tổ bà Ngành Nhị, kỵ nhật 30 tháng Chạp Âm lịch.',
 });
 addMarriage(id_d20_rong, id_d20_rong_ba);
 
-// 3. Ngành Ba: Nguyễn Mậu Thiêm (Pháp Uyên)
+// Ngành 3
 const id_d20_thiem = addPerson({
   id: makeUUID(20, 3, 1),
   full_name: 'Nguyễn Mậu Thiêm (Tự Pháp Uyên)',
@@ -478,7 +423,7 @@ const id_d20_thiem = addPerson({
   death_lunar_day: 30,
   death_lunar_month: 9,
   is_deceased: true,
-  note: 'Tổ Khởi Lập NGÀNH BA. Triều Lê phong chức Hậu Thần. Kỵ nhật ngày 30 tháng 9 Âm lịch.',
+  note: 'Tổ Khởi Lập NGÀNH BA. Hậu thần, kỵ nhật 30 tháng 9 Âm lịch.',
 });
 addParentsChild(id_d19_thai, id_d19_ai, id_d20_thiem);
 
@@ -491,11 +436,11 @@ const id_d20_thiem_ba = addPerson({
   death_lunar_day: 15,
   death_lunar_month: 7,
   is_deceased: true,
-  note: 'Tổ bà Ngành Ba, kỵ nhật ngày 15 tháng 7 Âm lịch.',
+  note: 'Tổ bà Ngành Ba, kỵ nhật 15 tháng 7 Âm lịch.',
 });
 addMarriage(id_d20_thiem, id_d20_thiem_ba);
 
-// 4. Ngành Tư: Nguyễn Mậu Hoàn (Tướng Công Tuấn Thông / Viết Nghĩa)
+// Ngành 4
 const id_d20_hoan = addPerson({
   id: makeUUID(20, 4, 1),
   full_name: 'Nguyễn Mậu Hoàn (Tướng Công Tuấn Thông)',
@@ -508,7 +453,7 @@ const id_d20_hoan = addPerson({
   death_lunar_month: 1,
   death_lunar_year: 1780,
   is_deceased: true,
-  note: 'Tổ Khởi Lập NGÀNH TƯ (Ngành 4). Sinh năm Mậu Thân (1728), mất năm Canh Tý (1780), thọ 53 tuổi. Tự Tuấn Thông / Tuấn Hoàn, hiệu Viết Nghĩa / Viết Mẫn tiên sinh. Tri huyện Mỹ Lộc, thăng Tá lang, Tri phủ Thiên Trường dũng phủ quân. Vua phong Tướng công, ban 100 mẫu ruộng cho con cháu và dân làng cúng tế. Kỵ nhật ngày 12 tháng Giêng Âm lịch.',
+  note: 'Tổ Khởi Lập NGÀNH TƯ (Ngành 4). Tri huyện Mỹ Lộc, Tá lang, Tri phủ Thiên Trường dũng phủ quân. Tướng công triều Lê. Ban 100 mẫu ruộng cúng tế. Kỵ nhật 12 tháng Giêng Âm lịch.',
 });
 addParentsChild(id_d19_thai, id_d19_ai, id_d20_hoan);
 
@@ -521,120 +466,14 @@ const id_d20_hoan_ba = addPerson({
   death_lunar_day: 14,
   death_lunar_month: 3,
   is_deceased: true,
-  note: 'Tổ bà Ngành Tư, kỵ nhật ngày 14 tháng 3 Âm lịch.',
+  note: 'Tổ bà Ngành Tư, kỵ nhật 14 tháng 3 Âm lịch.',
 });
 addMarriage(id_d20_hoan, id_d20_hoan_ba);
 
 // -----------------------------------------------------------------------------
-// ĐỜI 21 (ĐỜI 3 MẬU TỘC / HÀNG TÔN)
+// ĐỜI 21
 // -----------------------------------------------------------------------------
-// Ngành 1 - Đời 21
-const id_d21_khai = addPerson({
-  id: makeUUID(21, 1, 1),
-  full_name: 'Nguyễn Mậu Khải',
-  gender: 'male',
-  generation: 21,
-  birth_order: 1,
-  is_deceased: true,
-  note: 'Con trai Tổ Phúc Tiên (Ngành Nhất).',
-});
-addParentsChild(id_d20_truong, id_d20_truong_ba, id_d21_khai);
-
-const id_d21_khai_ba = addPerson({
-  id: makeUUID(21, 1, 2),
-  full_name: 'Nguyễn Thị Khải',
-  gender: 'female',
-  generation: 21,
-  is_in_law: true,
-  is_deceased: true,
-  note: 'Vợ cụ Nguyễn Mậu Khải.',
-});
-addMarriage(id_d21_khai, id_d21_khai_ba);
-
-// Ngành 2 - Đời 21
-const id_d21_oai = addPerson({
-  id: makeUUID(21, 2, 1),
-  full_name: 'Nguyễn Mậu Oai',
-  gender: 'male',
-  generation: 21,
-  birth_order: 1,
-  is_deceased: true,
-  note: 'Con trai trưởng Tổ Phúc Khoán (Ngành Nhị).',
-});
-addParentsChild(id_d20_rong, id_d20_rong_ba, id_d21_oai);
-
-const id_d21_luc = addPerson({
-  id: makeUUID(21, 2, 2),
-  full_name: 'Nguyễn Mậu Lực',
-  gender: 'male',
-  generation: 21,
-  birth_order: 2,
-  is_deceased: true,
-  note: 'Con trai thứ 2 Tổ Phúc Khoán (Ngành Nhị).',
-});
-addParentsChild(id_d20_rong, id_d20_rong_ba, id_d21_luc);
-
-const id_d21_giam = addPerson({
-  id: makeUUID(21, 2, 3),
-  full_name: 'Nguyễn Mậu Giám',
-  gender: 'male',
-  generation: 21,
-  birth_order: 3,
-  death_lunar_day: 3,
-  death_lunar_month: 11,
-  is_deceased: true,
-  note: 'Con trai thứ 3 Tổ Phúc Khoán (Ngành Nhị). Kỵ nhật ngày 3 tháng 11 Âm lịch.',
-});
-addParentsChild(id_d20_rong, id_d20_rong_ba, id_d21_giam);
-
-const id_d21_giam_ba = addPerson({
-  id: makeUUID(21, 2, 4),
-  full_name: 'Nguyễn Thị Giám',
-  gender: 'female',
-  generation: 21,
-  is_in_law: true,
-  death_lunar_day: 3,
-  death_lunar_month: 12,
-  is_deceased: true,
-  note: 'Vợ cụ Nguyễn Mậu Giám. Kỵ nhật ngày 3 tháng 12 Âm lịch.',
-});
-addMarriage(id_d21_giam, id_d21_giam_ba);
-
-// Ngành 3 - Đời 21
-const id_d21_me = addPerson({
-  id: makeUUID(21, 3, 1),
-  full_name: 'Nguyễn Mậu Mễ',
-  gender: 'male',
-  generation: 21,
-  birth_order: 1,
-  is_deceased: true,
-  note: 'Con trưởng Tổ Pháp Uyên (Ngành Ba).',
-});
-addParentsChild(id_d20_thiem, id_d20_thiem_ba, id_d21_me);
-
-const id_d21_lang = addPerson({
-  id: makeUUID(21, 3, 2),
-  full_name: 'Nguyễn Mậu Lang',
-  gender: 'male',
-  generation: 21,
-  birth_order: 2,
-  is_deceased: true,
-  note: 'Con thứ 2 Tổ Pháp Uyên (Ngành Ba).',
-});
-addParentsChild(id_d20_thiem, id_d20_thiem_ba, id_d21_lang);
-
-const id_d21_dieu = addPerson({
-  id: makeUUID(21, 3, 3),
-  full_name: 'Nguyễn Mậu Điêu',
-  gender: 'male',
-  generation: 21,
-  birth_order: 3,
-  is_deceased: true,
-  note: 'Dưỡng tử Tổ Pháp Uyên (Ngành Ba). Sinh cụ Hạc -> cụ Kho -> cụ bà Nguyễn Thị Khe (1906).',
-});
-addChild(id_d20_thiem, id_d21_dieu, true);
-
-// Ngành 4 - Đời 21
+// Ngành 4 - Con cụ Tuấn Hoàn
 const id_d21_khoan = addPerson({
   id: makeUUID(21, 4, 1),
   full_name: 'Nguyễn Mậu Khoan (Cụ Cử Khoan)',
@@ -644,7 +483,7 @@ const id_d21_khoan = addPerson({
   death_lunar_day: 15,
   death_lunar_month: 8,
   is_deceased: true,
-  note: 'Con trưởng Tổ Tướng Công Tuấn Hoàn (Ngành 4). Đỗ Cử nhân, làm văn thư phủ Thiên Trường. Đời thường gọi là cụ Cử Khoan. Kỵ nhật ngày 15 tháng 8 Âm lịch (đồng giỗ với Cụ Bà).',
+  note: 'Con trưởng Tổ Tuấn Hoàn (Ngành 4). Đỗ Cử nhân, làm văn thư phủ Thiên Trường. Đồng giỗ với vợ ngày 15/8 Âm lịch.',
 });
 addParentsChild(id_d20_hoan, id_d20_hoan_ba, id_d21_khoan);
 
@@ -657,7 +496,7 @@ const id_d21_khoan_ba = addPerson({
   death_lunar_day: 15,
   death_lunar_month: 8,
   is_deceased: true,
-  note: 'Vợ cụ Cử Khoan. Đồng giỗ với chồng ngày 15 tháng 8 Âm lịch.',
+  note: 'Vợ cụ Cử Khoan, đồng giỗ 15/8 Âm lịch.',
 });
 addMarriage(id_d21_khoan, id_d21_khoan_ba);
 
@@ -670,9 +509,20 @@ const id_d21_giao = addPerson({
   death_lunar_day: 24,
   death_lunar_month: 6,
   is_deceased: true,
-  note: 'Con thứ 2 Tổ Tướng Công Tuấn Hoàn (Ngành 4). Kỵ nhật ngày 24 tháng 6 Âm lịch.',
+  note: 'Con thứ 2 Tổ Tuấn Hoàn. Giỗ 24/6 Âm lịch.',
 });
 addParentsChild(id_d20_hoan, id_d20_hoan_ba, id_d21_giao);
+
+const id_d21_giao_ba = addPerson({
+  id: makeUUID(21, 4, 33),
+  full_name: 'Cụ Bà (Vợ cụ Nguyễn Mậu Giáo)',
+  gender: 'female',
+  generation: 21,
+  is_in_law: true,
+  is_deceased: true,
+  note: 'Vợ cụ Nguyễn Mậu Giáo.',
+});
+addMarriage(id_d21_giao, id_d21_giao_ba);
 
 const id_d21_hoi = addPerson({
   id: makeUUID(21, 4, 4),
@@ -681,7 +531,7 @@ const id_d21_hoi = addPerson({
   generation: 21,
   birth_order: 3,
   is_deceased: true,
-  note: 'Con thứ 3 Tổ Tướng Công Tuấn Hoàn (Ngành 4). Sinh 3 con: Mậu Lĩnh, Mậu Thuần, Mậu Tợi.',
+  note: 'Con thứ 3 Tổ Tuấn Hoàn.',
 });
 addParentsChild(id_d20_hoan, id_d20_hoan_ba, id_d21_hoi);
 
@@ -692,131 +542,13 @@ const id_d21_bon = addPerson({
   generation: 21,
   birth_order: 4,
   is_deceased: true,
-  note: 'Con nuôi Tổ Tuấn Hoàn. Thi Hương, thi Hội đều đỗ đạt, làm quan Tuần phủ. Sinh cụ Đội Giang (Mậu Giang).',
+  note: 'Con nuôi Tổ Tuấn Hoàn, đỗ đạt làm quan Tuần phủ.',
 });
 addChild(id_d20_hoan, id_d21_bon, true);
 
-const id_d21_cuchoa = addPerson({
-  id: makeUUID(21, 4, 6),
-  full_name: 'Nguyễn Thị Cúc Hoa',
-  gender: 'female',
-  generation: 21,
-  birth_order: 5,
-  death_lunar_day: 27,
-  death_lunar_month: 2,
-  is_deceased: true,
-  note: 'Con gái Tổ Tuấn Hoàn, mất sớm khi còn nhỏ. Đồng giỗ với bà cô Ngọc Hoa ngày 27/02 Âm lịch.',
-});
-addParentsChild(id_d20_hoan, id_d20_hoan_ba, id_d21_cuchoa);
-
-const id_d21_ngochoa = addPerson({
-  id: makeUUID(21, 4, 7),
-  full_name: 'Nguyễn Thị Ngọc Hoa',
-  gender: 'female',
-  generation: 21,
-  birth_order: 6,
-  death_lunar_day: 27,
-  death_lunar_month: 2,
-  is_deceased: true,
-  note: 'Con gái Tổ Tuấn Hoàn, mất sớm khi còn nhỏ. Đồng giỗ ngày 27/02 Âm lịch.',
-});
-addParentsChild(id_d20_hoan, id_d20_hoan_ba, id_d21_ngochoa);
-
 // -----------------------------------------------------------------------------
-// ĐỜI 22 (ĐỜI 4 MẬU TỘC / ĐỆ TAM TỘC)
+// ĐỜI 22
 // -----------------------------------------------------------------------------
-// Ngành 1
-const id_d22_ngoi = addPerson({
-  id: makeUUID(22, 1, 1),
-  full_name: 'Nguyễn Mậu Ngợi',
-  gender: 'male',
-  generation: 22,
-  birth_order: 1,
-  is_deceased: true,
-  note: 'Con trai cụ Mậu Khải (Ngành 1). Sinh cụ Mậu Thân và cụ Mậu Hỗ.',
-});
-addParentsChild(id_d21_khai, id_d21_khai_ba, id_d22_ngoi);
-
-// Ngành 2
-const id_d22_sang = addPerson({
-  id: makeUUID(22, 2, 1),
-  full_name: 'Nguyễn Mậu Sảng',
-  gender: 'male',
-  generation: 22,
-  birth_order: 1,
-  is_deceased: true,
-  note: 'Con trai cụ Mậu Oai (Ngành 2). Sinh 4 con: Mậu Sáng, Mậu Lung, Mậu Khoát, Mậu Ngưng.',
-});
-addChild(id_d21_oai, id_d22_sang);
-
-const id_d22_thoa = addPerson({
-  id: makeUUID(22, 2, 2),
-  full_name: 'Nguyễn Mậu Thoa',
-  gender: 'male',
-  generation: 22,
-  birth_order: 1,
-  is_deceased: true,
-  note: 'Con trai cụ Mậu Lực (Ngành 2). Sinh cụ Mậu Thuyết.',
-});
-addChild(id_d21_luc, id_d22_thoa);
-
-const id_d22_thap = addPerson({
-  id: makeUUID(22, 2, 3),
-  full_name: 'Nguyễn Mậu Thập',
-  gender: 'male',
-  generation: 22,
-  birth_order: 1,
-  is_deceased: true,
-  note: 'Con trai thứ 1 cụ Mậu Giám (Ngành 2). Sinh cụ Mậu Châu.',
-});
-addParentsChild(id_d21_giam, id_d21_giam_ba, id_d22_thap);
-
-const id_d22_thu = addPerson({
-  id: makeUUID(22, 2, 4),
-  full_name: 'Nguyễn Mậu Thử',
-  gender: 'male',
-  generation: 22,
-  birth_order: 2,
-  is_deceased: true,
-  note: 'Con trai thứ 2 cụ Mậu Giám (Ngành 2). Sinh cụ Mậu Đối, cụ Mậu Hiếu, cụ Mậu Tỵ.',
-});
-addParentsChild(id_d21_giam, id_d21_giam_ba, id_d22_thu);
-
-const id_d22_tam = addPerson({
-  id: makeUUID(22, 2, 5),
-  full_name: 'Nguyễn Mậu Tam',
-  gender: 'male',
-  generation: 22,
-  birth_order: 3,
-  is_deceased: true,
-  note: 'Con trai thứ 3 cụ Mậu Giám (Ngành 2). Sinh cụ Mậu Thất.',
-});
-addParentsChild(id_d21_giam, id_d21_giam_ba, id_d22_tam);
-
-// Ngành 3
-const id_d22_gia = addPerson({
-  id: makeUUID(22, 3, 1),
-  full_name: 'Nguyễn Mậu Giá',
-  gender: 'male',
-  generation: 22,
-  birth_order: 1,
-  is_deceased: true,
-  note: 'Con trai cụ Mậu Mễ (Ngành 3). Sinh cụ Mậu Hanh, cụ Mậu Từ, cụ Mậu Côi, cụ Mậu Đỏ.',
-});
-addChild(id_d21_me, id_d22_gia);
-
-const id_d22_giang = addPerson({
-  id: makeUUID(22, 3, 2),
-  full_name: 'Nguyễn Mậu Giảng',
-  gender: 'male',
-  generation: 22,
-  birth_order: 1,
-  is_deceased: true,
-  note: 'Con trai cụ Mậu Lang (Ngành 3). Sinh cụ Mậu Tố và các con gái.',
-});
-addChild(id_d21_lang, id_d22_giang);
-
-// Ngành 4
 const id_d22_men = addPerson({
   id: makeUUID(22, 4, 1),
   full_name: 'Nguyễn Mậu Mền',
@@ -824,7 +556,7 @@ const id_d22_men = addPerson({
   generation: 22,
   birth_order: 1,
   is_deceased: true,
-  note: 'Con trai cụ Cử Khoan (Ngành 4). Sinh cụ Hương Ngung (Mậu Ngung).',
+  note: 'Con cụ Cử Khoan.',
 });
 addParentsChild(id_d21_khoan, id_d21_khoan_ba, id_d22_men);
 
@@ -835,9 +567,9 @@ const id_d22_viem = addPerson({
   generation: 22,
   birth_order: 1,
   is_deceased: true,
-  note: 'Con trai thứ 1 cụ Mậu Giáo (Ngành 4). Sinh cụ Mậu Kiền và cụ Mậu Lễ.',
+  note: 'Con trai thứ nhất cụ Mậu Giáo (Ngành 4). Sinh cụ Mậu Kiền và cụ Mậu Lễ.',
 });
-addChild(id_d21_giao, id_d22_viem);
+addParentsChild(id_d21_giao, id_d21_giao_ba, id_d22_viem);
 
 const id_d22_viem_ba = addPerson({
   id: makeUUID(22, 4, 22),
@@ -850,17 +582,6 @@ const id_d22_viem_ba = addPerson({
 });
 addMarriage(id_d22_viem, id_d22_viem_ba);
 
-const id_d22_tu = addPerson({
-  id: makeUUID(22, 4, 3),
-  full_name: 'Nguyễn Mậu Tự',
-  gender: 'male',
-  generation: 22,
-  birth_order: 2,
-  is_deceased: true,
-  note: 'Con trai thứ 2 cụ Mậu Giáo (Ngành 4). Nuôi cụ Mậu Chanh.',
-});
-addChild(id_d21_giao, id_d22_tu);
-
 const id_d22_tac = addPerson({
   id: makeUUID(22, 4, 4),
   full_name: 'Nguyễn Mậu Tạc',
@@ -870,9 +591,9 @@ const id_d22_tac = addPerson({
   death_lunar_day: 27,
   death_lunar_month: 3,
   is_deceased: true,
-  note: 'Con trai thứ 3 cụ Mậu Giáo (Ngành 4). Mất ngày 27/03 Âm lịch, thọ 49 tuổi. Vợ là cụ Nguyễn Thị Bòng (giỗ 23/3). Sinh cụ Mậu Yêng.',
+  note: 'Con trai thứ 3 cụ Mậu Giáo. Giỗ 27/3 Âm lịch, thọ 49 tuổi. Vợ Nguyễn Thị Bòng giỗ 23/3 Âm lịch.',
 });
-addChild(id_d21_giao, id_d22_tac);
+addParentsChild(id_d21_giao, id_d21_giao_ba, id_d22_tac);
 
 const id_d22_tac_ba = addPerson({
   id: makeUUID(22, 4, 5),
@@ -883,7 +604,7 @@ const id_d22_tac_ba = addPerson({
   death_lunar_day: 23,
   death_lunar_month: 3,
   is_deceased: true,
-  note: 'Vợ cụ Nguyễn Mậu Tạc. Giỗ ngày 23 tháng 3 Âm lịch.',
+  note: 'Vợ cụ Nguyễn Mậu Tạc, giỗ 23/3 Âm lịch.',
 });
 addMarriage(id_d22_tac, id_d22_tac_ba);
 
@@ -896,20 +617,9 @@ const id_d22_linh = addPerson({
   death_lunar_day: 14,
   death_lunar_month: 11,
   is_deceased: true,
-  note: 'Con trai trưởng cụ Mậu Hợi (Ngành 4). Giỗ ngày 14 tháng 11 Âm lịch (đồng giỗ với cụ bà Nguyễn Thị Là). Sinh cụ Mậu Thống, cụ Mậu Khả, cụ bà Thị Tụng.',
+  note: 'Con trưởng cụ Mậu Hợi. Giỗ 14/11 Âm lịch, đồng giỗ vợ Nguyễn Thị Là.',
 });
 addChild(id_d21_hoi, id_d22_linh);
-
-const id_d22_thuan = addPerson({
-  id: makeUUID(22, 4, 7),
-  full_name: 'Nguyễn Mậu Thuần',
-  gender: 'male',
-  generation: 22,
-  birth_order: 2,
-  is_deceased: true,
-  note: 'Con thứ 2 cụ Mậu Hợi (Ngành 4). Sinh cụ Mậu Đồng, cụ Mậu Tỵ.',
-});
-addChild(id_d21_hoi, id_d22_thuan);
 
 const id_d22_toi = addPerson({
   id: makeUUID(22, 4, 8),
@@ -920,7 +630,7 @@ const id_d22_toi = addPerson({
   death_lunar_day: 9,
   death_lunar_month: 5,
   is_deceased: true,
-  note: 'Con thứ 3 cụ Mậu Hợi (Ngành 4). Giỗ ngày 9 tháng 5 Âm lịch. Vợ Nguyễn Thị Tợi giỗ 26/6. Sinh cụ Mậu Tiến, cụ Mậu Hinh.',
+  note: 'Con thứ 3 cụ Mậu Hợi. Giỗ 9/5 Âm lịch. Vợ Nguyễn Thị Tợi giỗ 26/6.',
 });
 addChild(id_d21_hoi, id_d22_toi);
 
@@ -933,14 +643,13 @@ const id_d22_doi_giang = addPerson({
   death_lunar_day: 26,
   death_lunar_month: 2,
   is_deceased: true,
-  note: 'Con trai cụ Tuần Bốn (Ngành 4). Chánh suất đội triều Nguyễn. Giỗ 26/02 Âm lịch. Vợ là Nguyễn Thị Lý (Nhí) giỗ 12 tháng Chạp. Sinh cụ Mậu Vinh, cụ bà Thị Mùi.',
+  note: 'Chánh suất đội triều Nguyễn. Giỗ 26/2 Âm lịch. Vợ Nguyễn Thị Lý giỗ 12 tháng Chạp.',
 });
 addChild(id_d21_bon, id_d22_doi_giang);
 
 // -----------------------------------------------------------------------------
-// ĐỜI 23 (ĐỜI 5 MẬU TỘC / ĐỆ TỨ TỘC)
+// ĐỜI 23
 // -----------------------------------------------------------------------------
-// Ngành 4 - Nhánh cụ Mậu Mền -> Cụ Hương Ngung
 const id_d23_ngung = addPerson({
   id: makeUUID(23, 4, 1),
   full_name: 'Nguyễn Mậu Ngung (Cụ Hương Ngung)',
@@ -950,7 +659,7 @@ const id_d23_ngung = addPerson({
   death_lunar_day: 4,
   death_lunar_month: 4,
   is_deceased: true,
-  note: 'Con trai cụ Mậu Mền (Ngành 4). Giữ chức Hương hội nên gọi là cụ Hương Ngung. Giỗ 4/4 Âm lịch. Vợ là Nguyễn Thị Kiêm giỗ 20/6 Âm lịch.',
+  note: 'Con trai cụ Mậu Mền. Hương hội. Giỗ 4/4 Âm lịch. Vợ Nguyễn Thị Kiêm giỗ 20/6 Âm lịch.',
 });
 addChild(id_d22_men, id_d23_ngung);
 
@@ -963,11 +672,58 @@ const id_d23_ngung_ba = addPerson({
   death_lunar_day: 20,
   death_lunar_month: 6,
   is_deceased: true,
-  note: 'Vợ cụ Hương Ngung. Giỗ ngày 20 tháng 6 Âm lịch.',
+  note: 'Vợ cụ Hương Ngung, giỗ 20/6 Âm lịch.',
 });
 addMarriage(id_d23_ngung, id_d23_ngung_ba);
 
-// Ngành 4 - Nhánh cụ Mậu Tạc -> Cụ Mậu Yêng
+const id_d23_kien = addPerson({
+  id: makeUUID(23, 4, 11),
+  full_name: 'Nguyễn Mậu Kiền',
+  gender: 'male',
+  generation: 23,
+  birth_order: 1,
+  is_deceased: true,
+  note: 'Con trai thứ nhất cụ Mậu Việm (Ngành 4).',
+});
+addParentsChild(id_d22_viem, id_d22_viem_ba, id_d23_kien);
+
+const id_d23_kien_ba = addPerson({
+  id: makeUUID(23, 4, 12),
+  full_name: 'Nguyễn Thị Kiền',
+  gender: 'female',
+  generation: 23,
+  is_in_law: true,
+  is_deceased: true,
+  note: 'Vợ cụ Nguyễn Mậu Kiền.',
+});
+addMarriage(id_d23_kien, id_d23_kien_ba);
+
+const id_d23_le = addPerson({
+  id: makeUUID(23, 4, 6),
+  full_name: 'Nguyễn Mậu Lễ',
+  gender: 'male',
+  generation: 23,
+  birth_order: 2,
+  death_lunar_day: 27,
+  death_lunar_month: 6,
+  is_deceased: true,
+  note: 'Con trai thứ 2 cụ Mậu Việm. Giỗ 27/6 Âm lịch. Vợ là Nguyễn Thị Nhiên giỗ 27/3 Âm lịch.',
+});
+addParentsChild(id_d22_viem, id_d22_viem_ba, id_d23_le);
+
+const id_d23_le_ba = addPerson({
+  id: makeUUID(23, 4, 13),
+  full_name: 'Nguyễn Thị Nhiên',
+  gender: 'female',
+  generation: 23,
+  is_in_law: true,
+  death_lunar_day: 27,
+  death_lunar_month: 3,
+  is_deceased: true,
+  note: 'Vợ cụ Nguyễn Mậu Lễ. Giỗ ngày 27 tháng 3 Âm lịch.',
+});
+addMarriage(id_d23_le, id_d23_le_ba);
+
 const id_d23_yeng = addPerson({
   id: makeUUID(23, 4, 3),
   full_name: 'Nguyễn Mậu Yêng',
@@ -982,7 +738,7 @@ const id_d23_yeng = addPerson({
   death_lunar_month: 4,
   death_lunar_year: 1912,
   is_deceased: true,
-  note: 'Con trai cụ Mậu Tạc (Ngành 4). Sinh Canh Tuất 1850, mất 17/4 Nhâm Tý (13/5/1912), thọ 53 tuổi. Vợ cả Nguyễn Thị Thận (1851-1930) thọ 80 tuổi (giỗ 2/7). Vợ thứ Hoàng Thị Gái làng Vị Hoàng (giỗ 23/7).',
+  note: 'Con trai cụ Mậu Tạc. Sinh 1850 mất 17/4 Nhâm Tý (1912) thọ 53 tuổi. Vợ cả Nguyễn Thị Thận (1851-1930, giỗ 2/7), vợ thứ Hoàng Thị Gái (giỗ 23/7).',
 });
 addParentsChild(id_d22_tac, id_d22_tac_ba, id_d23_yeng);
 
@@ -998,7 +754,7 @@ const id_d23_than = addPerson({
   death_lunar_year: 1930,
   is_in_law: true,
   is_deceased: true,
-  note: 'Chính thất cụ Mậu Yêng. Sinh năm Tân Hợi (1851), giỗ 2/7 Canh Ngọ (25/8/1930), thọ 80 tuổi. Sinh cụ Phó Huỳnh và cụ bà Thị Chài.',
+  note: 'Chính thất cụ Mậu Yêng, giỗ 2/7 Canh Ngọ (1930) thọ 80 tuổi.',
 });
 addMarriage(id_d23_yeng, id_d23_than);
 
@@ -1012,84 +768,13 @@ const id_d23_gai = addPerson({
   death_lunar_month: 7,
   death_lunar_year: 1945,
   is_deceased: true,
-  note: 'Thứ thất cụ Mậu Yêng, người làng Vị Hoàng - Nam Định. Giỗ ngày 23/7 Ất Dậu (30/8/1945). Sinh cụ Tuần Liễn (Mậu Hiện).',
+  note: 'Thứ thất cụ Mậu Yêng, làng Vị Hoàng - Nam Định. Giỗ 23/7 Âm lịch.',
 });
 addMarriage(id_d23_yeng, id_d23_gai);
 
-// Ngành 4 - Nhánh cụ Mậu Việm -> Cụ Mậu Lễ -> Cụ Lý Nhạc
-const id_d23_le = addPerson({
-  id: makeUUID(23, 4, 6),
-  full_name: 'Nguyễn Mậu Lễ',
-  gender: 'male',
-  generation: 23,
-  birth_order: 2,
-  death_lunar_day: 27,
-  death_lunar_month: 6,
-  is_deceased: true,
-  note: 'Con trai thứ 2 cụ Mậu Việm (Ngành 4). Giỗ ngày 27/6 Âm lịch. Vợ Nguyễn Thị Nhiên giỗ 27/3 Âm lịch. Sinh cụ Lý Nhạc.',
-});
-addChild(id_d22_viem, id_d23_le);
-
-// Ngành 4 - Nhánh cụ Đội Giang -> Cụ Mậu Vinh & Cụ Cửu Linh
-const id_d23_vinh = addPerson({
-  id: makeUUID(23, 4, 7),
-  full_name: 'Nguyễn Mậu Vinh',
-  gender: 'male',
-  generation: 23,
-  birth_order: 1,
-  is_deceased: true,
-  note: 'Con trai cụ Đội Giang (bà cả). Người tiến cúng bức đại tự Mậu Đức Hậu Công. Vợ là Nguyễn Thị Cộc. Sinh cụ Mậu Loan (1902).',
-});
-addChild(id_d22_doi_giang, id_d23_vinh);
-
-const id_d23_cam = addPerson({
-  id: makeUUID(23, 4, 8),
-  full_name: 'Nguyễn Mậu Cẩm (Cụ Cửu Linh)',
-  gender: 'male',
-  generation: 23,
-  birth_order: 2,
-  birth_year: 1901,
-  death_year: 1975,
-  death_day: 22,
-  death_month: 9,
-  death_lunar_day: 17,
-  death_lunar_month: 8,
-  death_lunar_year: 1975,
-  is_deceased: true,
-  note: 'Con trai cụ Đội Giang (bà kế). Có tên tự là Linh ("Minh Linh"), phong chức cửu phẩm nên gọi là cụ Cửu Linh. Sinh 1901 mất 17/8 Ất Mão (22/9/1975) thọ 75 tuổi. Vợ 1 Nguyễn Thị Đọ (1901-1932), vợ 2 Lương Thị Phụng (1903-1990).',
-});
-addChild(id_d22_doi_giang, id_d23_cam);
-
-// Ngành 4 - Nhánh cụ Mậu Lĩnh -> Cụ Mậu Thống & Mậu Khả
-const id_d23_thong = addPerson({
-  id: makeUUID(23, 4, 9),
-  full_name: 'Nguyễn Mậu Thống',
-  gender: 'male',
-  generation: 23,
-  birth_order: 1,
-  death_lunar_day: 6,
-  death_lunar_month: 6,
-  is_deceased: true,
-  note: 'Con trai cả cụ Mậu Lĩnh. Giỗ 6/6 Âm lịch. Vợ Nguyễn Thị Dùm giỗ 7/11. Sinh cụ Mậu Mục, cụ Mậu Mạc.',
-});
-addChild(id_d22_linh, id_d23_thong);
-
-// Ngành 4 - Nhánh cụ Mậu Tợi -> Cụ Quản Hinh
-const id_d23_hinh = addPerson({
-  id: makeUUID(23, 4, 10),
-  full_name: 'Nguyễn Mậu Hinh (Cụ Quản Hinh)',
-  gender: 'male',
-  generation: 23,
-  birth_order: 2,
-  is_deceased: true,
-  note: 'Con thứ cụ Mậu Tợi. Sinh các cụ: Phúc (1902), Khánh (1904), Khương (1908), Hưởng (1918), Ruân (1920), Kình (1910).',
-});
-addChild(id_d22_toi, id_d23_hinh);
-
 // -----------------------------------------------------------------------------
-// ĐỜI 24 (ĐỜI 6 MẬU TỘC / ĐỜI 6 TRUNG PHẢ)
+// ĐỜI 24
 // -----------------------------------------------------------------------------
-// 1. Nhánh cụ Hương Ngung -> Cụ Quản Trắm
 const id_d24_tram = addPerson({
   id: makeUUID(24, 4, 1),
   full_name: 'Nguyễn Mậu Trắm (Cụ Quản Trắm)',
@@ -1099,7 +784,7 @@ const id_d24_tram = addPerson({
   death_lunar_day: 27,
   death_lunar_month: 4,
   is_deceased: true,
-  note: 'Con trai cả cụ Hương Ngung (Ngành 4). Giữ chức Quản Hội nên thường gọi cụ Quản Trắm. Giỗ 27/4 Âm lịch. Vợ Nguyễn Thị Thân giỗ 11/8 Âm lịch. Sinh cụ Nguyễn Mậu Hách (1934).',
+  note: 'Quản Hội, con cả cụ Hương Ngung. Giỗ 27/4 Âm lịch. Vợ Nguyễn Thị Thân giỗ 11/8 Âm lịch.',
 });
 addParentsChild(id_d23_ngung, id_d23_ngung_ba, id_d24_tram);
 
@@ -1112,11 +797,36 @@ const id_d24_tram_ba = addPerson({
   death_lunar_day: 11,
   death_lunar_month: 8,
   is_deceased: true,
-  note: 'Vợ cụ Quản Trắm. Giỗ ngày 11 tháng 8 Âm lịch.',
+  note: 'Vợ cụ Quản Trắm, giỗ 11/8 Âm lịch.',
 });
 addMarriage(id_d24_tram, id_d24_tram_ba);
 
-// 2. Nhánh cụ Mậu Yêng -> Cụ Phó Huỳnh
+const id_d24_nhac = addPerson({
+  id: makeUUID(24, 4, 16),
+  full_name: 'Nguyễn Mậu Nhạc (Cụ Lý Nhạc)',
+  gender: 'male',
+  generation: 24,
+  birth_order: 1,
+  death_lunar_day: 5,
+  death_lunar_month: 8,
+  is_deceased: true,
+  note: 'Con trai cụ Mậu Lễ và cụ bà Nguyễn Thị Nhiên. Làm Lý trưởng nên thường gọi là cụ Lý Nhạc. Giỗ ngày 05/08 Âm lịch. Vợ là cụ Nguyễn Thị Mòi giỗ 30 tháng Chạp.',
+});
+addParentsChild(id_d23_le, id_d23_le_ba, id_d24_nhac);
+
+const id_d24_moi = addPerson({
+  id: makeUUID(24, 4, 17),
+  full_name: 'Nguyễn Thị Mòi',
+  gender: 'female',
+  generation: 24,
+  is_in_law: true,
+  death_lunar_day: 30,
+  death_lunar_month: 12,
+  is_deceased: true,
+  note: 'Vợ cụ Lý Nhạc. Giỗ ngày 30 tháng Chạp Âm lịch.',
+});
+addMarriage(id_d24_nhac, id_d24_moi);
+
 const id_d24_huynh = addPerson({
   id: makeUUID(24, 4, 3),
   full_name: 'Nguyễn Mậu Huỳnh (Cụ Phó Huỳnh)',
@@ -1131,7 +841,7 @@ const id_d24_huynh = addPerson({
   death_lunar_month: 1,
   death_lunar_year: 1956,
   is_deceased: true,
-  note: 'Tác giả cuốn Chúc Phả chữ Hán Nôm năm Quý Tỵ (1953) lưu giữ nguồn gốc họ Nguyễn Mậu Cổ Lễ. Sinh năm Đinh Dậu 1896, mất 8/1 Bính Thân (19/2/1956), thọ 61 tuổi. Làm Phó lý.',
+  note: 'Tác giả Chúc Phả năm 1953. Phó lý. Sinh 1896 mất 8/1 Bính Thân (1956) thọ 61 tuổi.',
 });
 addParentsChild(id_d23_yeng, id_d23_than, id_d24_huynh);
 
@@ -1149,11 +859,10 @@ const id_d24_hat = addPerson({
   death_lunar_year: 1971,
   is_in_law: true,
   is_deceased: true,
-  note: 'Vợ cụ Phó Huỳnh (con gái cụ Xiển). Sinh năm Quý Mão 1903, mất 01/5 nhuận Tân Hợi (23/6/1971), thọ 69 tuổi.',
+  note: 'Vợ cụ Phó Huỳnh, sinh 1903 mất 1/5 nhuận Tân Hợi (1971) thọ 69 tuổi.',
 });
 addMarriage(id_d24_huynh, id_d24_hat);
 
-// Cụ Tuần Liễn (Mậu Hiện)
 const id_d24_hien = addPerson({
   id: makeUUID(24, 4, 5),
   full_name: 'Nguyễn Mậu Hiện (Cụ Tuần Liễn)',
@@ -1168,58 +877,13 @@ const id_d24_hien = addPerson({
   death_lunar_month: 4,
   death_lunar_year: 1981,
   is_deceased: true,
-  note: 'Con trai cụ Mậu Yêng (bà kế). Làm Tuần tổng nên gọi là Tuần Liễn. Sinh Quý Mão 1903, mất 21/4 Tân Dậu (24/5/1981), thọ 79 tuổi. Vợ chính Nguyễn Thị Hột (1905-1981), vợ thứ Nguyễn Thị Hồng (1923-1988).',
+  note: 'Tuần tổng. Sinh 1903 mất 21/4 Tân Dậu (1981) thọ 79 tuổi.',
 });
 addParentsChild(id_d23_yeng, id_d23_gai, id_d24_hien);
 
-// 3. Nhánh Cụ Lý Nhạc -> Cụ Tuần Riệp (Mậu Thích)
-const id_d24_thich = addPerson({
-  id: makeUUID(24, 4, 6),
-  full_name: 'Nguyễn Mậu Thích (Cụ Tuần Riệp)',
-  gender: 'male',
-  generation: 24,
-  birth_order: 3,
-  birth_year: 1916,
-  death_year: 1964,
-  death_day: 12,
-  death_month: 3,
-  death_lunar_day: 29,
-  death_lunar_month: 1,
-  death_lunar_year: 1964,
-  is_deceased: true,
-  note: 'Tự là Nguyễn Mậu Riệp, làm Tuần Tổng. Sinh Bính Thìn 1916, mất 29/1 Giáp Thìn (12/3/1964), thọ 49 tuổi. Vợ chính Nguyễn Thị Nhỡ (1918-2000), vợ thứ Đàm Thị Cách (Mẹ VNAH, có con Liệt sĩ Nguyễn Mậu Đức).',
-});
-addChild(id_d23_le, id_d24_thich);
-
-// 4. Nhánh Cụ Cửu Linh -> Cụ Nguyễn Mậu Lê Khanh
-const id_d24_lekhanh = addPerson({
-  id: makeUUID(24, 4, 7),
-  full_name: 'Nguyễn Mậu Lê Khanh',
-  gender: 'male',
-  generation: 24,
-  birth_order: 1,
-  birth_year: 1927,
-  is_deceased: false,
-  note: 'Con trai thứ nhất cụ Cửu Linh. Cán bộ Trung Ương Đoàn TNCS Hồ Chí Minh nghỉ hưu tại 43 phố Ngô Quyền, Hà Nội. Huân chương Kháng chiến chống Pháp hạng Ba, chống Mỹ hạng Nhất.',
-});
-addChild(id_d23_cam, id_d24_lekhanh);
-
-const id_d24_kimlien = addPerson({
-  id: makeUUID(24, 4, 8),
-  full_name: 'Đoàn Thị Kim Liên',
-  gender: 'female',
-  generation: 24,
-  birth_year: 1928,
-  is_in_law: true,
-  is_deceased: false,
-  note: 'Vợ cụ Nguyễn Mậu Lê Khanh, quê làng Đô Quan, Nam Lợi, Nam Trực. Cán bộ Công ty Phục vụ Hà Nội.',
-});
-addMarriage(id_d24_lekhanh, id_d24_kimlien);
-
 // -----------------------------------------------------------------------------
-// ĐỜI 25 & 26 (ĐỜI 7 & ĐỜI 8 MẬU TỘC - TRƯỞNG BAN VÀ CON CHÁU ĐƯƠNG ĐẠI NĂM 2000)
+// ĐỜI 25
 // -----------------------------------------------------------------------------
-// 1. Cụ NGUYỄN MẬU HÁCH (Trưởng nam Ngành 4)
 const id_d25_hach = addPerson({
   id: makeUUID(25, 4, 1),
   full_name: 'Nguyễn Mậu Hách',
@@ -1228,7 +892,7 @@ const id_d25_hach = addPerson({
   birth_order: 1,
   birth_year: 1934,
   is_deceased: false,
-  note: 'Trưởng nam Ngành 4 dòng họ Nguyễn Mậu. Sinh năm Giáp Tuất (1934). Cựu chiến binh, Chủ nhiệm HTX May mặc Nghĩa Lợi, Chủ tịch Ủy ban Mặt trận Tổ quốc Việt Nam Thị trấn Cổ Lễ. Huân chương Kháng chiến chống Mỹ hạng Nhất.',
+  note: 'Trưởng nam Ngành 4 Nguyễn Mậu Tộc. Sinh năm Giáp Tuất (1934). Chủ tịch UBMTTQ TT. Cổ Lễ.',
   occupation: 'Chủ tịch UBMTTQ Thị trấn Cổ Lễ / Trưởng nam Ngành 4',
   residence: 'Thôn Thượng Đền, Thị trấn Cổ Lễ, Trực Ninh, Nam Định',
 });
@@ -1242,11 +906,56 @@ const id_d25_hach_ba = addPerson({
   birth_year: 1933,
   is_in_law: true,
   is_deceased: false,
-  note: 'Vợ cụ Nguyễn Mậu Hách, sinh năm Quý Dậu (1933), con gái cụ Nguyễn Gia Ba cùng làng.',
+  note: 'Vợ cụ Nguyễn Mậu Hách, sinh Quý Dậu (1933).',
 });
 addMarriage(id_d25_hach, id_d25_hach_ba);
 
-// 2. Cụ NGUYỄN MẬU TƯỜNG (Trưởng ban biên soạn Phả tộc 2001)
+const id_d25_thich = addPerson({
+  id: makeUUID(25, 4, 6),
+  full_name: 'Nguyễn Mậu Thích (Cụ Tuần Riệp)',
+  gender: 'male',
+  generation: 25,
+  birth_order: 3,
+  birth_year: 1916,
+  death_year: 1964,
+  death_day: 12,
+  death_month: 3,
+  death_lunar_day: 29,
+  death_lunar_month: 1,
+  death_lunar_year: 1964,
+  is_deceased: true,
+  note: 'Tự là Nguyễn Mậu Riệp, làm Tuần Tổng. Con trai cụ Lý Nhạc. Sinh 1916 mất 29/1 Giáp Thìn (1964) thọ 49 tuổi.',
+});
+addParentsChild(id_d24_nhac, id_d24_moi, id_d25_thich);
+
+const id_d25_nho = addPerson({
+  id: makeUUID(25, 4, 61),
+  full_name: 'Nguyễn Thị Nhỡ',
+  gender: 'female',
+  generation: 25,
+  birth_year: 1918,
+  death_year: 2000,
+  death_lunar_day: 5,
+  death_lunar_month: 11,
+  death_lunar_year: 2000,
+  is_in_law: true,
+  is_deceased: true,
+  note: 'Chính thất cụ Tuần Riệp (Mậu Thích). Sinh 1918 mất 05/11 Canh Thìn (30/11/2000) thọ 83 tuổi.',
+});
+addMarriage(id_d25_thich, id_d25_nho);
+
+const id_d25_cach = addPerson({
+  id: makeUUID(25, 4, 62),
+  full_name: 'Đàm Thị Cách (Mẹ VNAH)',
+  gender: 'female',
+  generation: 25,
+  birth_year: 1914,
+  is_in_law: true,
+  is_deceased: true,
+  note: 'Thứ thất cụ Tuần Riệp (Mậu Thích). Bà Mẹ Việt Nam Anh Hùng, thân mẫu Liệt sĩ Nguyễn Mậu Đức.',
+});
+addMarriage(id_d25_thich, id_d25_cach);
+
 const id_d25_tuong = addPerson({
   id: makeUUID(25, 4, 3),
   full_name: 'Nguyễn Mậu Tường',
@@ -1255,7 +964,7 @@ const id_d25_tuong = addPerson({
   birth_order: 7,
   birth_year: 1935,
   is_deceased: false,
-  note: 'Trưởng ban biên soạn Ngọc Phả Nguyễn Mậu Tộc năm 2001. Sinh năm Ất Hợi (1935), con thứ cụ Phó Huỳnh. Cán bộ GTVT, Đội trưởng Đội TNXP phục vụ tiền phương chống Mỹ. Bằng ghi công chiến sĩ giao thông không chiến hào, Huân chương Kháng chiến hạng Ba.',
+  note: 'Trưởng ban biên soạn Ngọc Phả Nguyễn Mậu Tộc năm 2001. Sinh năm Ất Hợi (1935), con thứ cụ Phó Huỳnh.',
 });
 addParentsChild(id_d24_huynh, id_d24_hat, id_d25_tuong);
 
@@ -1267,11 +976,10 @@ const id_d25_tuong_ba = addPerson({
   birth_year: 1940,
   is_in_law: true,
   is_deceased: false,
-  note: 'Vợ cụ Nguyễn Mậu Tường, sinh năm Canh Thìn (1940), người xứ Đông Thượng.',
+  note: 'Vợ cụ Nguyễn Mậu Tường, sinh năm Canh Thìn (1940).',
 });
 addMarriage(id_d25_tuong, id_d25_tuong_ba);
 
-// 3. Cụ NGUYỄN MẬU ĐIỂN (Huyện ủy viên)
 const id_d25_dien = addPerson({
   id: makeUUID(25, 4, 5),
   full_name: 'Nguyễn Mậu Điển (Tự Mậu Linh)',
@@ -1286,26 +994,26 @@ const id_d25_dien = addPerson({
   death_lunar_month: 3,
   death_lunar_year: 1998,
   is_deceased: true,
-  note: 'Con trai cụ Phó Huỳnh. Sinh năm Kỷ Tỵ (1929), mất 17/3 Mậu Dần (13/4/1998), thọ 70 tuổi. Huyện ủy viên huyện Trực Ninh. Huân chương Kháng chiến hạng Nhất.',
+  note: 'Huyện ủy viên Trực Ninh. Sinh 1929 mất 17/3 Mậu Dần (1998) thọ 70 tuổi.',
 });
 addParentsChild(id_d24_huynh, id_d24_hat, id_d25_dien);
 
 const id_d25_dien_ba = addPerson({
-  id: makeUUID(25, 4, 6),
+  id: makeUUID(25, 4, 55),
   full_name: 'Trần Thị Nhu',
   gender: 'female',
   generation: 25,
   birth_year: 1930,
   is_in_law: true,
   is_deceased: false,
-  note: 'Vợ cụ Nguyễn Mậu Điển, sinh Canh Ngọ 1930, người làng xứ Đông Thượng.',
+  note: 'Vợ cụ Nguyễn Mậu Điển.',
 });
 addMarriage(id_d25_dien, id_d25_dien_ba);
 
 // -----------------------------------------------------------------------------
-// ĐỜI 26 (CON CỤ NGUYỄN MẬU HÁCH & CÁC BÁC ĐƯƠNG ĐẠI)
+// ĐỜI 26 (CON CỤ HÁCH & CON CỤ TUẦN RIỆP)
 // -----------------------------------------------------------------------------
-// Các con cụ Nguyễn Mậu Hách:
+// Con cụ Hách
 const id_d26_thinh = addPerson({
   id: makeUUID(26, 4, 1),
   full_name: 'Nguyễn Mậu Thịnh',
@@ -1314,8 +1022,7 @@ const id_d26_thinh = addPerson({
   birth_order: 1,
   birth_year: 1956,
   is_deceased: false,
-  note: 'Con trai trưởng cụ Mậu Hách. Sinh năm Bính Thân (1956). Tốt nghiệp Đại học An ninh, Thiếu tá Công an, Phó phòng Chính trị Công an tỉnh Đồng Nai.',
-  occupation: 'Thiếu tá Công an tỉnh Đồng Nai',
+  note: 'Con trưởng cụ Mậu Hách. Thiếu tá Công an tỉnh Đồng Nai.',
 });
 addParentsChild(id_d25_hach, id_d25_hach_ba, id_d26_thinh);
 
@@ -1327,7 +1034,7 @@ const id_d26_thinh_ba = addPerson({
   birth_year: 1959,
   is_in_law: true,
   is_deceased: false,
-  note: 'Vợ ông Nguyễn Mậu Thịnh, sinh năm Kỷ Hợi (1959), quê Ý Yên.',
+  note: 'Vợ ông Nguyễn Mậu Thịnh.',
 });
 addMarriage(id_d26_thinh, id_d26_thinh_ba);
 
@@ -1339,7 +1046,7 @@ const id_d26_quan = addPerson({
   birth_order: 2,
   birth_year: 1961,
   is_deceased: false,
-  note: 'Con trai thứ 2 cụ Mậu Hách. Sinh năm Tân Sửu (1961). Chủ nhiệm HTX May mặc Nghĩa Lợi - Cổ Lễ (1988-1992).',
+  note: 'Con trai thứ 2 cụ Mậu Hách. Chủ nhiệm HTX May mặc Nghĩa Lợi.',
 });
 addParentsChild(id_d25_hach, id_d25_hach_ba, id_d26_quan);
 
@@ -1351,7 +1058,7 @@ const id_d26_quan_ba = addPerson({
   birth_year: 1962,
   is_in_law: true,
   is_deceased: false,
-  note: 'Vợ ông Nguyễn Mậu Quân, sinh năm Nhâm Dần (1962), người thôn Nội, Nam Thanh.',
+  note: 'Vợ ông Nguyễn Mậu Quân.',
 });
 addMarriage(id_d26_quan, id_d26_quan_ba);
 
@@ -1363,7 +1070,7 @@ const id_d26_lien = addPerson({
   birth_order: 3,
   birth_year: 1964,
   is_deceased: false,
-  note: 'Con gái cụ Mậu Hách. Sinh năm Giáp Thìn (1964), lấy chồng Đặng Minh Khang ở Liên Tỉnh, Nam Trực.',
+  note: 'Con gái cụ Mậu Hách.',
 });
 addParentsChild(id_d25_hach, id_d25_hach_ba, id_d26_lien);
 
@@ -1375,7 +1082,7 @@ const id_d26_minh = addPerson({
   birth_order: 4,
   birth_year: 1972,
   is_deceased: false,
-  note: 'Con trai thứ 3 cụ Mậu Hách. Sinh năm Nhâm Tý (1972). Vợ là Đinh Thị Ngoãn sinh 1974 ở An Lãng.',
+  note: 'Con trai thứ 3 cụ Mậu Hách.',
 });
 addParentsChild(id_d25_hach, id_d25_hach_ba, id_d26_minh);
 
@@ -1387,7 +1094,7 @@ const id_d26_minh_ba = addPerson({
   birth_year: 1974,
   is_in_law: true,
   is_deceased: false,
-  note: 'Vợ ông Nguyễn Mậu Minh, sinh Giáp Dần (1974), làng An Lãng - Trực Chính.',
+  note: 'Vợ ông Nguyễn Mậu Minh.',
 });
 addMarriage(id_d26_minh, id_d26_minh_ba);
 
@@ -1399,8 +1106,7 @@ const id_d26_bang = addPerson({
   birth_order: 5,
   birth_year: 1974,
   is_deceased: false,
-  note: 'Con trai thứ 4 cụ Mậu Hách. Sinh năm Giáp Dần (1974). Cử nhân Kỹ sư Thủy lợi (1996), du học Tiến sĩ tại Nga, Viện Khoa học Thủy lợi Việt Nam.',
-  occupation: 'Tiến sĩ Viện Khoa học Thủy lợi Việt Nam',
+  note: 'Con trai thứ 4 cụ Mậu Hách. Tiến sĩ Thủy lợi tại Nga, Viện Khoa học Thủy lợi Việt Nam.',
 });
 addParentsChild(id_d25_hach, id_d25_hach_ba, id_d26_bang);
 
@@ -1412,12 +1118,127 @@ const id_d26_tuan = addPerson({
   birth_order: 6,
   birth_year: 1976,
   is_deceased: false,
-  note: 'Con trai thứ 5 cụ Mậu Hách. Sinh năm Bính Thìn (1976). Cử nhân Quản lý xã hội (1999).',
+  note: 'Con trai thứ 5 cụ Mậu Hách. Cử nhân Quản lý xã hội.',
 });
 addParentsChild(id_d25_hach, id_d25_hach_ba, id_d26_tuan);
 
+// Con cụ Tuần Riệp (Mậu Thích)
+const id_d26_chinh = addPerson({
+  id: makeUUID(26, 4, 11),
+  full_name: 'Nguyễn Mậu Chính',
+  gender: 'male',
+  generation: 26,
+  birth_order: 1,
+  birth_year: 1944,
+  is_deceased: false,
+  note: 'Con trai trưởng cụ Tuần Riệp (Mậu Thích). Ngành GTVT Cục Công trình 1.',
+});
+addParentsChild(id_d25_thich, id_d25_nho, id_d26_chinh);
+
+const id_d26_chinh_ba = addPerson({
+  id: makeUUID(26, 4, 12),
+  full_name: 'Lê Thị Lan',
+  gender: 'female',
+  generation: 26,
+  birth_year: 1949,
+  is_in_law: true,
+  is_deceased: false,
+  note: 'Vợ ông Nguyễn Mậu Chính, quê TP. Vinh.',
+});
+addMarriage(id_d26_chinh, id_d26_chinh_ba);
+
+const id_d26_tung = addPerson({
+  id: makeUUID(26, 4, 13),
+  full_name: 'Nguyễn Mậu Tung',
+  gender: 'male',
+  generation: 26,
+  birth_order: 2,
+  birth_year: 1954,
+  is_deceased: false,
+  note: 'Con trai thứ 2 cụ Tuần Riệp. Cựu chiến binh lái xe tiền phương chiến dịch Hồ Chí Minh.',
+});
+addParentsChild(id_d25_thich, id_d25_nho, id_d26_tung);
+
+const id_d26_tung_ba = addPerson({
+  id: makeUUID(26, 4, 14),
+  full_name: 'Bùi Thị Ngân',
+  gender: 'female',
+  generation: 26,
+  birth_year: 1955,
+  is_in_law: true,
+  is_deceased: false,
+  note: 'Vợ ông Nguyễn Mậu Tung, Y sĩ Bệnh viện huyện Trực Ninh.',
+});
+addMarriage(id_d26_tung, id_d26_tung_ba);
+
+const id_d26_thieng = addPerson({
+  id: makeUUID(26, 4, 15),
+  full_name: 'Nguyễn Mậu Thiềng',
+  gender: 'male',
+  generation: 26,
+  birth_order: 3,
+  birth_year: 1957,
+  is_deceased: false,
+  note: 'Con trai thứ 3 cụ Tuần Riệp. Phó ban Văn hóa xã.',
+});
+addParentsChild(id_d25_thich, id_d25_nho, id_d26_thieng);
+
+const id_d26_thieng_ba = addPerson({
+  id: makeUUID(26, 4, 16),
+  full_name: 'Mai Thị Chuyển',
+  gender: 'female',
+  generation: 26,
+  birth_year: 1962,
+  is_in_law: true,
+  is_deceased: false,
+  note: 'Vợ ông Nguyễn Mậu Thiềng, quê thôn An Lãng, Trực Chính.',
+});
+addMarriage(id_d26_thieng, id_d26_thieng_ba);
+
+const id_d26_tu = addPerson({
+  id: makeUUID(26, 4, 17),
+  full_name: 'Nguyễn Mậu Tụ',
+  gender: 'male',
+  generation: 26,
+  birth_order: 4,
+  birth_year: 1959,
+  is_deceased: false,
+  note: 'Con trai thứ 4 cụ Tuần Riệp.',
+});
+addParentsChild(id_d25_thich, id_d25_nho, id_d26_tu);
+
+const id_d26_tu_ba = addPerson({
+  id: makeUUID(26, 4, 18),
+  full_name: 'Nguyễn Thị Thoa',
+  gender: 'female',
+  generation: 26,
+  birth_year: 1960,
+  is_in_law: true,
+  is_deceased: false,
+  note: 'Vợ ông Nguyễn Mậu Tụ.',
+});
+addMarriage(id_d26_tu, id_d26_tu_ba);
+
+const id_d26_duc = addPerson({
+  id: makeUUID(26, 4, 19),
+  full_name: 'Nguyễn Mậu Đức (Liệt Sĩ)',
+  gender: 'male',
+  generation: 26,
+  birth_order: 5,
+  birth_year: 1949,
+  death_year: 1969,
+  death_day: 11,
+  death_month: 8,
+  death_lunar_day: 29,
+  death_lunar_month: 6,
+  death_lunar_year: 1969,
+  is_deceased: true,
+  note: 'Liệt sĩ chống Mỹ hy sinh ngày 29/6 Kỷ Dậu (11/8/1969) thọ 21 tuổi. Con trai Mẹ VNAH Đàm Thị Cách và cụ Tuần Riệp.',
+});
+addParentsChild(id_d25_thich, id_d25_cach, id_d26_duc);
+
 // -----------------------------------------------------------------------------
-// ĐỜI 27 (CHÁU NỘI CỤ MẬU HÁCH & HẬU DUỆ ĐƯƠNG ĐẠI)
+// ĐỜI 27 (CHÁU NỘI CỤ HÁCH, CỤ TUẦN RIỆP, CỤ PHÓ HUỲNH)
 // -----------------------------------------------------------------------------
 const id_d27_duong = addPerson({
   id: makeUUID(27, 4, 1),
@@ -1427,7 +1248,7 @@ const id_d27_duong = addPerson({
   birth_order: 1,
   birth_year: 1981,
   is_deceased: false,
-  note: 'Con gái ông Nguyễn Mậu Thịnh, cháu nội cụ Mậu Hách. Sinh năm Tân Dậu (1981).',
+  note: 'Con gái ông Nguyễn Mậu Thịnh, cháu nội cụ Mậu Hách.',
 });
 addParentsChild(id_d26_thinh, id_d26_thinh_ba, id_d27_duong);
 
@@ -1439,7 +1260,7 @@ const id_d27_van = addPerson({
   birth_order: 1,
   birth_year: 1984,
   is_deceased: false,
-  note: 'Con gái ông Nguyễn Mậu Quân, cháu nội cụ Mậu Hách. Sinh năm Giáp Tý (1984).',
+  note: 'Con gái ông Nguyễn Mậu Quân, cháu nội cụ Mậu Hách.',
 });
 addParentsChild(id_d26_quan, id_d26_quan_ba, id_d27_van);
 
@@ -1451,7 +1272,7 @@ const id_d27_trunganh = addPerson({
   birth_order: 2,
   birth_year: 1987,
   is_deceased: false,
-  note: 'Con trai ông Nguyễn Mậu Quân, cháu nội cụ Mậu Hách. Sinh năm Đinh Mão (1987).',
+  note: 'Con trai ông Nguyễn Mậu Quân, cháu nội cụ Mậu Hách.',
 });
 addParentsChild(id_d26_quan, id_d26_quan_ba, id_d27_trunganh);
 
@@ -1463,9 +1284,93 @@ const id_d27_hien = addPerson({
   birth_order: 1,
   birth_year: 2000,
   is_deceased: false,
-  note: 'Con gái ông Nguyễn Mậu Minh, cháu nội cụ Mậu Hách. Sinh năm Canh Thìn (2000).',
+  note: 'Con gái ông Nguyễn Mậu Minh, cháu nội cụ Mậu Hách.',
 });
 addParentsChild(id_d26_minh, id_d26_minh_ba, id_d27_hien);
+
+const id_d27_nam = addPerson({
+  id: makeUUID(27, 4, 5),
+  full_name: 'Nguyễn Mậu Nam',
+  gender: 'male',
+  generation: 27,
+  birth_order: 1,
+  birth_year: 1974,
+  is_deceased: false,
+  note: 'Con trai trưởng ông Nguyễn Mậu Chính. Tốt nghiệp ĐH Kinh tế Quốc dân, Kiểm toán Việt Nam.',
+});
+addParentsChild(id_d26_chinh, id_d26_chinh_ba, id_d27_nam);
+
+const id_d27_giang = addPerson({
+  id: makeUUID(27, 4, 6),
+  full_name: 'Nguyễn Mậu Giang',
+  gender: 'male',
+  generation: 27,
+  birth_order: 2,
+  birth_year: 1976,
+  is_deceased: false,
+  note: 'Con trai thứ 2 ông Nguyễn Mậu Chính. ĐH Thương mại, Tổng công ty Điện thoại di động VN.',
+});
+addParentsChild(id_d26_chinh, id_d26_chinh_ba, id_d27_giang);
+
+const id_d27_trung = addPerson({
+  id: makeUUID(27, 4, 7),
+  full_name: 'Nguyễn Mậu Trung',
+  gender: 'male',
+  generation: 27,
+  birth_order: 1,
+  birth_year: 1978,
+  is_deceased: false,
+  note: 'Con trai ông Nguyễn Mậu Tung. ĐH Xây dựng, Viện Thiết kế Bộ Quốc phòng.',
+});
+addParentsChild(id_d26_tung, id_d26_tung_ba, id_d27_trung);
+
+const id_d27_thanhlong = addPerson({
+  id: makeUUID(27, 4, 8),
+  full_name: 'Nguyễn Mậu Thành Long',
+  gender: 'male',
+  generation: 27,
+  birth_order: 1,
+  birth_year: 1984,
+  is_deceased: false,
+  note: 'Con trai trưởng ông Nguyễn Mậu Thiềng.',
+});
+addParentsChild(id_d26_thieng, id_d26_thieng_ba, id_d27_thanhlong);
+
+const id_d27_congthin = addPerson({
+  id: makeUUID(27, 4, 9),
+  full_name: 'Nguyễn Mậu Công Thìn',
+  gender: 'male',
+  generation: 27,
+  birth_order: 2,
+  birth_year: 1988,
+  is_deceased: false,
+  note: 'Con trai thứ 2 ông Nguyễn Mậu Thiềng.',
+});
+addParentsChild(id_d26_thieng, id_d26_thieng_ba, id_d27_congthin);
+
+const id_d27_manhcuong = addPerson({
+  id: makeUUID(27, 4, 10),
+  full_name: 'Nguyễn Mậu Mạnh Cường',
+  gender: 'male',
+  generation: 27,
+  birth_order: 1,
+  birth_year: 1983,
+  is_deceased: false,
+  note: 'Con trai thứ nhất ông Nguyễn Mậu Tụ.',
+});
+addParentsChild(id_d26_tu, id_d26_tu_ba, id_d27_manhcuong);
+
+const id_d27_manhhung = addPerson({
+  id: makeUUID(27, 4, 11),
+  full_name: 'Nguyễn Mậu Mạnh Hùng',
+  gender: 'male',
+  generation: 27,
+  birth_order: 2,
+  birth_year: 1988,
+  is_deceased: false,
+  note: 'Con trai thứ 2 ông Nguyễn Mậu Tụ.',
+});
+addParentsChild(id_d26_tu, id_d26_tu_ba, id_d27_manhhung);
 
 // -----------------------------------------------------------------------------
 // SỰ KIỆN TẾ TỰ DÒNG HỌ NGUYỄN MẬU (CUSTOM EVENTS)
@@ -1518,12 +1423,12 @@ fs.writeFileSync(
   'utf8'
 );
 
-console.log(`Generated JSON: ${persons.length} persons, ${relationships.length} relationships, ${personDetailsPrivate.length} private details.`);
+console.log(`Generated Comprehensive JSON: ${persons.length} persons, ${relationships.length} relationships.`);
 
 // Output SQL Seed
 let sql = `-- =============================================================================
 -- GIA PHẢ DÒNG HỌ NGUYỄN MẬU (CỔ LỄ, TRỰC NINH, NAM ĐỊNH) - SEED CHUẨN XÁC 100%
--- Trích từ: NGỌC PHẢ NGUYỄN MẬU TỘC (Năm 2001 - 128 trang)
+-- Trích từ: NGỌC PHẢ NGUYỄN MẬU TỘC (Bản đầy đủ 136 trang)
 -- =============================================================================
 
 BEGIN;
@@ -1571,4 +1476,4 @@ fs.writeFileSync(
   'utf8'
 );
 
-console.log(`Generated SQL Seed successfully.`);
+console.log(`Generated Comprehensive SQL Seed successfully.`);
