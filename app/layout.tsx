@@ -12,9 +12,9 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
 });
 export const metadata: Metadata = {
-  title: `${config.siteName} - Thôn Thượng Đền, Cổ Lễ, Trực Ninh, Nam Định`,
+  title: `${config.siteName}`,
   description:
-    "Trang thông tin gia phả Dòng họ Nguyễn Mậu (Ngành 4) tại Thôn Thượng Đền, Thị trấn Cổ Lễ, Huyện Trực Ninh, Tỉnh Nam Định. Tra cứu phả hệ, thế thứ, ngày giỗ và truyền thống dòng tộc.",
+    "Trang thông tin gia phả Dòng họ Nguyễn Mậu - Thôn Thượng, Thị trấn Cổ Lễ, Huyện Trực Ninh, Tỉnh Nam Định. Tra cứu phả hệ, thế thứ, ngày giỗ và truyền thống dòng tộc.",
 };
 
 export default function RootLayout({

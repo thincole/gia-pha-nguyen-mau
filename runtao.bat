@@ -12,7 +12,7 @@ echo.
 cd /d "%~dp0"
 
 :: 2. Thiết lập thông tin Supabase cấu hình sẵn
-set "SUPABASE_SITE_NAME=Gia Phả Họ Nguyễn Mậu (Ngành 4)"
+set "SUPABASE_SITE_NAME=Gia Phả Họ Nguyễn Mậu - Thôn Thượng - Thị trấn Cổ Lễ - huyện Trực Ninh - tỉnh Nam Định"
 set "SUPABASE_PROJECT_URL=https://uwlluncglayxwumfgqbj.supabase.co"
 set "SUPABASE_ANON_KEY=sb_publishable_JmQAeQDs9cu4k6kbHuva4Q_aBjn_PXF"
 set "PORT=3005"
@@ -25,7 +25,7 @@ echo.
 :: Tự động tạo / ghi đè file .env.local với các giá trị cấu hình trên
 (
     echo # -----------------------------------------------------------------------------
-    echo # GIA PHẢ DÒNG HỌ NGUYỄN MẬU (NGÀNH 4) - CẤU HÌNH SUPABASE
+    echo # GIA PHẢ DÒNG HỌ NGUYỄN MẬU - CẤU HÌNH SUPABASE
     echo # -----------------------------------------------------------------------------
     echo SITE_NAME="%SUPABASE_SITE_NAME%"
     echo NEXT_PUBLIC_SUPABASE_URL="%SUPABASE_PROJECT_URL%"
