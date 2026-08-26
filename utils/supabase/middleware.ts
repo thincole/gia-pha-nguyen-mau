@@ -47,13 +47,16 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // Protected routes
-  const protectedPaths = ["/dashboard"];
-  const isProtectedPath = protectedPaths.some((path) =>
-    request.nextUrl.pathname.startsWith(path),
-  );
+  // Protected routes (Chỉ các trang quản trị nhạy cảm mới yêu cầu đăng nhập)
+  const pathname = request.nextUrl.pathname;
+  const isProtectedPath =
+    pathname.startsWith("/dashboard/data") ||
+    pathname.startsWith("/dashboard/users") ||
+    pathname.startsWith("/dashboard/lineage") ||
+    pathname.startsWith("/dashboard/members/new") ||
+    pathname.includes("/edit");
 
-  const isLoginPage = request.nextUrl.pathname.startsWith("/login");
+  const isLoginPage = pathname.startsWith("/login");
 
   // Check if DB schema is initialized by checking if profiles table exists
   if (isProtectedPath || isLoginPage) {
@@ -73,7 +76,7 @@ export async function updateSession(request: NextRequest) {
   }
 
   if (isProtectedPath && !user) {
-    // no user, potentially respond by redirecting the user to the login page
+    // no user, redirect to login page with return url
     const url = request.nextUrl.clone();
     url.pathname = "/login";
     return NextResponse.redirect(url);
@@ -82,7 +85,7 @@ export async function updateSession(request: NextRequest) {
   // Redirect users who are already logged in away from the login page
   if (isLoginPage && user) {
     const url = request.nextUrl.clone();
-    url.pathname = "/dashboard";
+    url.pathname = "/";
     return NextResponse.redirect(url);
   }
 

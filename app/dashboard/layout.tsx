@@ -14,14 +14,9 @@ export default async function DashboardLayout({
   children: React.ReactNode;
 }) {
   const user = await getUser();
+  const profile = user ? await getProfile(user.id) : null;
 
-  if (!user) {
-    redirect("/login");
-  }
-
-  const profile = await getProfile(user.id);
-
-  if (!profile?.is_active) {
+  if (user && !profile?.is_active) {
     return (
       <div className="min-h-screen bg-neutral text-primary flex flex-col font-sans">
         <header className="sticky top-0 z-30 bg-white/80 border-b border-stone-200 shadow-sm transition-all duration-200">

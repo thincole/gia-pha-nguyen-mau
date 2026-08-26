@@ -7,6 +7,7 @@ import {
   Database,
   GitMerge,
   Info,
+  LogIn,
   Network,
   UserCircle,
   Users,
@@ -34,7 +35,17 @@ export default function HeaderMenu() {
   }, []);
 
   return (
-    <div className="relative" ref={menuRef}>
+    <div className="relative flex items-center gap-3" ref={menuRef}>
+      {!user ? (
+        <Link
+          href="/login"
+          className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-stone-900 text-white hover:bg-amber-800 text-xs sm:text-sm font-semibold transition-all shadow-sm active:scale-95"
+        >
+          <LogIn className="size-4" />
+          <span>Đăng nhập Quản trị</span>
+        </Link>
+      ) : null}
+
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 pl-2 pr-4 py-1.5 rounded-full hover:bg-stone-100 transition-all duration-200 border border-transparent hover:border-stone-200"
@@ -58,29 +69,22 @@ export default function HeaderMenu() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
-            className="absolute right-0 mt-2 w-56 bg-surface rounded-3xl shadow-soft border border-border py-2 z-50 overflow-hidden"
+            className="absolute right-0 top-full mt-2 w-56 bg-surface rounded-3xl shadow-soft border border-border py-2 z-50 overflow-hidden"
           >
-            <div className="px-4 py-3 border-b border-stone-100 bg-stone-50/50">
-              <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-0.5">
-                Tài khoản
-              </p>
-              <p className="text-sm font-medium text-stone-900 truncate">
-                {userEmail}
-              </p>
-            </div>
+            {user ? (
+              <div className="px-4 py-3 border-b border-stone-100 bg-stone-50/50">
+                <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-0.5">
+                  Tài khoản
+                </p>
+                <p className="text-sm font-medium text-stone-900 truncate">
+                  {userEmail}
+                </p>
+              </div>
+            ) : null}
 
             <div className="py-1">
               <Link
-                href="/dashboard"
-                onClick={() => setIsOpen(false)}
-                className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-stone-700 hover:text-amber-700 hover:bg-amber-50 transition-colors"
-              >
-                <Network className="size-4" />
-                Bảng điều khiển
-              </Link>
-
-              <Link
-                href="/dashboard/members"
+                href="/"
                 onClick={() => setIsOpen(false)}
                 className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-stone-700 hover:text-amber-700 hover:bg-amber-50 transition-colors"
               >
@@ -154,7 +158,18 @@ export default function HeaderMenu() {
                 Giới thiệu
               </Link>
 
-              <LogoutButton />
+              {user ? (
+                <LogoutButton />
+              ) : (
+                <Link
+                  href="/login"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-stone-700 hover:text-amber-700 hover:bg-amber-50 transition-colors"
+                >
+                  <LogIn className="size-4" />
+                  Đăng nhập
+                </Link>
+              )}
             </div>
           </motion.div>
         )}

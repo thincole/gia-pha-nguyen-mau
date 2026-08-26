@@ -1,24 +1,97 @@
+import DashboardHeader from "@/components/DashboardHeader";
 import Footer from "@/components/Footer";
-import LandingHero from "@/components/LandingHero";
-import config from "./config";
+import { MemberListProvider } from "@/context/MemberListContext";
+import MembersViews from "@/components/MembersViews";
+import MemberDetailModal from "@/components/modal/MemberDetailModal";
+import ViewToggle, { ViewMode } from "@/components/ViewToggle";
+import { UserProvider } from "@/components/UserProvider";
+import { getProfile, getSupabase, getUser } from "@/utils/supabase/queries";
+import { Sparkles } from "lucide-react";
 
-export default function HomePage() {
+interface HomePageProps {
+  searchParams: Promise<{ view?: string; rootId?: string; avatar?: string }>;
+}
+
+export default async function HomePage({ searchParams }: HomePageProps) {
+  const { view, rootId, avatar } = await searchParams;
+  const initialView = view as ViewMode | undefined;
+  const initialShowAvatar = avatar !== "hide";
+
+  const user = await getUser();
+  const profile = user ? await getProfile(user.id) : null;
+  const canEdit = profile?.role === "admin" || profile?.role === "editor";
+
+  const supabase = await getSupabase();
+
+  const [personsRes, relsRes] = await Promise.all([
+    supabase
+      .from("persons")
+      .select("*")
+      .order("birth_year", { ascending: true, nullsFirst: false }),
+    supabase.from("relationships").select("*"),
+  ]);
+
+  const persons = personsRes.data || [];
+  const relationships = relsRes.data || [];
+
+  // Prepare map and roots for tree views
+  const personsMap = new Map();
+  persons.forEach((p) => personsMap.set(p.id, p));
+
+  const childIds = new Set(
+    relationships
+      .filter(
+        (r) => r.type === "biological_child" || r.type === "adopted_child",
+      )
+      .map((r) => r.person_b),
+  );
+
+  let finalRootId = rootId;
+
+  if (!finalRootId || !personsMap.has(finalRootId)) {
+    const rootsFallback = persons.filter((p) => !childIds.has(p.id));
+    if (rootsFallback.length > 0) {
+      finalRootId = rootsFallback[0].id;
+    } else if (persons.length > 0) {
+      finalRootId = persons[0].id;
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-neutral flex flex-col selection:bg-amber-200 selection:text-amber-900 relative overflow-hidden">
-      {/* Decorative background grid and blurs */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-size-[24px_24px] pointer-events-none"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_-30%,#fef3c7,transparent)] pointer-events-none"></div>
+    <UserProvider user={user} profile={profile}>
+      <div className="min-h-screen bg-neutral text-primary flex flex-col font-sans selection:bg-amber-200 selection:text-amber-900">
+        <DashboardHeader />
 
-      <div className="absolute top-0 inset-x-0 h-screen overflow-hidden pointer-events-none flex justify-center">
-        <div className="absolute top-[-10%] right-[-5%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-amber-300/20 rounded-full blur-[100px] mix-blend-multiply" />
-        <div className="absolute top-[20%] left-[-10%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-rose-200/20 rounded-full blur-[120px] mix-blend-multiply" />
+        {/* Compact clan banner */}
+        <div className="bg-amber-50/60 border-b border-amber-200/50 py-2 px-4 text-center">
+          <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-amber-900">
+            <Sparkles className="size-4 text-amber-600 shrink-0" />
+            <span>Thôn Thượng Đền • Thị trấn Cổ Lễ • Huyện Trực Ninh • Tỉnh Nam Định</span>
+          </div>
+        </div>
+
+        <main className="flex-1 flex flex-col relative w-full">
+          <MemberListProvider
+            initialView={initialView}
+            initialRootId={finalRootId}
+            initialShowAvatar={initialShowAvatar}
+          >
+            <ViewToggle />
+            <MembersViews
+              persons={persons}
+              relationships={relationships}
+              canEdit={canEdit}
+            />
+
+            <MemberDetailModal />
+          </MemberListProvider>
+        </main>
+
+        <Footer
+          className="mt-auto bg-white border-t border-stone-200"
+          showDisclaimer={true}
+        />
       </div>
-
-      <main className="flex-1 flex flex-col items-center justify-center px-4 py-20 md:py-32 relative z-10 w-full">
-        <LandingHero siteName={config.siteName} />
-      </main>
-
-      <Footer className="bg-transparent relative z-10 border-none" />
-    </div>
+    </UserProvider>
   );
 }
