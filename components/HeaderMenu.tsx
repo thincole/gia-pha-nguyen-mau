@@ -36,16 +36,6 @@ export default function HeaderMenu() {
 
   return (
     <div className="relative flex items-center gap-3" ref={menuRef}>
-      {!user ? (
-        <Link
-          href="/login"
-          className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-stone-900 text-white hover:bg-amber-800 text-xs sm:text-sm font-semibold transition-all shadow-sm active:scale-95"
-        >
-          <LogIn className="size-4" />
-          <span>Đăng nhập Quản trị</span>
-        </Link>
-      ) : null}
-
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 pl-2 pr-4 py-1.5 rounded-full hover:bg-stone-100 transition-all duration-200 border border-transparent hover:border-stone-200"

@@ -91,8 +91,18 @@ function EventCard({
     const now = new Date().getFullYear();
     const diff = now - event.originYear;
     if (diff <= 0) return null;
-    if (isBirthday) return `${diff} tuổi`;
-    if (event.type === "death_anniversary") return `${diff} năm`;
+    if (isBirthday) return `Sinh nhật tròn ${diff} tuổi`;
+    if (event.type === "death_anniversary") return `Kỵ nhật ${diff} năm`;
+    return null;
+  })();
+
+  const birthDateFull = (() => {
+    if (isBirthday && event.originDay && event.originMonth) {
+      const d = event.originDay.toString().padStart(2, "0");
+      const m = event.originMonth.toString().padStart(2, "0");
+      const y = event.originYear ? `/${event.originYear}` : "";
+      return `Sinh ngày ${d}/${m}${y}`;
+    }
     return null;
   })();
 
@@ -117,7 +127,7 @@ function EventCard({
       label += `/${year}`;
     }
     if (event.type === "death_anniversary") {
-      label += ` (Âm lịch: ${event.eventDateLabel.replace(" ÂL", "")})`;
+      label += ` (Âm lịch: ${event.eventDateLabel.replace(" ÂL", "")} ÂL)`;
     }
     return label;
   })();
@@ -148,10 +158,10 @@ function EventCard({
             : isPast
               ? "bg-stone-100 text-stone-400"
               : isBirthday
-                ? "bg-blue-50 text-blue-500"
+                ? "bg-blue-50 text-blue-600"
                 : isCustom
-                  ? "bg-purple-50 text-purple-500"
-                  : "bg-rose-50 text-rose-500"
+                  ? "bg-purple-50 text-purple-600"
+                  : "bg-rose-50 text-rose-600"
         }`}
       >
         {isBirthday ? (
@@ -165,7 +175,7 @@ function EventCard({
 
       {/* Info */}
       <div className="flex-1 min-w-0">
-        {/* Top row: name + badge */}
+        {/* Top row: name + type badge + zodiac + days badge */}
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
           <p
             className={`font-semibold text-[15px] sm:text-base truncate transition-colors ${
@@ -176,6 +186,24 @@ function EventCard({
           >
             {event.personName}
           </p>
+
+          {/* Event Type Badge */}
+          {isBirthday && (
+            <span className="shrink-0 text-[11px] font-bold text-blue-700 bg-blue-50 border border-blue-200/70 rounded-md px-2 py-0.5 whitespace-nowrap shadow-xs">
+              🎂 Sinh nhật
+            </span>
+          )}
+          {event.type === "death_anniversary" && (
+            <span className="shrink-0 text-[11px] font-bold text-rose-700 bg-rose-50 border border-rose-200/70 rounded-md px-2 py-0.5 whitespace-nowrap shadow-xs">
+              🌸 Ngày giỗ
+            </span>
+          )}
+          {isCustom && (
+            <span className="shrink-0 text-[11px] font-bold text-purple-700 bg-purple-50 border border-purple-200/70 rounded-md px-2 py-0.5 whitespace-nowrap shadow-xs">
+              ⭐ Sự kiện
+            </span>
+          )}
+
           {isBirthday &&
             event.originDay &&
             event.originMonth &&
@@ -184,9 +212,10 @@ function EventCard({
                 {getZodiacSign(event.originDay, event.originMonth)}
               </span>
             )}
+
           {/* Days badge — inline with name */}
           <span
-            className={`shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-lg text-[11px] font-bold leading-tight whitespace-nowrap ${
+            className={`shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-lg text-[11px] font-bold leading-tight whitespace-nowrap ml-auto sm:ml-0 ${
               isToday
                 ? "bg-amber-400 text-white"
                 : isPast
@@ -208,16 +237,19 @@ function EventCard({
         </div>
 
         {/* Details */}
-        <div className="flex flex-col gap-0.5 mt-1">
-          <p className="text-[13px] sm:text-sm text-stone-500 flex items-center gap-1.5 leading-snug">
-            <CalendarDays className="size-3.5 shrink-0" />
-            <span className="font-medium text-stone-600">{dateLabel}</span>
-            {yearsInfo && <span className="text-stone-400">· {yearsInfo}</span>}
+        <div className="flex flex-col gap-0.5 mt-1.5">
+          <p className="text-[13px] sm:text-sm text-stone-500 flex flex-wrap items-center gap-x-2 gap-y-0.5 leading-snug">
+            <span className="inline-flex items-center gap-1.5">
+              <CalendarDays className="size-3.5 shrink-0 text-stone-400" />
+              <span className="font-medium text-stone-700">{dateLabel}</span>
+            </span>
+            {yearsInfo && <span className="text-stone-500 font-medium">· {yearsInfo}</span>}
+            {birthDateFull && <span className="text-stone-400 text-xs">({birthDateFull})</span>}
           </p>
 
           {event.location && (
-            <p className="text-[13px] sm:text-sm text-stone-500 flex items-center gap-1.5 leading-snug">
-              <MapPin className="size-3.5 shrink-0" />
+            <p className="text-[13px] sm:text-sm text-stone-500 flex items-center gap-1.5 leading-snug mt-0.5">
+              <MapPin className="size-3.5 shrink-0 text-stone-400" />
               <span className="truncate">{event.location}</span>
             </p>
           )}
